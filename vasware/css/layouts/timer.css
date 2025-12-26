@@ -1,0 +1,491 @@
+/* ================================
+   Timer/Manufacturing Page Styles
+   ================================ */
+
+/* Timer Container */
+.timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 100vh;
+  background-color: var(--background-light);
+  padding: 0;
+}
+
+body.dark-mode .timer-wrapper {
+  background-color: var(--background-dark);
+}
+
+/* Minimal Header */
+.timer-header {
+  padding: 1.5rem 1rem 1rem;
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+body.dark-mode .timer-header {
+  background-color: #1f2937;
+  border-bottom-color: #374151;
+}
+
+.timer-header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin: 0;
+}
+
+body.dark-mode .timer-header-title {
+  color: var(--text-dark);
+}
+
+.timer-header-sku {
+  font-size: 0.875rem;
+  color: #617589;
+  margin-top: 0.25rem;
+}
+
+body.dark-mode .timer-header-sku {
+  color: #9ca3af;
+}
+
+/* Main Content */
+.timer-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+  gap: 1.5rem;
+}
+
+/* Total Timer Section */
+.timer-section {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .timer-section {
+  background-color: #1f2937;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.timer-section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin: 0 0 1rem 0;
+}
+
+body.dark-mode .timer-section-title {
+  color: #9ca3af;
+}
+
+.timer-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timer-value {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+  color: var(--text-light);
+  line-height: 1;
+  min-width: 3.5rem;
+  text-align: center;
+}
+
+body.dark-mode .timer-value {
+  color: var(--text-dark);
+}
+
+.timer-separator {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  padding: 0 0.25rem;
+  line-height: 1;
+}
+
+body.dark-mode .timer-separator {
+  color: var(--text-dark);
+}
+
+.timer-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+}
+
+/* Product Timer Section */
+.product-timer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timer-with-button {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.timer-column {
+  flex: 1;
+}
+
+.add-box-btn {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background-color: #137fec;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
+.add-box-btn:hover {
+  background-color: #0066cc;
+  box-shadow: 0 2px 8px rgba(19, 127, 236, 0.3);
+}
+
+body.dark-mode .add-box-btn {
+  background-color: #60a5fa;
+}
+
+body.dark-mode .add-box-btn:hover {
+  background-color: #3b82f6;
+}
+
+/* Performance Status */
+.performance-status {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 2px solid;
+}
+
+.performance-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.performance-value {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+  line-height: 1;
+}
+
+.performance-unit {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Performance Status Colors */
+.performance-poor {
+  background-color: #ffebee;
+  border-color: #ef5350;
+  color: #c62828;
+}
+
+body.dark-mode .performance-poor {
+  background-color: rgba(229, 57, 53, 0.15);
+  border-color: #ef5350;
+  color: #ef9a9a;
+}
+
+.performance-moderate {
+  background-color: #fff3e0;
+  border-color: #ffa726;
+  color: #e65100;
+}
+
+body.dark-mode .performance-moderate {
+  background-color: rgba(255, 152, 0, 0.15);
+  border-color: #ffa726;
+  color: #ffb74d;
+}
+
+.performance-good {
+  background-color: #e8f5e9;
+  border-color: #66bb6a;
+  color: #2e7d32;
+}
+
+body.dark-mode .performance-good {
+  background-color: rgba(76, 175, 80, 0.15);
+  border-color: #66bb6a;
+  color: #81c784;
+}
+
+/* Action Buttons Grid */
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 0 0 2rem 0;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  text-align: left;
+  transition: all 0.2s ease;
+  color: inherit;
+  cursor: pointer;
+}
+
+body.dark-mode .action-btn {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.action-btn:hover {
+  border-color: #137fec;
+  box-shadow: 0 2px 8px rgba(19, 127, 236, 0.15);
+  transform: translateY(-2px);
+}
+
+body.dark-mode .action-btn:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
+}
+
+.action-btn-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.action-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.action-btn-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+body.dark-mode .action-btn-title {
+  color: var(--text-dark);
+}
+
+.action-btn-desc {
+  font-size: 0.75rem;
+  color: #617589;
+}
+
+body.dark-mode .action-btn-desc {
+  color: #9ca3af;
+}
+
+/* Product Switch Button */
+.action-btn.product {
+  background-color: #f0f4ff;
+  border-color: #137fec;
+}
+
+body.dark-mode .action-btn.product {
+  background-color: rgba(19, 127, 236, 0.1);
+  border-color: #60a5fa;
+}
+
+.action-btn.product .action-btn-icon {
+  background-color: rgba(19, 127, 236, 0.1);
+  color: #137fec;
+}
+
+body.dark-mode .action-btn.product .action-btn-icon {
+  background-color: rgba(19, 127, 236, 0.2);
+  color: #60a5fa;
+}
+
+/* Break Button */
+.action-btn.break .action-btn-icon {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: #ff9800;
+}
+
+/* Task Switch Button */
+.action-btn.task .action-btn-icon {
+  background-color: rgba(156, 39, 176, 0.1);
+  color: #9c27b0;
+}
+
+/* End Day Button */
+.action-btn.end {
+  background-color: #ffebee;
+  border-color: #ef5350;
+}
+
+body.dark-mode .action-btn.end {
+  background-color: rgba(239, 83, 80, 0.1);
+  border-color: #ef5350;
+}
+
+.action-btn.end .action-btn-icon {
+  background-color: rgba(239, 83, 80, 0.1);
+  color: #ef5350;
+}
+
+body.dark-mode .action-btn.end .action-btn-icon {
+  background-color: rgba(239, 83, 80, 0.2);
+  color: #ef9a9a;
+}
+
+.action-btn.end .action-btn-title {
+  color: #d32f2f;
+}
+
+body.dark-mode .action-btn.end .action-btn-title {
+  color: #ef9a9a;
+}
+
+/* Modal/Dialog */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 350px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+body.dark-mode .modal-content {
+  background-color: #1f2937;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+body.dark-mode .modal-title {
+  color: var(--text-dark);
+}
+
+.modal-text {
+  color: #617589;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+body.dark-mode .modal-text {
+  color: #9ca3af;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.modal-btn.cancel {
+  background-color: #e5e7eb;
+  color: var(--text-light);
+}
+
+body.dark-mode .modal-btn.cancel {
+  background-color: #374151;
+  color: var(--text-dark);
+}
+
+.modal-btn.cancel:hover {
+  background-color: #d1d5db;
+}
+
+body.dark-mode .modal-btn.cancel:hover {
+  background-color: #4b5563;
+}
+
+.modal-btn.confirm {
+  background-color: #ef5350;
+  color: white;
+}
+
+.modal-btn.confirm:hover {
+  background-color: #d32f2f;
+}
+
+body.dark-mode .modal-btn.confirm:hover {
+  background-color: #c62828;
+}

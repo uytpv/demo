@@ -24,6 +24,7 @@
 @import 'layouts/login.css';
 @import 'layouts/app.css';
 @import 'layouts/product.css';
+@import 'layouts/timer.css';
 
 /* 6. Utility Classes */
 @import 'utilities/spacing.css';
