@@ -1,0 +1,168 @@
+/* ================================
+   Status Alert Component - Card Style
+   ================================ */
+
+/* Base Status Alert */
+.status-alert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0.5rem 0 2rem;
+  border-radius: 1rem;
+  background-color: #E3F2FD;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.status-alert:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+body.dark-mode .status-alert {
+  background-color: rgba(19, 127, 236, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Status Alert Icon */
+.status-alert-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #137fec 0%, #0d5fbf 100%);
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(19, 127, 236, 0.3);
+}
+
+body.dark-mode .status-alert-icon {
+  background: linear-gradient(135deg, #137fec 0%, #0d5fbf 100%);
+  box-shadow: 0 4px 12px rgba(19, 127, 236, 0.4);
+}
+
+/* Status Alert Content */
+.status-alert-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.status-alert-title {
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+body.dark-mode .status-alert-title {
+  color: #F9FAFB;
+}
+
+.status-alert-detail {
+  color: #6B7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+body.dark-mode .status-alert-detail {
+  color: #D1D5DB;
+}
+
+/* Status Alert Variants */
+
+/* Check-in Status (Active/Success) */
+.status-alert.check-in {
+  background: linear-gradient(135deg, #ECFDF5 0%, #D1F3E8 100%);
+}
+
+body.dark-mode .status-alert.check-in {
+  background: linear-gradient(135deg, rgba(52, 199, 89, 0.15) 0%, rgba(52, 199, 89, 0.08) 100%);
+}
+
+.status-alert.check-in .status-alert-icon {
+  background: linear-gradient(135deg, #34C759 0%, #30B14F 100%);
+  box-shadow: 0 4px 12px rgba(52, 199, 89, 0.3);
+}
+
+.status-alert.check-in .status-alert-title {
+  color: #065F46;
+}
+
+body.dark-mode .status-alert.check-in .status-alert-title {
+  color: #DCFCE7;
+}
+
+/* Info Status */
+.status-alert.info {
+  background: linear-gradient(135deg, #E3F2FD 0%, #D4E7F7 100%);
+}
+
+body.dark-mode .status-alert.info {
+  background: linear-gradient(135deg, rgba(19, 127, 236, 0.15) 0%, rgba(19, 127, 236, 0.08) 100%);
+}
+
+.status-alert.info .status-alert-icon {
+  background: linear-gradient(135deg, #137fec 0%, #0D5FBF 100%);
+  box-shadow: 0 4px 12px rgba(19, 127, 236, 0.3);
+}
+
+.status-alert.info .status-alert-title {
+  color: #1e3a8a;
+}
+
+body.dark-mode .status-alert.info .status-alert-title {
+  color: #BFDBFE;
+}
+
+/* Warning Status */
+.status-alert.warning {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF7E8 100%);
+}
+
+body.dark-mode .status-alert.warning {
+  background: linear-gradient(135deg, rgba(255, 149, 0, 0.15) 0%, rgba(255, 149, 0, 0.08) 100%);
+}
+
+.status-alert.warning .status-alert-icon {
+  background: linear-gradient(135deg, #FF9500 0%, #E68600 100%);
+  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+}
+
+.status-alert.warning .status-alert-title {
+  color: #92400e;
+}
+
+body.dark-mode .status-alert.warning .status-alert-title {
+  color: #FEF08A;
+}
+
+/* Alert Status */
+.status-alert.alert {
+  background: linear-gradient(135deg, #FEF2F2 0%, #FDE8E8 100%);
+}
+
+body.dark-mode .status-alert.alert {
+  background: linear-gradient(135deg, rgba(255, 59, 48, 0.15) 0%, rgba(255, 59, 48, 0.08) 100%);
+}
+
+.status-alert.alert .status-alert-icon {
+  background: linear-gradient(135deg, #FF3B30 0%, #E02B22 100%);
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+}
+
+.status-alert.alert .status-alert-title {
+  color: #7f1d1d;
+}
+
+body.dark-mode .status-alert.alert .status-alert-title {
+  color: #FECACA;
+}

@@ -1,0 +1,165 @@
+/* ================================
+   Form & Input Components
+   ================================ */
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary-light);
+  margin-left: 0.25rem;
+}
+
+body.dark-mode .form-group label {
+  color: var(--text-secondary-dark);
+}
+
+.form-group-password {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 0.25rem;
+}
+
+/* Input with Icon */
+.input-with-icon {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  margin-bottom: 1rem;
+}
+
+.input-with-icon input {
+  flex: 1;
+  width: auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  min-height: 44px;
+  height: 44px;
+}
+
+.input-with-icon .icon-left {
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  color: var(--gray-400);
+  pointer-events: none;
+  font-size: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+}
+
+.input-with-icon .password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  cursor: pointer;
+  z-index: 2;
+  pointer-events: auto;
+  color: var(--gray-400);
+  font-size: 1.25rem;
+  user-select: none;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+}
+
+.input-with-icon .password-toggle:hover {
+  color: var(--gray-600);
+}
+
+body.dark-mode .input-with-icon .icon-left {
+  color: var(--gray-400);
+}
+
+body.dark-mode .input-with-icon .password-toggle {
+  color: var(--gray-400);
+}
+
+body.dark-mode .input-with-icon .password-toggle:hover {
+  color: var(--gray-300);
+}
+
+/* Search Input (warehouse) */
+.warehouse-search-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  margin-bottom: 0.75rem;
+}
+
+.warehouse-search-input {
+  flex: 1;
+  width: auto;
+  height: 100%;
+  outline: none;
+  font-size: 0.875rem;
+  background-color: transparent;
+  padding: 0;
+  padding-right: 0.75rem;
+  font-weight: 500;
+  border: none !important;
+  color: var(--text-light);
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.warehouse-search-input::placeholder {
+  color: var(--gray-400);
+}
+
+body.dark-mode .warehouse-search-input {
+  color: var(--text-dark);
+}
+
+body.dark-mode .warehouse-search-input::placeholder {
+  color: var(--gray-400);
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+  transition: color 0.2s ease;
+  margin-top: 0.25rem;
+}
+
+.forgot-password-link:hover {
+  color: var(--primary-dark);
+}

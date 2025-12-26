@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Andromeda - Select Product</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Styles CSS -->
+<link href="css/index.css" rel="stylesheet"/>
+<style>
+        /* Custom scrollbar hiding for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+  </head>
+<body class="bg-surface-light dark:bg-background-dark font-display">
+  <!-- Header -->
+  <header class="app-header">
+    <h1 class="app-header-title">Select Product</h1>
+    <div class="app-header-right">
+      <button class="app-header-notify-btn" aria-label="Notifications">
+        <span class="material-symbols-outlined">notifications</span>
+        <div class="notify-badge"></div>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-wrapper">
+    <div class="app-container">
+      <div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden mx-auto max-w-md bg-background-light dark:bg-background-dark shadow-xl">
+        <!-- Search Bar -->
+        <div class="px-4 pb-3 pt-1">
+<label class="flex flex-col w-full">
+<div class="flex w-full items-stretch rounded-lg h-12 bg-surface-light dark:bg-surface-dark border border-transparent focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="text-text-secondary-light dark:text-text-secondary-dark flex items-center justify-center pl-3 pr-2">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden bg-transparent text-text-primary-light dark:text-text-primary-dark placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark focus:outline-0 border-none h-full px-0 text-base font-normal leading-normal" placeholder="Search SKU or Name..." value=""/>
+<div class="text-primary flex items-center justify-center pr-3 pl-2 cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">barcode_scanner</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 px-4 pb-3 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-4 shadow-sm shadow-primary/30 transition-all">
+<p class="text-white text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Zone A</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Zone B</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Fragile</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Heavy</p>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Recently Scanned Section -->
+<div class="pt-4">
+<h3 class="text-text-primary-light dark:text-text-primary-dark text-base font-semibold leading-tight px-4 pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history</span>
+                    Recently Scanned
+                </h3>
+<!-- Recent Item 1 -->
+<div class="group relative flex items-center gap-4 px-4 py-3 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 bg-gray-200" data-alt="Close up of shiny steel industrial bearings" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjNKTAzx2w8R6lHRUQe11pWUALgTDFuvztzVnCqtIx8gWJ2rvmiKfv0tiYBGCSubBBz8eV1lXUdcMvPxEDMwxXuVGOz0ObdQHxDPeXM4HkCey9BOEV4mI6E30XIxV79JjC90h_i4i1Z-grfLh-dZKjgffxQnm8MZCFaJeJJsCgNbdiB6eZ9C_7lfPfmlmpg-PA7kDt4cTPay4XkI0Y1tMBa3CWKQO87M02MkfHcZl7lVG0DUuRbAcbOz_nHGBQCYJkaiq-WbOtt1Q");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal line-clamp-1">Steel Bearings</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 text-xs px-1.5 py-0.5 rounded font-medium">Zone A</span>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">SKU-9921</p>
+</div>
+</div>
+</div>
+<div class="shrink-0">
+<label class="flex size-7 items-center justify-center cursor-pointer">
+<input class="peer h-6 w-6 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary focus:ring-primary/20 focus:ring-offset-0 checked:bg-primary checked:border-primary transition-all cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Recent Item 2 -->
+<div class="group relative flex items-center gap-4 px-4 py-3 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 bg-gray-200" data-alt="Stack of white PVC pipes in warehouse" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2IAoTp9u7Ck-p4TfJcWmautLsWqK-crH7LK0N7jHxpsY8TLba-1snhggIE8hiM-owg9rrbA1OB6SOr7p5wU8CcFlxVk2g3W4cE8YwS9rI1_-OGtduECSilI7SMnKrMcOgoCHHknVG9TmTKyH0oksnyGw6dRxbbPrIaiQxPmOMSxpZTKwkuaZ9gV8GKznEvlr7Ir-Jo9R1N_LIVKs7q9xCMTaCtmVolwBzzRxvYhiNGWJ8JyxQF89RuD3vgMYy2MhT79s_WaEtcLg");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal line-clamp-1">PVC Piping - 4 inch</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300 text-xs px-1.5 py-0.5 rounded font-medium">Fragile</span>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">SKU-4420</p>
+</div>
+</div>
+</div>
+<div class="shrink-0">
+<label class="flex size-7 items-center justify-center cursor-pointer">
+<input class="peer h-6 w-6 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary focus:ring-primary/20 focus:ring-offset-0 checked:bg-primary checked:border-primary transition-all cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<!-- All Products Section -->
+<div class="pt-6">
+<h3 class="text-text-primary-light dark:text-text-primary-dark text-base font-semibold leading-tight px-4 pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+                    All Products
+                </h3>
+<!-- List Items -->
+<div class="flex flex-col">
+<!-- Item 3 -->
+<div class="group relative flex items-center gap-4 px-4 py-3 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 bg-gray-200" data-alt="Close up of aluminum metal sheets stacked" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCx7slRg4bCXOWPa3igGF0atEpSYbf-bh9rv-q3lHVAOX55Q9sZz7vaBAqKt4326EOLMp6laCjWJlTGdN3wK3blj-PtJ1zYBDXxy9sFzJagb4Nqc-sLIfpBpagQ7KHKbE1cCy2YpC4mw-rKhpU84JRT8AWav6RTIDdiahQwtB9f-MTBkPO8_Nl22-DmozL3wrR0lSJQNvG0qDfB9Zr0jDcEEBznVsRSJo94S2lwpSb8Un3GPBRklIgRSP39OxGs1QS47L1yDZTAaM");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal line-clamp-1">Aluminum Sheets</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 text-xs px-1.5 py-0.5 rounded font-medium">Zone B</span>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">SKU-8812</p>
+</div>
+</div>
+</div>
+<div class="shrink-0">
+<label class="flex size-7 items-center justify-center cursor-pointer">
+<input class="peer h-6 w-6 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary focus:ring-primary/20 focus:ring-offset-0 checked:bg-primary checked:border-primary transition-all cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group relative flex items-center gap-4 px-4 py-3 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 bg-gray-200" data-alt="Industrial brass valves isolated" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgueVmjhrMSm6Ka4yb-mwbTXNQxmN2rCQB-zyFgVD9DSMO5MamMDEw_D9IWlLLEcs9hl7Tu5WvwzCMtJWOUrbT15794tM4AhnJTiDxPnuDU-FEgMekWN4Q8YKKs4BzDaEOBYXl8u1I1g2XPTsWlwcz84IDX-oEjMuIAcGAwbG99ZszSdfcjz_0kqHdOnuGv_WeM7PetKLTgyKcZMu5KAM3_WjpnvvAHNfzeVpdWPq9HUwo8SAbLKR8ieRA1n5itZOYD2YOjZ4gZBs");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal line-clamp-1">Brass Valves 2"</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 text-xs px-1.5 py-0.5 rounded font-medium">Heavy</span>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">SKU-1029</p>
+</div>
+</div>
+</div>
+<div class="shrink-0">
+<label class="flex size-7 items-center justify-center cursor-pointer">
+<input class="peer h-6 w-6 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary focus:ring-primary/20 focus:ring-offset-0 checked:bg-primary checked:border-primary transition-all cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="group relative flex items-center gap-4 px-4 py-3 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 bg-gray-200" data-alt="Copper wire spools on shelf" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABMCfElKgqdIazcAHpCf4TzelwWKeXSQyOTuQKNOSBuuGX33xGuLtIO5sZdv1YjHJ4p-e8lMqJS5T862bahI-5zRFOp2CH6Ip6tXMvClKukTt0-sefuKe48a4tutxfJdjvpE5JETBsyfzLxSWNt5Y-S23vToBTPi6reNfk6EoETIbr-qtbb3AW6Ws_18kTa6fWO5EW074SzBt5ivo7qVuhOUjQvrinQBWaY-x1OZlDpYWxxmWw9dYfh7aPbDAkufSYlu91lf_Cyz4");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal line-clamp-1">Copper Wire Spools</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 text-xs px-1.5 py-0.5 rounded font-medium">Zone A</span>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">SKU-3384</p>
+</div>
+</div>
+</div>
+<div class="shrink-0">
+<label class="flex size-7 items-center justify-center cursor-pointer">
+<input class="peer h-6 w-6 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary focus:ring-primary/20 focus:ring-offset-0 checked:bg-primary checked:border-primary transition-all cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Illustration (Hidden by default, shown when filtering might result in no items) -->
+<!-- 
+            <div class="flex flex-col items-center justify-center py-12 px-4 text-center">
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-full mb-4">
+                    <span class="material-symbols-outlined text-primary text-[48px]">search_off</span>
+                </div>
+                <h4 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold mb-2">No products found</h4>
+                <p class="text-text-secondary-light dark:text-text-secondary-dark mb-6">We couldn't find any products matching your search.</p>
+                <button class="bg-primary text-white font-bold py-3 px-6 rounded-lg flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+                    Scan Barcode
+                </button>
+            </div>
+            -->
+<div class="h-20"></div> <!-- Spacer for bottom bar -->
+</main>
+<!-- Bottom Navigation -->
+    <nav class="warehouse-nav">
+      <div class="warehouse-nav-content">
+        <!-- Nav Item: Time Card -->
+        <a href="select_warehouse.html" class="warehouse-nav-item active">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schedule</span>
+          <span class="warehouse-nav-item-text">Time Card</span>
+        </a>
+        <!-- Nav Item: Sick Leave -->
+        <a href="sick_leave.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">sick</span>
+          <span class="warehouse-nav-item-text">Sick Leave</span>
+        </a>
+        <!-- Nav Item: Policies -->
+        <a href="policies.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">description</span>
+          <span class="warehouse-nav-item-text">Policies</span>
+        </button>
+        <!-- Nav Item: Profile -->
+        <button class="warehouse-nav-item">
+          <span class="material-symbols-outlined">person</span>
+          <span class="warehouse-nav-item-text">Profile</span>
+        </button>
+        <!-- Nav Item: Settings -->
+        <button class="warehouse-nav-item">
+          <span class="material-symbols-outlined">settings</span>
+          <span class="warehouse-nav-item-text">Settings</span>
+        </button>
+      </div>
+    </nav>
+</div>
+</div>
+</div>
+</div>
+</body></html>

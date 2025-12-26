@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Andromeda - Customer and Job Selection</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Styles CSS -->
+<link href="css/index.css" rel="stylesheet"/>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+  <!-- Header -->
+  <header class="app-header">
+    <h1 class="app-header-title">Select Customer Task</h1>
+    <div class="app-header-right">
+      <button class="app-header-notify-btn" aria-label="Notifications">
+        <span class="material-symbols-outlined">notifications</span>
+        <div class="notify-badge"></div>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-wrapper">
+    <div class="app-container">
+      <!-- Main Content Area -->
+      <main class="app-main">
+        <!-- Check-in Status Alert -->
+        <div class="status-alert check-in">
+          <div class="status-alert-icon">
+            <span class="material-symbols-outlined">check_circle</span>
+          </div>
+          <div class="status-alert-content">
+            <p class="status-alert-title">Checked in to Posti Tuusula</p>
+            <p class="status-alert-detail">22:58 - 25.12.2025</p>
+          </div>
+        </div>
+
+        <!-- Selection Form -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <!-- Customer Selection -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label style="font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+              <span class="material-symbols-outlined" style="font-size: 20px; color: #137fec;">domain</span>
+              Principle
+            </label>
+            <select style="width: 100%; padding: 0.875rem 1rem; border: 1px solid #dbe0e6; border-radius: 0.75rem; font-size: 1rem; appearance: none; background: white; cursor: pointer; padding-right: 2.5rem;">
+              <option disabled selected>Choose a principle...</option>
+              <option value="ipa">IPA</option>
+              <option value="finlayson">Finlayson</option>
+              <option value="prescott">Prescott</option>
+              <option value="varasto">Varasto</option>
+            </select>
+          </div>
+
+          <!-- Job/Task Selection -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label style="font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+              <span class="material-symbols-outlined" style="font-size: 20px; color: #137fec;">assignment</span>
+              Work types
+            </label>
+            <select style="width: 100%; padding: 0.875rem 1rem; border: 1px solid #dbe0e6; border-radius: 0.75rem; font-size: 1rem; appearance: none; background: white; cursor: pointer; padding-right: 2.5rem;">
+              <option disabled selected>Choose a work type...</option>
+              <option value="picking">Picking</option>
+              <option value="packing">Packing</option>
+              <option value="training">Training</option>
+              <option value="wait">Waiting</option>
+            </select>
+            <p class="help-text">Select a Principle first to see available work types.</p>
+          </div>
+        </div>
+
+        <!-- Recent Jobs -->
+        <div style="margin-top: 2rem;">
+          <h3 style="font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #6B7280; margin-bottom: 1rem;">Recent Tasks</h3>
+          <div class="item-list">
+        <!-- Item 1 -->
+        <button class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-icon">
+              <span class="material-symbols-outlined">warehouse</span>
+            </div>
+            <div class="list-item-info">
+              <span class="list-item-name">Posti Tuusula</span>
+              <span class="list-item-address">Palkkitie 1, 04300 Tuusula</span>
+            </div>
+          </div>
+          <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
+        </button>
+
+        <!-- Item 2 -->
+        <button class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-icon">
+              <span class="material-symbols-outlined">local_shipping</span>
+            </div>
+            <div class="list-item-info">
+              <span class="list-item-name">Picking</span>
+              <span class="list-item-address">Rekkatie 2, 04220 Kerava</span>
+            </div>
+          </div>
+          <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
+        </button>
+
+        <!-- Item 3 -->
+        <button class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-icon">
+              <span class="material-symbols-outlined">factory</span>
+            </div>
+            <div class="list-item-info">
+              <span class="list-item-name">Posti Järvenpää</span>
+              <span class="list-item-address">Soolokatu 5, 04410 Järvenpää</span>
+            </div>
+          </div>
+          <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
+        </div>
+      </main>
+
+      <!-- Bottom Navigation -->
+      <nav class="app-nav">
+        <div class="warehouse-nav-content">
+          <a href="select_warehouse.html" class="warehouse-nav-item active">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schedule</span>
+            <span class="warehouse-nav-item-text">Time Card</span>
+          </a>
+          <a href="sick_leave.html" class="warehouse-nav-item">
+            <span class="material-symbols-outlined">sick</span>
+            <span class="warehouse-nav-item-text">Sick Leave</span>
+          </a>
+          <a href="policies.html" class="warehouse-nav-item">
+            <span class="material-symbols-outlined">description</span>
+            <span class="warehouse-nav-item-text">Policies</span>
+          </a>
+          <a href="my_time_cards.html" class="warehouse-nav-item">
+            <span class="material-symbols-outlined">person</span>
+            <span class="warehouse-nav-item-text">Profile</span>
+          </a>
+          <a href="settings.html" class="warehouse-nav-item">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="warehouse-nav-item-text">Settings</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</body>
+</body></html>

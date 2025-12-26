@@ -1,0 +1,111 @@
+/* ================================
+   Header Components
+   ================================ */
+
+/* App Header (used on app pages) */
+.app-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 28rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(0.5rem);
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.2s ease;
+}
+
+body.dark-mode .app-header {
+  background-color: rgba(16, 25, 34, 0.95);
+  border-bottom-color: #1f2937;
+}
+
+.app-header-left,
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-header-left {
+  flex-direction: row;
+}
+
+.app-header-right {
+  justify-content: flex-end;
+}
+
+.app-header-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  flex: 1;
+  text-align: center;
+  color: #374151;
+}
+
+body.dark-mode .app-header-title {
+  color: var(--text-dark);
+}
+
+.app-header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-left: -0.5rem;
+  border-radius: 9999px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-light);
+}
+
+.app-header-btn:hover {
+  background-color: #f3f4f6;
+}
+
+body.dark-mode .app-header-btn {
+  color: var(--text-dark);
+}
+
+body.dark-mode .app-header-btn:hover {
+  background-color: #1f2937;
+}
+
+/* Notify Button */
+.app-header-notify-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-right: -0.5rem;
+  border-radius: 9999px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-light);
+}
+
+.app-header-notify-btn:hover {
+  background-color: #f3f4f6;
+}
+
+body.dark-mode .app-header-notify-btn {
+  color: var(--text-dark);
+}
+
+body.dark-mode .app-header-notify-btn:hover {
+  background-color: #1f2937;
+}
+
+

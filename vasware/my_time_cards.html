@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Time Cards - Andromeda</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/index.css"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-gray-100 overflow-x-hidden">
+  <!-- Header -->
+  <header class="app-header">
+    <h1 class="app-header-title">My Time Cards</h1>
+    <div class="app-header-right">
+      <button class="app-header-notify-btn" aria-label="Notifications">
+        <span class="material-symbols-outlined">notifications</span>
+        <div class="notify-badge"></div>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-wrapper">
+    <div class="app-container">
+      <!-- Summary Widget -->
+      <div class="px-4 py-4">
+<div class="bg-white dark:bg-surface-dark rounded-lg p-5 shadow-sm border border-gray-200 dark:border-gray-700 flex flex-col gap-1">
+<span class="text-gray-500 dark:text-gray-400 text-sm font-medium">This Week's Total</span>
+<div class="flex items-baseline gap-2">
+<h2 class="text-primary text-3xl font-bold tracking-tight">38.5</h2>
+<span class="text-gray-600 dark:text-gray-300 font-medium">Hrs</span>
+</div>
+<div class="mt-2 flex items-center gap-2">
+<div class="h-1.5 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+<span class="text-xs text-gray-400 whitespace-nowrap">Goal: 40h</span>
+</div>
+</div>
+</div>
+<!-- Current Pay Period Section -->
+<div class="flex flex-col">
+<h3 class="text-lg font-bold px-4 py-2 text-[#111418] dark:text-white">Current Pay Period</h3>
+<div class="px-4 flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-surface-dark p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<p class="text-[#111418] dark:text-white text-base font-bold">Mon, Oct 24</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal">Packing - Line A</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-green-600" style="font-size: 16px;">check_circle</span>
+<span class="text-green-700 dark:text-green-500 text-xs font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded-full">Approved</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-xl tabular-nums">8.5 <span class="text-sm font-medium text-gray-500 dark:text-gray-400">hrs</span></span>
+<span class="text-xs text-gray-400 mt-1">08:00 - 16:30</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-surface-dark p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<p class="text-[#111418] dark:text-white text-base font-bold">Sun, Oct 23</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal">Inventory Check</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-amber-500" style="font-size: 16px;">pending</span>
+<span class="text-amber-700 dark:text-amber-500 text-xs font-medium bg-amber-50 dark:bg-amber-900/30 px-2 py-0.5 rounded-full">Pending</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-xl tabular-nums">6.5 <span class="text-sm font-medium text-gray-500 dark:text-gray-400">hrs</span></span>
+<span class="text-xs text-gray-400 mt-1">09:00 - 15:30</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-surface-dark p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<p class="text-[#111418] dark:text-white text-base font-bold">Sat, Oct 22</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal">Forklift Operation</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-green-600" style="font-size: 16px;">check_circle</span>
+<span class="text-green-700 dark:text-green-500 text-xs font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded-full">Approved</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-xl tabular-nums">8.0 <span class="text-sm font-medium text-gray-500 dark:text-gray-400">hrs</span></span>
+<span class="text-xs text-gray-400 mt-1">08:00 - 16:00</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-surface-dark p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<p class="text-[#111418] dark:text-white text-base font-bold">Fri, Oct 21</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal">Receiving Dock</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-green-600" style="font-size: 16px;">check_circle</span>
+<span class="text-green-700 dark:text-green-500 text-xs font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded-full">Approved</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-xl tabular-nums">8.0 <span class="text-sm font-medium text-gray-500 dark:text-gray-400">hrs</span></span>
+<span class="text-xs text-gray-400 mt-1">08:00 - 16:00</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-white dark:bg-surface-dark p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<p class="text-[#111418] dark:text-white text-base font-bold">Thu, Oct 20</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal">Training - Safety</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-green-600" style="font-size: 16px;">check_circle</span>
+<span class="text-green-700 dark:text-green-500 text-xs font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded-full">Approved</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-xl tabular-nums">4.0 <span class="text-sm font-medium text-gray-500 dark:text-gray-400">hrs</span></span>
+<span class="text-xs text-gray-400 mt-1">08:00 - 12:00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Previous Pay Period Section -->
+<div class="flex flex-col mt-6">
+<h3 class="text-lg font-bold px-4 py-2 text-[#111418] dark:text-white">Previous Pay Period</h3>
+<div class="px-4 flex flex-col gap-3">
+<div class="bg-white/60 dark:bg-surface-dark/60 p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex justify-between items-center opacity-80">
+<div class="flex flex-col gap-0.5">
+<p class="text-[#111418] dark:text-white text-base font-bold">Oct 10 - Oct 16</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal">Weekly Total</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[#111418] dark:text-white font-bold text-lg tabular-nums">42.0 <span class="text-sm font-medium text-gray-500">hrs</span></span>
+<span class="material-symbols-outlined text-gray-400" style="font-size: 20px;">chevron_right</span>
+</div>
+</div>
+<div class="bg-white/60 dark:bg-surface-dark/60 p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm flex justify-between items-center opacity-80">
+<div class="flex flex-col gap-0.5">
+<p class="text-[#111418] dark:text-white text-base font-bold">Oct 03 - Oct 09</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal">Weekly Total</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[#111418] dark:text-white font-bold text-lg tabular-nums">39.5 <span class="text-sm font-medium text-gray-500">hrs</span></span>
+<span class="material-symbols-outlined text-gray-400" style="font-size: 20px;">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<button class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors flex-1">
+<span class="material-symbols-outlined" style="font-size: 28px;">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors flex-1">
+<span class="material-symbols-outlined" style="font-size: 28px;">qr_code_scanner</span>
+<span class="text-[10px] font-medium">Scan</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary flex-1">
+<span class="material-symbols-outlined fill-current" style="font-size: 28px; font-variation-settings: 'FILL' 1;">history</span>
+<span class="text-[10px] font-bold">History</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors flex-1">
+<div class="w-7 h-7 rounded-full bg-gray-200 dark:bg-gray-600 overflow-hidden relative">
+<!-- Avatar placeholder -->
+<div class="absolute inset-0 bg-gradient-to-tr from-gray-400 to-gray-200 dark:from-gray-700 dark:to-gray-500" data-alt="User avatar placeholder gradient"></div>
+</div>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</div>
+
+    <!-- Bottom Navigation -->
+    <nav class="warehouse-nav">
+      <div class="warehouse-nav-content">
+        <!-- Nav Item: Time Card -->
+        <a href="select_warehouse.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schedule</span>
+          <span class="warehouse-nav-item-text">Time Card</span>
+        </a>
+        <!-- Nav Item: Sick Leave -->
+        <a href="sick_leave.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">sick</span>
+          <span class="warehouse-nav-item-text">Sick Leave</span>
+        </a>
+        <!-- Nav Item: Policies -->
+        <a href="policies.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">description</span>
+          <span class="warehouse-nav-item-text">Policies</span>
+        </a>
+        <!-- Nav Item: Profile -->
+        <a href="my_time_cards.html" class="warehouse-nav-item active">
+          <span class="material-symbols-outlined">person</span>
+          <span class="warehouse-nav-item-text">Profile</span>
+        </a>
+    <!-- Bottom Navigation -->
+    <nav class="app-nav">
+      <div class="warehouse-nav-content">
+        <!-- Nav Item: Time Card -->
+        <a href="select_warehouse.html" class="warehouse-nav-item active">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schedule</span>
+          <span class="warehouse-nav-item-text">Time Card</span>
+        </a>
+        <!-- Nav Item: Sick Leave -->
+        <a href="sick_leave.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">sick</span>
+          <span class="warehouse-nav-item-text">Sick Leave</span>
+        </a>
+        <!-- Nav Item: Policies -->
+        <a href="policies.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">description</span>
+          <span class="warehouse-nav-item-text">Policies</span>
+        </a>
+        <!-- Nav Item: Profile -->
+        <a href="my_time_cards.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">person</span>
+          <span class="warehouse-nav-item-text">Profile</span>
+        </a>
+        <!-- Nav Item: Settings -->
+        <a href="settings.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">settings</span>
+          <span class="warehouse-nav-item-text">Settings</span>
+        </a>
+      </div>
+    </nav>
+</div>
+</div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="theme-color" content="#0088FF"/>
+  <title>Andromeda - Select Warehouse</title>
+  <link rel="stylesheet" href="css/index.css"/>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-text-light dark:text-text-dark transition-colors duration-200">
+  <!-- Header -->
+  <header class="app-header">
+    <h1 class="app-header-title">Select Warehouse</h1>
+    <div class="app-header-right">
+      <button class="app-header-notify-btn" aria-label="Notifications">
+        <span class="material-symbols-outlined">notifications</span>
+        <div class="notify-badge active"></div>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-wrapper">
+    <div class="app-container">
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- Search Bar -->
+      <div class="input-with-icon">
+        <span class="material-symbols-outlined icon-left">search</span>
+        <input id="search" placeholder="Search location..." type="text"/>
+      </div>
+
+      <!-- Warehouse List -->
+      <div class="item-list">
+        <!-- Item 1 -->
+        <button class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-icon">
+              <span class="material-symbols-outlined">warehouse</span>
+            </div>
+            <div class="list-item-info">
+              <span class="list-item-name">Posti Tuusula</span>
+              <span class="list-item-address">Palkkitie 1, 04300 Tuusula</span>
+            </div>
+          </div>
+          <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
+        </button>
+
+        <!-- Item 2 -->
+        <button class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-icon">
+              <span class="material-symbols-outlined">local_shipping</span>
+            </div>
+            <div class="list-item-info">
+              <span class="list-item-name">Posti Sipoo</span>
+              <span class="list-item-address">Rekkatie 2, 04220 Kerava</span>
+            </div>
+          </div>
+          <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
+        </button>
+
+        <!-- Item 3 -->
+        <button class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-icon">
+              <span class="material-symbols-outlined">factory</span>
+            </div>
+            <div class="list-item-info">
+              <span class="list-item-name">Posti Järvenpää</span>
+              <span class="list-item-address">Soolokatu 5, 04410 Järvenpää</span>
+            </div>
+          </div>
+          <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
+        </button>
+
+        <!-- Item 4 -->
+        <button class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-icon">
+              <span class="material-symbols-outlined">inventory_2</span>
+            </div>
+            <div class="list-item-info">
+              <span class="list-item-name">Posti Lahti</span>
+              <span class="list-item-address">12 Orbit Rd, Dock 9</span>
+            </div>
+          </div>
+          <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
+        </button>
+        <!-- Item 1 -->
+        <button class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-icon">
+              <span class="material-symbols-outlined">warehouse</span>
+            </div>
+            <div class="list-item-info">
+              <span class="list-item-name">Posti Tuusula</span>
+              <span class="list-item-address">Palkkitie 1, 04300 Tuusula</span>
+            </div>
+          </div>
+          <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
+        </button>
+
+        <!-- Item 2 -->
+        <button class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-icon">
+              <span class="material-symbols-outlined">local_shipping</span>
+            </div>
+            <div class="list-item-info">
+              <span class="list-item-name">Posti Sipoo</span>
+              <span class="list-item-address">Rekkatie 2, 04220 Kerava</span>
+            </div>
+          </div>
+          <span class="warehouse-item-chevron material-symbols-outlined">chevron_right</span>
+        </button>
+
+        
+      </div>
+
+      <!-- Empty State Message -->
+      <div class="help-text">
+        <p>Don't see your location? <br/> Contact your supervisor or <a href="#">refresh the list</a>.</p>
+      </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="app-nav">
+      <div class="warehouse-nav-content">
+        <!-- Nav Item: Time Card -->
+        <a href="select_warehouse.html" class="warehouse-nav-item active">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schedule</span>
+          <span class="warehouse-nav-item-text">Time Card</span>
+        </a>
+        <!-- Nav Item: Sick Leave -->
+        <a href="sick_leave.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">sick</span>
+          <span class="warehouse-nav-item-text">Sick Leave</span>
+        </a>
+        <!-- Nav Item: Policies -->
+        <a href="policies.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">description</span>
+          <span class="warehouse-nav-item-text">Policies</span>
+        </a>
+        <!-- Nav Item: Profile -->
+        <a href="my_time_cards.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">person</span>
+          <span class="warehouse-nav-item-text">Profile</span>
+        </a>
+        <!-- Nav Item: Settings -->
+        <a href="settings.html" class="warehouse-nav-item">
+          <span class="material-symbols-outlined">settings</span>
+          <span class="warehouse-nav-item-text">Settings</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Add click handlers to warehouse items for navigation
+    document.querySelectorAll('.list-item').forEach(item => {
+      item.addEventListener('click', () => {
+        // Add visual feedback
+        item.style.opacity = '0.8';
+        setTimeout(() => {
+          window.location.href = 'select_customer_task.html';
+        }, 150);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+/* ================================
+   Responsive Design Utilities
+   Media Queries & Breakpoint Classes
+   ================================ */
+
+/* Breakpoint Variables
+   - mobile: 320px (min-width not needed, default)
+   - tablet: 768px
+   - desktop: 1024px
+*/
+
+/* Mobile-First Base Styles (default) */
+.hidden-mobile {
+  display: none;
+}
+
+.show-mobile {
+  display: block;
+}
+
+.flex-mobile {
+  display: flex;
+}
+
+.full-width-mobile {
+  width: 100%;
+}
+
+.max-width-mobile {
+  max-width: 100%;
+}
+
+/* Tablet Breakpoint (≥768px) */
+@media (min-width: 768px) {
+  .hidden-tablet {
+    display: none;
+  }
+
+  .show-tablet {
+    display: block;
+  }
+
+  .flex-tablet {
+    display: flex;
+  }
+
+  .hidden-mobile {
+    display: block;
+  }
+
+  .show-mobile {
+    display: none;
+  }
+
+  .container-tablet {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .grid-tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .p-tablet {
+    padding: 2rem;
+  }
+
+  .text-responsive-tablet {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop Breakpoint (≥1024px) */
+@media (min-width: 1024px) {
+  .hidden-desktop {
+    display: none;
+  }
+
+  .show-desktop {
+    display: block;
+  }
+
+  .flex-desktop {
+    display: flex;
+  }
+
+  .hidden-tablet {
+    display: block;
+  }
+
+  .show-tablet {
+    display: none;
+  }
+
+  .container-desktop {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .grid-desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .p-desktop {
+    padding: 3rem;
+  }
+
+  .text-responsive-desktop {
+    font-size: 1.125rem;
+  }
+}
+
+/* Orientation-Based Styles */
+@media (orientation: portrait) {
+  .portrait-only {
+    display: block;
+  }
+
+  .landscape-only {
+    display: none;
+  }
+
+  .portrait-padding {
+    padding-top: 2rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .portrait-only {
+    display: none;
+  }
+
+  .landscape-only {
+    display: block;
+  }
+
+  .landscape-padding {
+    padding-top: 0.5rem;
+  }
+
+  .landscape-hide-nav {
+    padding-bottom: 0;
+  }
+}
+
+/* Height-Based Media Queries */
+@media (max-height: 600px) {
+  .hide-short {
+    display: none;
+  }
+
+  .compact-spacing {
+    gap: 0.5rem;
+  }
+}
+
+@media (min-height: 600px) {
+  .show-short {
+    display: none;
+  }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .retina-optimized {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Responsive Margin & Padding */
+@media (max-width: 767px) {
+  .p-responsive {
+    padding: 1rem;
+  }
+
+  .m-responsive {
+    margin: 0.75rem;
+  }
+
+  .mb-responsive {
+    margin-bottom: 1rem;
+  }
+
+  .mt-responsive {
+    margin-top: 0.75rem;
+  }
+
+  .px-responsive {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .py-responsive {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .gap-responsive {
+    gap: 0.75rem;
+  }
+
+  .h-responsive {
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .p-responsive {
+    padding: 1.5rem;
+  }
+
+  .m-responsive {
+    margin: 1rem;
+  }
+
+  .mb-responsive {
+    margin-bottom: 1.5rem;
+  }
+
+  .mt-responsive {
+    margin-top: 1rem;
+  }
+
+  .px-responsive {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .py-responsive {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .gap-responsive {
+    gap: 1rem;
+  }
+
+  .h-responsive {
+    height: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .p-responsive {
+    padding: 2rem;
+  }
+
+  .m-responsive {
+    margin: 1.5rem;
+  }
+
+  .mb-responsive {
+    margin-bottom: 2rem;
+  }
+
+  .mt-responsive {
+    margin-top: 1.5rem;
+  }
+
+  .px-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .py-responsive {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .gap-responsive {
+    gap: 1.5rem;
+  }
+
+  .h-responsive {
+    height: 100vh;
+  }
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 767px) {
+  .text-fluid-sm {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .text-fluid-base {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+
+  .text-fluid-lg {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+  }
+
+  .text-fluid-xl {
+    font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .text-fluid-sm {
+    font-size: 0.875rem;
+  }
+
+  .text-fluid-base {
+    font-size: 1rem;
+  }
+
+  .text-fluid-lg {
+    font-size: 1.125rem;
+  }
+
+  .text-fluid-xl {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-fluid-sm {
+    font-size: 0.9375rem;
+  }
+
+  .text-fluid-base {
+    font-size: 1.0625rem;
+  }
+
+  .text-fluid-lg {
+    font-size: 1.25rem;
+  }
+
+  .text-fluid-xl {
+    font-size: 1.5rem;
+  }
+}
+
+/* Safe Area Insets for Notched Devices */
+@supports (padding: max(0px)) {
+  .safe-area-inset-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .safe-area-inset-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-area-inset-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+
+  .safe-area-inset-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Viewport Width Classes */
+@media (max-width: 479px) {
+  .w-small {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .w-medium {
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .w-large {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .w-xlarge {
+    max-width: 960px;
+  }
+}
+
+/* Touch-Friendly Targets for Mobile */
+@media (hover: none) and (pointer: coarse) {
+  button:not(.language-btn),
+  [role="button"],
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .motion-reduce {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Prefer Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .prefer-dark {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+}
+
+/* Prefer Light Mode */
+@media (prefers-color-scheme: light) {
+  .prefer-light {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+  }
+}
+
+/* Low Battery Mode */
+@media (prefers-color-scheme: dark) {
+  .low-power {
+    animation: none;
+    box-shadow: none;
+  }
+}

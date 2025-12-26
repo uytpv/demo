@@ -1,0 +1,138 @@
+/* ================================
+   Navigation Components
+   ================================ */
+
+/* Bottom Navigation */
+.warehouse-nav,
+.app-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 28rem;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid #f3f4f6;
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  padding-top: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  z-index: 30;
+}
+
+body.dark-mode .warehouse-nav {
+  background-color: #1a2632;
+  border-top-color: #1f2937;
+}
+
+.warehouse-nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+/* Nav Item */
+.warehouse-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 4rem;
+  color: #617589;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.warehouse-nav-item:hover {
+  color: #137fec;
+}
+
+.warehouse-nav-item.active {
+  color: #137fec;
+}
+
+body.dark-mode .warehouse-nav-item {
+  color: #94a3b8;
+}
+
+body.dark-mode .warehouse-nav-item:hover {
+  color: #60a5fa;
+}
+
+body.dark-mode .warehouse-nav-item.active {
+  color: #60a5fa;
+}
+
+.warehouse-nav-item-text {
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+
+/* Language Selector */
+.language-selector {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 5rem;
+}
+
+.language-btn {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.language-btn.active {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .language-btn.active {
+  background-color: var(--gray-800);
+}
+
+.language-btn:not(.active) {
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  opacity: 0.6;
+  filter: grayscale(100%);
+}
+
+body.dark-mode .language-btn:not(.active) {
+  background-color: var(--gray-800);
+  border-color: var(--gray-700);
+}
+
+.language-btn:not(.active):hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  background-color: white;
+}
+
+body.dark-mode .language-btn:not(.active):hover {
+  background-color: var(--gray-700);
+}
+
+.flag-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.375rem;
+}

@@ -1,0 +1,257 @@
+/* ================================
+   Button Components
+   ================================ */
+
+/* Primary Button */
+.btn-primary {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 136, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 4px 20px rgba(0, 136, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+/* Icon Button */
+.btn-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.btn-icon.primary {
+  background-color: white;
+  border: 2px solid var(--primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-icon.secondary {
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .btn-icon.primary {
+  background-color: var(--gray-800);
+}
+
+body.dark-mode .btn-icon.secondary {
+  background-color: var(--gray-800);
+  border-color: var(--gray-700);
+}
+
+.btn-icon:hover {
+  transform: scale(1.05);
+}
+
+.btn-icon:active {
+  transform: scale(0.95);
+}
+
+/* Form Submit Button */
+.form-submit-btn {
+  margin-top: 0.5rem;
+}
+
+/* List Item (clickable) - Reusable component */
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-item:hover {
+  border-color: rgba(19, 127, 236, 0.3);
+}
+
+.list-item:active {
+  transform: scale(0.99);
+}
+
+body.dark-mode .list-item {
+  background-color: #1a2632;
+}
+
+body.dark-mode .list-item:hover {
+  border-color: rgba(19, 127, 236, 0.5);
+}
+
+.list-item-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: #f9fafb;
+  color: #137fec;
+  flex-shrink: 0;
+}
+
+body.dark-mode .list-item-icon {
+  background-color: #1f2937;
+}
+
+.list-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.list-item:hover .list-item-name {
+  color: #137fec;
+}
+
+body.dark-mode .list-item-name {
+  color: var(--text-dark);
+}
+
+body.dark-mode .list-item:hover .list-item-name {
+  color: #60a5fa;
+}
+
+.list-item-address {
+  font-size: 0.875rem;
+  color: #617589;
+  margin-top: 0.125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.dark-mode .list-item-address {
+  color: #94a3b8;
+}
+
+.list-item-chevron {
+  color: #9ca3af;
+  transition: all 0.2s ease;
+}
+
+.list-item:hover .list-item-chevron {
+  color: #137fec;
+}
+
+body.dark-mode .list-item:hover .list-item-chevron {
+  color: #60a5fa;
+}
+
+/* GPS Button */
+.warehouse-gps-btn {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(19, 127, 236, 0.1);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(19, 127, 236, 0.2);
+  transition: all 0.1s ease;
+  cursor: pointer;
+  text-align: left;
+}
+
+.warehouse-gps-btn:active {
+  transform: scale(0.98);
+}
+
+body.dark-mode .warehouse-gps-btn {
+  background-color: rgba(19, 127, 236, 0.2);
+  border-color: rgba(19, 127, 236, 0.5);
+}
+
+.warehouse-gps-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: #137fec;
+  color: white;
+  box-shadow: 0 0 10px rgba(19, 127, 236, 0.3);
+  flex-shrink: 0;
+}
+
+.warehouse-gps-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.warehouse-gps-title {
+  color: #137fec;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+body.dark-mode .warehouse-gps-title {
+  color: #60a5fa;
+}
+
+.warehouse-gps-subtitle {
+  color: #617589;
+  font-size: 0.75rem;
+  margin-top: 0.125rem;
+}
+
+body.dark-mode .warehouse-gps-subtitle {
+  color: #94a3b8;
+}
+
+.warehouse-gps-chevron {
+  margin-left: auto;
+  color: #137fec;
+}
+
+body.dark-mode .warehouse-gps-chevron {
+  color: #60a5fa;
+}
