@@ -23,6 +23,7 @@
 /* 5. Layout Styles */
 @import 'layouts/login.css';
 @import 'layouts/app.css';
+@import 'layouts/product.css';
 
 /* 6. Utility Classes */
 @import 'utilities/spacing.css';

@@ -37,14 +37,14 @@
         </div>
 
         <!-- Selection Form -->
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="form-section">
           <!-- Customer Selection -->
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label style="font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
-              <span class="material-symbols-outlined" style="font-size: 20px; color: #137fec;">domain</span>
+          <div class="form-field">
+            <label class="form-field-label">
+              <span class="material-symbols-outlined form-field-label-icon">domain</span>
               Principle
             </label>
-            <select style="width: 100%; padding: 0.875rem 1rem; border: 1px solid #dbe0e6; border-radius: 0.75rem; font-size: 1rem; appearance: none; background: white; cursor: pointer; padding-right: 2.5rem;">
+            <select>
               <option disabled selected>Choose a principle...</option>
               <option value="ipa">IPA</option>
               <option value="finlayson">Finlayson</option>
@@ -54,12 +54,12 @@
           </div>
 
           <!-- Job/Task Selection -->
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label style="font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
-              <span class="material-symbols-outlined" style="font-size: 20px; color: #137fec;">assignment</span>
+          <div class="form-field">
+            <label class="form-field-label">
+              <span class="material-symbols-outlined form-field-label-icon">assignment</span>
               Work types
             </label>
-            <select style="width: 100%; padding: 0.875rem 1rem; border: 1px solid #dbe0e6; border-radius: 0.75rem; font-size: 1rem; appearance: none; background: white; cursor: pointer; padding-right: 2.5rem;">
+            <select>
               <option disabled selected>Choose a work type...</option>
               <option value="picking">Picking</option>
               <option value="packing">Packing</option>
@@ -69,10 +69,12 @@
             <p class="help-text">Select a Principle first to see available work types.</p>
           </div>
         </div>
-
+<a class="btn-primary form-submit-btn" href="select_product.html">
+        Start
+      </a>
         <!-- Recent Jobs -->
-        <div style="margin-top: 2rem;">
-          <h3 style="font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #6B7280; margin-bottom: 1rem;">Recent Tasks</h3>
+        <div class="product-section">
+          <h3 class="product-section-title">Recent Tasks</h3>
           <div class="item-list">
         <!-- Item 1 -->
         <a href="select_product.html" class="list-item">
@@ -113,6 +115,7 @@
         </a>
       </div>
         </div>
+        
       </main>
 
       <!-- Bottom Navigation -->

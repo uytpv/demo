@@ -1,0 +1,123 @@
+/* ================================
+   Product Selection Page Styles
+   ================================ */
+
+/* Product Section Heading */
+.product-section {
+  margin-top: 2rem;
+}
+
+.product-section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6B7280;
+  margin-bottom: 1rem;
+}
+
+/* Product Item Container */
+.product-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-item:hover {
+  border-color: rgba(19, 127, 236, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .product-item {
+  background-color: #1a2632;
+}
+
+body.dark-mode .product-item:hover {
+  border-color: rgba(19, 127, 236, 0.5);
+}
+
+/* Product Item Content */
+.product-item-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Product Item Icon */
+.product-item-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: #f9fafb;
+  color: #137fec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+body.dark-mode .product-item-icon {
+  background-color: #1f2937;
+}
+
+/* Product Item Info */
+.product-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.dark-mode .product-item-name {
+  color: var(--text-dark);
+}
+
+.product-item-sku {
+  font-size: 0.875rem;
+  color: #617589;
+  margin-top: 0.125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.dark-mode .product-item-sku {
+  color: #94a3b8;
+}
+
+/* Product Item Chevron */
+.product-item-chevron {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.product-item:hover .product-item-chevron {
+  color: #137fec;
+}
+
+body.dark-mode .product-item:hover .product-item-chevron {
+  color: #60a5fa;
+}
+
+/* Last item spacing */
+.product-item:last-child {
+  margin-bottom: 0;
+}
