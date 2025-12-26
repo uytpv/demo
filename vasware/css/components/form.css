@@ -66,6 +66,37 @@ body.dark-mode .form-group label {
   height: fit-content;
 }
 
+/* Icon Right (Barcode Scan) */
+.input-with-icon .icon-right {
+  position: absolute;
+  right: 0.75rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  cursor: pointer;
+  z-index: 2;
+  pointer-events: auto;
+  color: #137fec;
+  font-size: 20px;
+  user-select: none;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+}
+
+.input-with-icon .icon-right:hover {
+  color: #0066cc;
+}
+
+body.dark-mode .input-with-icon .icon-right {
+  color: #60a5fa;
+}
+
+body.dark-mode .input-with-icon .icon-right:hover {
+  color: #93c5fd;
+}
+
 .input-with-icon .password-toggle {
   position: absolute;
   right: 0.75rem;

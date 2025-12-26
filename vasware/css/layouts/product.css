@@ -56,8 +56,8 @@ body.dark-mode .product-item:hover {
 
 /* Product Item Icon */
 .product-item-icon {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 0.5rem;
   background-color: #f9fafb;
   color: #137fec;
@@ -65,6 +65,18 @@ body.dark-mode .product-item:hover {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.product-item-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.product-item-icon span {
+  font-size: 1.5rem;
 }
 
 body.dark-mode .product-item-icon {
