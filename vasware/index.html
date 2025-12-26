@@ -63,7 +63,7 @@
         </div>
       </div>
 
-      <button class="btn-primary form-submit-btn" type="submit">
+      <button class="btn-primary form-submit-btn" type="submit" onclick="return handleSignIn(event)">
         Sign In
         <span class="material-symbols-outlined" style="margin-left: 0.5rem;">arrow_forward</span>
       </button>
@@ -80,6 +80,14 @@
 
   <script src="js/main.js"></script>
   <script>
+    // Handle sign in
+    function handleSignIn(event) {
+      event.preventDefault();
+      // Simulate successful login and redirect to select_warehouse
+      window.location.href = 'select_warehouse.html';
+      return false;
+    }
+
     // Handle form submission
     document.querySelector('.login-card-form').addEventListener('submit', function(event) {
       event.preventDefault();

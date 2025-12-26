@@ -79,7 +79,7 @@ body.dark-mode .warehouse-nav-item.active {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 .language-btn {

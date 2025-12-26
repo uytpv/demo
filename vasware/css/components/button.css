@@ -16,6 +16,10 @@
   border-radius: 0.75rem;
   box-shadow: 0 2px 8px rgba(0, 136, 255, 0.15);
   transition: all 0.2s ease;
+  cursor: pointer;
+  touch-action: auto;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .btn-primary:hover {
