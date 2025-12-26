@@ -51,6 +51,7 @@ body.dark-mode .backdrop-bottom-right {
   z-index: 10;
   border: 1px solid var(--gray-100);
   transition: all 0.3s ease;
+  pointer-events: auto;
 }
 
 body.dark-mode .login-card {
@@ -63,6 +64,9 @@ body.dark-mode .login-card {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  pointer-events: auto;
+  position: relative;
+  z-index: 5;
 }
 
 .login-header {

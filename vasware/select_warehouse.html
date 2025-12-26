@@ -40,7 +40,7 @@
       <!-- Warehouse List -->
       <div class="item-list">
         <!-- Item 1 -->
-        <button class="list-item">
+        <a href="select_customer_task.html" class="list-item">
           <div class="list-item-content">
             <div class="list-item-icon">
               <span class="material-symbols-outlined">warehouse</span>
@@ -51,10 +51,10 @@
             </div>
           </div>
           <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
-        </button>
+        </a>
 
         <!-- Item 2 -->
-        <button class="list-item">
+        <a href="select_customer_task.html" class="list-item">
           <div class="list-item-content">
             <div class="list-item-icon">
               <span class="material-symbols-outlined">local_shipping</span>
@@ -65,10 +65,10 @@
             </div>
           </div>
           <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
-        </button>
+        </a>
 
         <!-- Item 3 -->
-        <button class="list-item">
+        <a href="select_customer_task.html" class="list-item">
           <div class="list-item-content">
             <div class="list-item-icon">
               <span class="material-symbols-outlined">factory</span>
@@ -79,10 +79,10 @@
             </div>
           </div>
           <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
-        </button>
+        </a>
 
         <!-- Item 4 -->
-        <button class="list-item">
+        <a href="select_customer_task.html" class="list-item">
           <div class="list-item-content">
             <div class="list-item-icon">
               <span class="material-symbols-outlined">inventory_2</span>
@@ -93,9 +93,9 @@
             </div>
           </div>
           <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
-        </button>
+        </a>
         <!-- Item 1 -->
-        <button class="list-item">
+        <a href="select_customer_task.html" class="list-item">
           <div class="list-item-content">
             <div class="list-item-icon">
               <span class="material-symbols-outlined">warehouse</span>
@@ -106,10 +106,10 @@
             </div>
           </div>
           <span class="list-item-chevron material-symbols-outlined">chevron_right</span>
-        </button>
+        </a>
 
         <!-- Item 2 -->
-        <button class="list-item">
+        <a href="select_customer_task.html" class="list-item">
           <div class="list-item-content">
             <div class="list-item-icon">
               <span class="material-symbols-outlined">local_shipping</span>
@@ -120,9 +120,7 @@
             </div>
           </div>
           <span class="warehouse-item-chevron material-symbols-outlined">chevron_right</span>
-        </button>
-
-        
+        </a>
       </div>
 
       <!-- Empty State Message -->
@@ -164,17 +162,5 @@
   </div>
 
   <script src="js/main.js"></script>
-  <script>
-    // Add click handlers to warehouse items for navigation
-    document.querySelectorAll('.list-item').forEach(item => {
-      item.addEventListener('click', () => {
-        // Add visual feedback
-        item.style.opacity = '0.8';
-        setTimeout(() => {
-          window.location.href = 'select_customer_task.html';
-        }, 150);
-      });
-    });
-  </script>
 </body>
 </html>

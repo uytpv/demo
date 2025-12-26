@@ -16,6 +16,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 </head>
 <body class="login-container">
+  <div class="login-backdrop backdrop-top-left"></div>
+  <div class="login-backdrop backdrop-bottom-right"></div>
+  
   <main class="login-card">
     <div class="login-header">
       <div></div>
@@ -63,10 +66,9 @@
         </div>
       </div>
 
-      <button class="btn-primary form-submit-btn" type="submit" onclick="return handleSignIn(event)">
+      <a class="btn-primary form-submit-btn" href="select_warehouse.html">
         Sign In
-        <span class="material-symbols-outlined" style="margin-left: 0.5rem;">arrow_forward</span>
-      </button>
+      </a>
     </form>
 
     <div class="help-text">
@@ -80,21 +82,6 @@
 
   <script src="js/main.js"></script>
   <script>
-    // Handle sign in
-    function handleSignIn(event) {
-      event.preventDefault();
-      // Simulate successful login and redirect to select_warehouse
-      window.location.href = 'select_warehouse.html';
-      return false;
-    }
-
-    // Handle form submission
-    document.querySelector('.login-card-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      // Simulate successful login and redirect to select_warehouse
-      window.location.href = 'select_warehouse.html';
-    });
-
     function togglePassword() {
       const passwordInput = document.getElementById('password');
       const toggleIcon = document.querySelector('.password-toggle');

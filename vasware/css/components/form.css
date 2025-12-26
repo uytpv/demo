@@ -45,6 +45,10 @@ body.dark-mode .form-group label {
   padding-right: 2.5rem;
   min-height: 44px;
   height: 44px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 16px;
 }
 
 .input-with-icon .icon-left {
