@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Màn hình Quản lý hồ sơ cá nhân - Andromeda</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3487f4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2430",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 h-screen flex justify-center overflow-hidden">
+<!-- Mobile Wrapper -->
+<div class="relative flex h-full w-full max-w-md flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden group/design-root">
+<!-- Top Navigation -->
+<header class="flex items-center bg-surface-light dark:bg-surface-dark px-4 py-3 justify-between border-b border-slate-200 dark:border-slate-800 sticky top-0 z-20">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center truncate px-2">
+                Hồ sơ cá nhân
+            </h1>
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 h-2.5 w-2.5 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+</header>
+<!-- Main Content Scrollable Area -->
+<main class="flex-1 overflow-y-auto scrollbar-hide pb-24">
+<!-- Profile Header -->
+<div class="bg-surface-light dark:bg-surface-dark px-4 pt-6 pb-6 mb-2">
+<div class="flex flex-col items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-28 w-28 border-4 border-white dark:border-slate-700 shadow-sm" data-alt="Portrait of employee Nguyen Van A" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxYhS1V6oX5nsBqn8zpoHGE9i9lrzXg1sGN4CLafrEAr5-FuGUxwJY9dW_2b-_OR4MttO7VfUTcg-O_GD-ZNzvWqx8R6MOy683LAkV8QgvruINl2pjFbC9VrZZSi_WMk-T-LCHjXWBbIwLd1rDXkoq5QJOARLb9bTo8ESlOa8Ow9ExdJZkbVQRilM6ihzvnbsrdCd2ORcCxaH2T2jOsvSe9Ld7NcrsZt_wDHZJcZW9tJKXbaH6zWDYOEMolYSeYUTaqYK4FuMY-ek");'>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full border-[3px] border-white dark:border-slate-800 shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Nguyễn Văn A</h2>
+<div class="mt-1 flex items-center gap-2">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs font-semibold uppercase tracking-wide">Kho A</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm">MSNV: AND-2023</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Nhân viên kho vận</p>
+</div>
+</div>
+</div>
+<!-- Section 1: Work Info (Read Only) -->
+<div class="bg-surface-light dark:bg-surface-dark mb-2">
+<div class="px-4 py-3 border-b border-slate-100 dark:border-slate-800 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">badge</span>
+<h3 class="text-slate-900 dark:text-white text-base font-bold">Thông tin công việc</h3>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800 pl-4">
+<div class="flex items-center gap-4 py-3.5 pr-4 justify-between group">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium w-32 shrink-0">Phòng ban</p>
+<p class="text-slate-900 dark:text-white text-sm font-medium text-right flex-1">Logistics - Zone A</p>
+</div>
+<div class="flex items-center gap-4 py-3.5 pr-4 justify-between group">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium w-32 shrink-0">Quản lý trực tiếp</p>
+<p class="text-slate-900 dark:text-white text-sm font-medium text-right flex-1">Lê Thị B</p>
+</div>
+<div class="flex items-center gap-4 py-3.5 pr-4 justify-between group">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium w-32 shrink-0">Ca làm việc</p>
+<p class="text-slate-900 dark:text-white text-sm font-medium text-right flex-1">Ca Sáng (06:00 - 14:00)</p>
+</div>
+<div class="flex items-center gap-4 py-3.5 pr-4 justify-between group">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium w-32 shrink-0">Ngày vào làm</p>
+<p class="text-slate-900 dark:text-white text-sm font-medium text-right flex-1">15/05/2021</p>
+</div>
+</div>
+</div>
+<!-- Section 2: Contact Info (Editable) -->
+<div class="bg-surface-light dark:bg-surface-dark mb-2">
+<div class="px-4 py-3 border-b border-slate-100 dark:border-slate-800 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">contact_phone</span>
+<h3 class="text-slate-900 dark:text-white text-base font-bold">Thông tin liên hệ</h3>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800 pl-4">
+<!-- Editable Item -->
+<div class="flex items-center gap-3 py-3.5 pr-4 justify-between cursor-pointer active:bg-slate-50 dark:active:bg-slate-800 transition-colors">
+<div class="flex flex-col flex-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider mb-0.5">Số điện thoại</p>
+<p class="text-slate-900 dark:text-white text-base font-medium">0909 123 456</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">edit</span>
+</div>
+<!-- Editable Item -->
+<div class="flex items-center gap-3 py-3.5 pr-4 justify-between cursor-pointer active:bg-slate-50 dark:active:bg-slate-800 transition-colors">
+<div class="flex flex-col flex-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider mb-0.5">Email</p>
+<p class="text-slate-900 dark:text-white text-base font-medium truncate">nguyenvana@andromeda.vn</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">edit</span>
+</div>
+<!-- Editable Item -->
+<div class="flex items-center gap-3 py-3.5 pr-4 justify-between cursor-pointer active:bg-slate-50 dark:active:bg-slate-800 transition-colors">
+<div class="flex flex-col flex-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider mb-0.5">Địa chỉ thường trú</p>
+<p class="text-slate-900 dark:text-white text-base font-medium truncate">123 Đường số 9, KCN Tân Bình</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">edit</span>
+</div>
+</div>
+</div>
+<!-- Section 3: System & Account -->
+<div class="bg-surface-light dark:bg-surface-dark mb-6">
+<div class="px-4 py-3 border-b border-slate-100 dark:border-slate-800 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings_account_box</span>
+<h3 class="text-slate-900 dark:text-white text-base font-bold">Tài khoản</h3>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800 pl-4">
+<div class="flex items-center gap-3 py-4 pr-4 justify-between cursor-pointer active:bg-slate-50 dark:active:bg-slate-800 transition-colors">
+<p class="text-slate-900 dark:text-white text-sm font-medium">Đổi mật khẩu</p>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">chevron_right</span>
+</div>
+<div class="flex items-center gap-3 py-4 pr-4 justify-between cursor-pointer active:bg-slate-50 dark:active:bg-slate-800 transition-colors">
+<p class="text-slate-900 dark:text-white text-sm font-medium">Ngôn ngữ ứng dụng</p>
+<div class="flex items-center gap-2">
+<span class="text-slate-500 text-sm">Tiếng Việt</span>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="px-4 pb-8 flex flex-col gap-3">
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white gap-2 text-base font-bold shadow-sm transition-all">
+<span class="material-symbols-outlined">save</span>
+                    Cập nhật thông tin
+                </button>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-transparent border border-slate-200 dark:border-slate-700 text-red-600 dark:text-red-400 gap-2 text-base font-medium hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+                    Đăng xuất
+                </button>
+<p class="text-center text-xs text-slate-400 mt-2">Phiên bản 2.4.0 (Build 20231025)</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="absolute bottom-0 left-0 w-full bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 pb-safe pt-2 px-2 z-30 h-[80px]">
+<div class="flex justify-between items-center h-full pb-2">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center w-full h-full gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">home</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Trang chủ</span>
+</a>
+<!-- Timesheet -->
+<a class="flex flex-col items-center justify-center w-full h-full gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">calendar_month</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Chấm công</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex flex-col items-center justify-center w-full h-full gap-1 group relative" href="#">
+<!-- Indicator for active state -->
+<div class="absolute -top-2 w-8 h-1 bg-primary rounded-b-lg shadow-sm shadow-blue-500/50"></div>
+<span class="material-symbols-outlined text-primary text-[24px] fill-current" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] font-bold text-primary">Hồ sơ</span>
+</a>
+<!-- Requests -->
+<a class="flex flex-col items-center justify-center w-full h-full gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">assignment</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Đề xuất</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center w-full h-full gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">settings</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Cài đặt</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

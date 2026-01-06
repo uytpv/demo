@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Chọn Kho - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
+      <h1 class="app-header-title">Andromeda</h1>
+      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content scrollable">
+      <!-- Page Title -->
+      <section class="section">
+        <h2 class="section-title">Chọn Kho Làm Việc</h2>
+        <p class="section-subtitle">Chọn địa điểm để bắt đầu ca làm việc của bạn</p>
+      </section>
+
+      <!-- Search Bar -->
+      <div class="search-sticky">
+        <div class="input-wrapper">
+          <span class="material-symbols-outlined input-wrapper-icon">search</span>
+          <input type="text" class="input-field input-field-with-icon" 
+                 placeholder="Tìm kiếm kho..." value=""/>
+        </div>
+      </div>
+
+      <!-- Warehouse List -->
+      <section class="section-container">
+        <!-- Warehouse Item 1 - Selected -->
+        <a href="#" class="card" style="border: 2px solid var(--color-primary);">
+          <div class="flex justify-between items-start gap-4">
+            <div class="flex-1">
+              <h3 class="text-lg font-bold text-primary mb-1">Kho Hàng Chính</h3>
+              <p class="text-secondary text-sm mb-2">Tầng 1, 123 Đường Võ Văn Kiệt</p>
+              <p class="text-tertiary text-xs">Mở: 8:00 AM - 5:00 PM</p>
+            </div>
+            <span class="material-symbols-outlined" style="color: var(--color-primary); font-size: 24px;">check_circle</span>
+          </div>
+        </a>
+
+        <!-- Warehouse Item 2 -->
+        <a href="#" class="card">
+          <div class="flex justify-between items-start gap-4">
+            <div class="flex-1">
+              <h3 class="text-lg font-bold mb-1">Kho Phụ Kiện</h3>
+              <p class="text-secondary text-sm mb-2">Tầng 2, 123 Đường Võ Văn Kiệt</p>
+              <p class="text-tertiary text-xs">Mở: 8:00 AM - 5:00 PM</p>
+            </div>
+            <span class="material-symbols-outlined" style="color: var(--text-tertiary); font-size: 24px;">radio_button_unchecked</span>
+          </div>
+        </a>
+
+        <!-- Warehouse Item 3 -->
+        <a href="#" class="card">
+          <div class="flex justify-between items-start gap-4">
+            <div class="flex-1">
+              <h3 class="text-lg font-bold mb-1">Kho Đông Lạnh</h3>
+              <p class="text-secondary text-sm mb-2">Khu công nghiệp, Quận 1</p>
+              <p class="text-tertiary text-xs">Mở: 9:00 AM - 6:00 PM</p>
+            </div>
+            <span class="material-symbols-outlined" style="color: var(--text-tertiary); font-size: 24px;">radio_button_unchecked</span>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <!-- Confirm Button -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-surface-primary border-t border-border-primary flex gap-3">
+      <a href="#" class="btn btn-secondary btn-lg flex-1">Hủy</a>
+      <a href="04_select_customer_and_task.html" class="btn btn-primary btn-lg flex-1">Tiếp tục</a>
+    </div>
+  </div>
+</body>
+</html>

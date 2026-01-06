@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Hồ sơ cá nhân - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
+      <h1 class="app-header-title">Hồ sơ</h1>
+      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content scrollable">
+      <!-- Profile Header -->
+      <div class="card mb-4">
+        <div class="flex flex-col items-center gap-4">
+          <div class="avatar avatar-lg" style="background-image: url('https://via.placeholder.com/100');">
+            <span class="avatar-status-dot"></span>
+          </div>
+          <div class="text-center">
+            <h2 class="text-xl font-bold">Nguyễn Văn A</h2>
+            <p class="text-secondary text-sm mt-1">Nhân viên sản xuất</p>
+            <div class="flex gap-2 justify-center mt-3">
+              <span class="badge badge-primary">Đang hoạt động</span>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row row-between w-full">
+            <div class="text-center flex-1">
+              <p class="text-secondary text-sm">Mã NV</p>
+              <p class="font-bold mt-1">EMP-001</p>
+            </div>
+            <div class="divider-vertical"></div>
+            <div class="text-center flex-1">
+              <p class="text-secondary text-sm">Phòng ban</p>
+              <p class="font-bold mt-1">Sản xuất</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <section class="section">
+        <h3 class="section-title">Thông tin liên hệ</h3>
+        <div class="space-y-3 mt-4">
+          <div class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3 flex-1">
+                <span class="material-symbols-outlined" style="color: var(--text-tertiary);">email</span>
+                <div>
+                  <p class="text-xs text-secondary">Email</p>
+                  <p class="font-medium text-sm">nguyen.van.a@company.com</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-secondary">content_copy</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3 flex-1">
+                <span class="material-symbols-outlined" style="color: var(--text-tertiary);">phone</span>
+                <div>
+                  <p class="text-xs text-secondary">Điện thoại</p>
+                  <p class="font-medium text-sm">+84 912 345 678</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-secondary">content_copy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work Information -->
+      <section class="section">
+        <h3 class="section-title">Thông tin công việc</h3>
+        <div class="space-y-3 mt-4">
+          <div class="card">
+            <div class="flex justify-between text-sm">
+              <span class="text-secondary">Ngày bắt đầu:</span>
+              <span class="font-medium">01/01/2020</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="flex justify-between text-sm">
+              <span class="text-secondary">Chức vụ:</span>
+              <span class="font-medium">Nhân viên sản xuất</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="flex justify-between text-sm">
+              <span class="text-secondary">Loại hợp đồng:</span>
+              <span class="font-medium">Hợp đồng chính thức</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Action Buttons -->
+      <section class="section">
+        <a href="#" class="btn btn-secondary btn-lg btn-full">
+          <span class="material-symbols-outlined">edit</span>
+          <span>Chỉnh sửa hồ sơ</span>
+        </a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

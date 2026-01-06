@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Quy định làm việc - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
+      <h1 class="app-header-title">Quy định làm việc</h1>
+      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </a>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-sticky">
+      <div class="input-wrapper">
+        <span class="material-symbols-outlined input-wrapper-icon">search</span>
+        <input type="text" class="input-field input-field-with-icon" 
+               placeholder="Tìm kiếm quy định..." value=""/>
+      </div>
+    </div>
+
+    <!-- Filter Chips -->
+    <div class="filter-bar px-4">
+      <a href="#" class="chip chip-selected">
+        <span class="material-symbols-outlined" style="font-size: 18px;">filter_alt</span>
+        <span>Tất cả</span>
+      </a>
+      <a href="#" class="chip">
+        <span>Giờ làm việc</span>
+      </a>
+      <a href="#" class="chip">
+        <span>Nghỉ phép</span>
+      </a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-content scrollable">
+      <!-- Policy Categories -->
+      <section class="section">
+        <!-- Category: Working Hours -->
+        <div class="mb-6">
+          <h2 class="section-title mb-3">Giờ làm việc</h2>
+          <div class="space-y-2">
+            <a href="#" class="card">
+              <h3 class="font-bold mb-1">Giờ làm việc bình thường</h3>
+              <p class="text-secondary text-sm">Từ 08:00 đến 17:00 (5 ngày/tuần)</p>
+            </a>
+            <a href="#" class="card">
+              <h3 class="font-bold mb-1">Giờ làm việc linh hoạt</h3>
+              <p class="text-secondary text-sm">Được phép sắp xếp thời gian nếu phù hợp</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Category: Leave Policies -->
+        <div class="mb-6">
+          <h2 class="section-title mb-3">Chính sách nghỉ phép</h2>
+          <div class="space-y-2">
+            <a href="#" class="card">
+              <div class="flex justify-between items-start">
+                <div class="flex-1">
+                  <h3 class="font-bold mb-1">Nghỉ phép hàng năm</h3>
+                  <p class="text-secondary text-sm">Tối đa 15 ngày</p>
+                </div>
+                <span class="badge badge-primary">15 ngày</span>
+              </div>
+            </a>
+            <a href="#" class="card">
+              <div class="flex justify-between items-start">
+                <div class="flex-1">
+                  <h3 class="font-bold mb-1">Nghỉ bệnh</h3>
+                  <p class="text-secondary text-sm">Cần giấy xác nhận bệnh từ bác sĩ</p>
+                </div>
+                <span class="badge badge-primary">Tùy</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Category: Benefits -->
+        <div class="mb-6">
+          <h2 class="section-title mb-3">Phúc lợi</h2>
+          <div class="space-y-2">
+            <a href="#" class="card">
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-success">check_circle</span>
+                <div class="flex-1">
+                  <h3 class="font-bold mb-1">Bảo hiểm xã hội</h3>
+                  <p class="text-secondary text-sm">Bao gồm bảo hiểm y tế và lương hưu</p>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="card">
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-success">check_circle</span>
+                <div class="flex-1">
+                  <h3 class="font-bold mb-1">Thưởng hiệu suất</h3>
+                  <p class="text-secondary text-sm">Hàng tháng/hàng năm dựa trên hiệu suất</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Category: Code of Conduct -->
+        <div class="mb-6">
+          <h2 class="section-title mb-3">Quy tắc ứng xử</h2>
+          <div class="space-y-2">
+            <a href="#" class="card">
+              <h3 class="font-bold mb-1">Tôn trọng đồng nghiệp</h3>
+              <p class="text-secondary text-sm">Không phân biệt, qu騷nhiễu hoặc bắc cau</p>
+            </a>
+            <a href="#" class="card">
+              <h3 class="font-bold mb-1">Bảo mật thông tin</h3>
+              <p class="text-secondary text-sm">Giữ bí mật thông tin công ty</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

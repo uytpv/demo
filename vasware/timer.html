@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html class="light" lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -6,158 +7,181 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="theme-color" content="#0088FF"/>
-  <title>Andromeda - Timer</title>
+  <title>Andromeda - Assembly Line B</title>
   <link rel="stylesheet" href="css/index.css"/>
+  
+  <!-- Component Styles -->
+  <link rel="stylesheet" href="css/components/card.css"/>
+  <link rel="stylesheet" href="css/components/timer-display.css"/>
+  <link rel="stylesheet" href="css/components/product-info.css"/>
+  <link rel="stylesheet" href="css/components/stats-box.css"/>
+  <link rel="stylesheet" href="css/components/action-button.css"/>
+  <link rel="stylesheet" href="css/components/action-grid-nav.css"/>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <!-- Material Symbols -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
-  <div class="timer-wrapper">
-    <!-- Minimal Header -->
-    <div class="timer-header">
-      <h1 class="timer-header-title">Assembly Line B</h1>
-      <p class="timer-header-sku">#SKU-90210</p>
-    </div>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-text-light dark:text-text-dark transition-colors duration-200">
 
-    <!-- Main Content -->
-    <div class="timer-content">
-      <!-- Total Work Time Timer -->
-      <div class="timer-section">
-        <h2 class="timer-section-title">Total Work Time</h2>
-        <div class="timer-display">
-          <div class="timer-unit">
-            <div class="timer-value">01</div>
-            <div class="timer-label">Hours</div>
-          </div>
-          <div class="timer-separator">:</div>
-          <div class="timer-unit">
-            <div class="timer-value">45</div>
-            <div class="timer-label">Minutes</div>
-          </div>
-          <div class="timer-separator">:</div>
-          <div class="timer-unit">
-            <div class="timer-value">32</div>
-            <div class="timer-label">Seconds</div>
-          </div>
+<!-- BEGIN: Top Navigation -->
+<header class="app-header">
+  <h1 class="app-header-title">Assembly Line B</h1>
+  <div class="app-header-right">
+    <button class="app-header-notify-btn" aria-label="Notifications">
+      <span class="material-symbols-outlined">notifications</span>
+      <div class="notify-badge"></div>
+    </button>
+  </div>
+</header>
+<!-- END: Top Navigation -->
+
+<!-- BEGIN: Page Content -->
+<div class="app-wrapper">
+  <div class="app-container">
+
+<!-- BEGIN: Main Content Area -->
+<main class="app-main">
+
+  <!-- Current Product Info Section -->
+  <div class="current-product-info">
+    <div class="info-grid">
+      <!-- Warehouse Info -->
+      <div class="info-card">
+        <div class="info-icon warehouse">
+          <span class="material-symbols-outlined">warehouse</span>
+        </div>
+        <div class="info-content">
+          <span class="info-label">Kho</span>
+          <span class="info-value">A1</span>
         </div>
       </div>
 
-      <!-- Product Timer Section -->
-      <div class="timer-section product-timer-section">
-        <h2 class="timer-section-title">Current Product</h2>
-        <div class="timer-with-button">
-          <div class="timer-column">
-            <div class="timer-display">
-              <div class="timer-unit">
-                <div class="timer-value">12</div>
-                <div class="timer-label">Minutes</div>
-              </div>
-              <div class="timer-separator">:</div>
-              <div class="timer-unit">
-                <div class="timer-value">45</div>
-                <div class="timer-label">Seconds</div>
-              </div>
-            </div>
-          </div>
-          <a href="select_product.html" class="add-box-btn">
-            <span class="material-symbols-outlined">add</span>
-            Add Box
-          </a>
+      <!-- Customer Info -->
+      <div class="info-card">
+        <div class="info-icon customer">
+          <span class="material-symbols-outlined">person_check</span>
+        </div>
+        <div class="info-content">
+          <span class="info-label">Khách hàng</span>
+          <span class="info-value">VN Corp</span>
         </div>
       </div>
 
-      <!-- Performance Status -->
-      <div class="timer-section">
-        <h2 class="timer-section-title">Performance</h2>
-        <div class="performance-status performance-good">
-          <div class="performance-label">Current Speed</div>
-          <div class="performance-value">450</div>
-          <div class="performance-unit">units/hour</div>
+      <!-- Task Info -->
+      <div class="info-card">
+        <div class="info-icon task">
+          <span class="material-symbols-outlined">task_alt</span>
         </div>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="action-buttons">
-        <!-- Switch Product -->
-        <a href="select_product.html" class="action-btn product">
-          <div class="action-btn-icon">
-            <span class="material-symbols-outlined">inventory_2</span>
-          </div>
-          <div class="action-btn-text">
-            <div class="action-btn-title">Switch Product</div>
-            <div class="action-btn-desc">Chuyển sản phẩm</div>
-          </div>
-        </a>
-
-        <!-- Take Break -->
-        <button class="action-btn break" onclick="handleBreak()">
-          <div class="action-btn-icon">
-            <span class="material-symbols-outlined">coffee</span>
-          </div>
-          <div class="action-btn-text">
-            <div class="action-btn-title">Take Break</div>
-            <div class="action-btn-desc">Nghỉ giải lao</div>
-          </div>
-        </button>
-
-        <!-- Switch Task -->
-        <a href="select_customer_task.html" class="action-btn task">
-          <div class="action-btn-icon">
-            <span class="material-symbols-outlined">swap_horiz</span>
-          </div>
-          <div class="action-btn-text">
-            <div class="action-btn-title">Switch Task</div>
-            <div class="action-btn-desc">Chuyển công việc</div>
-          </div>
-        </a>
-
-        <!-- End Work Day -->
-        <button class="action-btn end" onclick="showEndDayModal()">
-          <div class="action-btn-icon">
-            <span class="material-symbols-outlined">logout</span>
-          </div>
-          <div class="action-btn-text">
-            <div class="action-btn-title">End Work Day</div>
-            <div class="action-btn-desc">Kết thúc ca</div>
-          </div>
-        </button>
+        <div class="info-content">
+          <span class="info-label">Task</span>
+          <span class="info-value">Assembly</span>
+        </div>
       </div>
     </div>
 
-    <!-- End Day Confirmation Modal -->
-    <div id="endDayModal" class="modal">
-      <div class="modal-content">
-        <h2 class="modal-title">End Work Day?</h2>
-        <p class="modal-text">Are you sure you want to end your work day?</p>
-        <div class="modal-buttons">
-          <button class="modal-btn cancel" onclick="closeEndDayModal()">Cancel</button>
-          <a href="select_warehouse.html" class="modal-btn confirm">OK</a>
+    <!-- Product Display -->
+    <div class="product-display">
+      <div class="product-image-container">
+        <img src="assets/images/product-01.jpg" alt="Product Image" class="product-image"/>
+      </div>
+      <div class="product-details">
+        <div class="product-info-row">
+          <span class="product-label">Sản phẩm:</span>
+          <span class="product-name">Valve Assembly</span>
+        </div>
+        <div class="product-info-row">
+          <span class="product-label">Mã:</span>
+          <span class="product-code">VAL-2024-001</span>
+        </div>
+        <div class="product-working-time">
+          <span class="product-label">Thời gian làm việc:</span>
+          <div class="timer-working">
+            <span class="timer-working-time">00:15:32</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <script>
-    function showEndDayModal() {
-      document.getElementById('endDayModal').classList.add('active');
-    }
+  <!-- Timer Display -->
+  <div class="timer-display">
+    <div class="timer-time">01:45:12</div>
+  </div>
 
-    function closeEndDayModal() {
-      document.getElementById('endDayModal').classList.remove('active');
-    }
+  <!-- Add Product Button -->
+  <button class="btn-add-product" title="Add Product">
+    <span class="material-symbols-outlined">add</span>
+    <span>Add Product</span>
+  </button>
 
-    function handleBreak() {
-      alert('Break recorded. Reminder: Take a break after every 2 hours of work.');
-    }
+  <!-- Stats Box -->
+  <div class="stats-box">
+    <div class="stats-content">
+      <div class="stats-icon">
+        <span class="material-symbols-outlined">speed</span>
+      </div>
+      <div>
+        <p class="stats-label">Average Speed</p>
+        <div class="stats-value-container">
+          <span class="stats-value">425</span>
+          <span class="stats-unit">/ hr</span>
+        </div>
+      </div>
+    </div>
+    <div class="stats-right">
+      <div class="stats-badge">Excellent</div>
+      <p class="stats-note">Target: &gt;400</p>
+    </div>
+  </div>
+</main>
+<!-- END: Main Content Area -->
 
-    // Close modal when clicking outside
-    document.getElementById('endDayModal').addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeEndDayModal();
-      }
-    });
-  </script>
+<!-- BEGIN: Bottom Navigation -->
+<!-- Action Grid for Breaks and Tasks -->
+<nav class="action-grid-nav">
+  <div class="action-grid-content">
+    <!-- Short Break Item -->
+    <button class="action-grid-item" title="Break or Lunch">
+      <div class="action-grid-icon break">
+        <span class="material-symbols-outlined">coffee</span>
+      </div>
+      <span class="action-grid-label">Break</span>
+    </button>
+    
+    <!-- Lunch Item -->
+    <button class="action-grid-item" title="Change Product">
+      <div class="action-grid-icon lunch">
+        <span class="material-symbols-outlined">swap_vert</span>
+      </div>
+      <span class="action-grid-label">Change Product</span>
+    </button>
+    
+    <!-- Switch Task Item -->
+    <button class="action-grid-item" title="Switch Task - Select new job">
+      <div class="action-grid-icon switch">
+        <span class="material-symbols-outlined">swap_horiz</span>
+      </div>
+      <span class="action-grid-label">Switch Task</span>
+    </button>
+    
+    <!-- End Shift Item -->
+    <button class="action-grid-item" title="End Shift - Complete day">
+      <div class="action-grid-icon logout">
+        <span class="material-symbols-outlined">logout</span>
+      </div>
+      <span class="action-grid-label">End Shift</span>
+    </button>
+  </div>
+</nav>
+<!-- END: Bottom Navigation -->
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

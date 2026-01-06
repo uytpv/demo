@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Quy định an toàn - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
+      <h1 class="app-header-title">Andromeda</h1>
+      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </a>
+    </header>
+
+    <!-- Page Title -->
+    <section class="section">
+      <h1 class="text-3xl font-bold">Quy định an toàn</h1>
+      <p class="text-secondary text-sm mt-1">Cập nhật lần cuối: 15/10/2023</p>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-sticky">
+      <div class="input-wrapper">
+        <span class="material-symbols-outlined input-wrapper-icon">search</span>
+        <input type="text" class="input-field input-field-with-icon" 
+               placeholder="Tìm kiếm quy định, chính sách..." value=""/>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-content scrollable">
+      <!-- Featured Section -->
+      <section class="section">
+        <h2 class="section-title mb-3">Các quy định quan trọng</h2>
+        <div class="space-y-3">
+          <a href="#" class="card">
+            <div class="flex gap-3">
+              <span class="material-symbols-outlined text-danger mt-1">warning</span>
+              <div class="flex-1">
+                <h3 class="font-bold">Sử dụng thiết bị bảo vệ cá nhân</h3>
+                <p class="text-secondary text-sm mt-1">Tất cả nhân viên bắt buộc phải sử dụng đầy đủ PPE</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="card">
+            <div class="flex gap-3">
+              <span class="material-symbols-outlined text-warning mt-1">security</span>
+              <div class="flex-1">
+                <h3 class="font-bold">Kiểm tra an toàn hàng ngày</h3>
+                <p class="text-secondary text-sm mt-1">Kiểm tra thiết bị trước khi bắt đầu ca làm việc</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="card">
+            <div class="flex gap-3">
+              <span class="material-symbols-outlined text-info mt-1">info</span>
+              <div class="flex-1">
+                <h3 class="font-bold">Báo cáo sự cố ngay</h3>
+                <p class="text-secondary text-sm mt-1">Báo cáo ngay bất kỳ sự cố hoặc nguy hiểm nào</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Categories -->
+      <section class="section">
+        <h2 class="section-title mb-3">Danh mục quy định</h2>
+        <div class="space-y-2">
+          <a href="#" class="card">
+            <div class="row row-between">
+              <span class="font-medium">Bảo vệ cá nhân</span>
+              <span class="material-symbols-outlined text-secondary">chevron_right</span>
+            </div>
+          </a>
+          <a href="#" class="card">
+            <div class="row row-between">
+              <span class="font-medium">Quy trình khẩn cấp</span>
+              <span class="material-symbols-outlined text-secondary">chevron_right</span>
+            </div>
+          </a>
+          <a href="#" class="card">
+            <div class="row row-between">
+              <span class="font-medium">Quyền và trách nhiệm</span>
+              <span class="material-symbols-outlined text-secondary">chevron_right</span>
+            </div>
+          </a>
+          <a href="#" class="card">
+            <div class="row row-between">
+              <span class="font-medium">Báo cáo sự cố</span>
+              <span class="material-symbols-outlined text-secondary">chevron_right</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Emergency Contact -->
+      <section class="section">
+        <div class="alert alert-warning">
+          <span class="material-symbols-outlined">emergency</span>
+          <div>
+            <p class="font-bold">Liên hệ khẩn cấp</p>
+            <p class="text-sm mt-1">Số điện thoại: 911 | Email: safety@company.com</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+/* ================================
+   Action Grid Navigation
+   ================================ */
+
+/* Action Grid Nav Container */
+.action-grid-nav {
+  width: 100%;
+  padding-bottom: 1rem;
+  background-color: var(--surface-light);
+  border-top: 1px solid var(--gray-200);
+}
+
+.action-grid-nav.dark {
+  background-color: var(--surface-dark);
+  border-top-color: var(--gray-800);
+}
+
+/* Grid Content */
+.action-grid-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0.5rem;
+}
+
+.action-grid-content::-webkit-scrollbar {
+  display: none;
+}
+
+.action-grid-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Grid Item */
+.action-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  min-width: 80px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.action-grid-item:active {
+  transform: scale(0.9);
+}
+
+/* Grid Icon */
+.action-grid-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Icon Colors - Break (Orange) */
+.action-grid-icon.break {
+  background-color: #fed7aa;
+  color: #ea580c;
+}
+
+.action-grid-item:active .action-grid-icon.break {
+  background-color: #fdba74;
+  transform: scale(0.95);
+}
+
+/* Icon Colors - Lunch (Blue) */
+.action-grid-icon.lunch {
+  background-color: #bfdbfe;
+  color: #1e40af;
+}
+
+.action-grid-item:active .action-grid-icon.lunch {
+  background-color: #93c5fd;
+  transform: scale(0.95);
+}
+
+/* Icon Colors - Switch (Purple) */
+.action-grid-icon.switch {
+  background-color: #e9d5ff;
+  color: #6b21a8;
+}
+
+.action-grid-item:active .action-grid-icon.switch {
+  background-color: #d8b4fe;
+  transform: scale(0.95);
+}
+
+/* Icon Colors - Logout (Red) */
+.action-grid-icon.logout {
+  background-color: #fecaca;
+  color: #dc2626;
+}
+
+.action-grid-item:active .action-grid-icon.logout {
+  background-color: #fca5a5;
+  transform: scale(0.95);
+}
+
+/* Dark Mode Colors */
+.action-grid-nav.dark .action-grid-icon.break {
+  background-color: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+.action-grid-nav.dark .action-grid-item:active .action-grid-icon.break {
+  background-color: rgba(249, 115, 22, 0.3);
+}
+
+.action-grid-nav.dark .action-grid-icon.lunch {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.action-grid-nav.dark .action-grid-item:active .action-grid-icon.lunch {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+.action-grid-nav.dark .action-grid-icon.switch {
+  background-color: rgba(147, 51, 234, 0.2);
+  color: #d8b4fe;
+}
+
+.action-grid-nav.dark .action-grid-item:active .action-grid-icon.switch {
+  background-color: rgba(147, 51, 234, 0.3);
+}
+
+.action-grid-nav.dark .action-grid-icon.logout {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.action-grid-nav.dark .action-grid-item:active .action-grid-icon.logout {
+  background-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Grid Label */
+.action-grid-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  color: #111418;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.action-grid-nav.dark .action-grid-label {
+  color: white;
+}

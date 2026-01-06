@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Chọn Sản phẩm - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
+      <h1 class="app-header-title">Andromeda</h1>
+      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </a>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-sticky">
+      <div class="input-wrapper">
+        <span class="material-symbols-outlined input-wrapper-icon">search</span>
+        <input type="text" class="input-field input-field-with-icon" 
+               placeholder="Nhập mã hoặc tên sản phẩm..." value=""/>
+      </div>
+      <a href="#" class="btn-icon mt-3" style="position: absolute; right: 16px; top: 20px;">
+        <span class="material-symbols-outlined">qr_code_scanner</span>
+      </a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-content scrollable with-bottom-action">
+      <!-- Section Header -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Danh sách Sản phẩm</h2>
+          <span class="text-tertiary text-sm">3 items</span>
+        </div>
+      </section>
+
+      <!-- Product Grid -->
+      <div class="grid-2 px-4">
+        <!-- Product Card 1 - Selected -->
+        <a href="#" class="card" style="border: 2px solid var(--color-primary);">
+          <div class="aspect-square bg-surface-secondary rounded-lg flex items-center justify-center mb-3">
+            <span class="material-symbols-outlined" style="font-size: 40px; color: var(--color-primary);">widgets</span>
+          </div>
+          <h3 class="text-sm font-bold text-primary truncate">Mainboard A1</h3>
+          <p class="text-tertiary text-xs mt-1">SKU: MB-001</p>
+          <p class="text-secondary text-xs font-medium mt-2">Qty: 100</p>
+        </a>
+
+        <!-- Product Card 2 -->
+        <a href="#" class="card">
+          <div class="aspect-square bg-surface-secondary rounded-lg flex items-center justify-center mb-3">
+            <span class="material-symbols-outlined" style="font-size: 40px;">widgets</span>
+          </div>
+          <h3 class="text-sm font-bold truncate">Mainboard B2</h3>
+          <p class="text-tertiary text-xs mt-1">SKU: MB-002</p>
+          <p class="text-secondary text-xs font-medium mt-2">Qty: 50</p>
+        </a>
+
+        <!-- Product Card 3 -->
+        <a href="#" class="card">
+          <div class="aspect-square bg-surface-secondary rounded-lg flex items-center justify-center mb-3">
+            <span class="material-symbols-outlined" style="font-size: 40px;">widgets</span>
+          </div>
+          <h3 class="text-sm font-bold truncate">Connector C3</h3>
+          <p class="text-tertiary text-xs mt-1">SKU: CN-003</p>
+          <p class="text-secondary text-xs font-medium mt-2">Qty: 200</p>
+        </a>
+      </div>
+    </main>
+
+    <!-- Action Buttons -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-surface-primary border-t border-border-primary flex gap-3">
+      <a href="#" class="btn btn-secondary btn-lg flex-1">Quay lại</a>
+      <a href="06_timer.html" class="btn btn-primary btn-lg flex-1">Bắt đầu</a>
+    </div>
+  </div>
+</body>
+</html>

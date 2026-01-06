@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Cài đặt - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
+      <h1 class="app-header-title">Cài đặt</h1>
+      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content scrollable">
+      <!-- Profile Section -->
+      <section class="section">
+        <div class="card">
+          <div class="row gap-4">
+            <div class="avatar avatar-lg" style="background-image: url('https://via.placeholder.com/100');"></div>
+            <div class="flex-1">
+              <h3 class="text-lg font-bold">Nguyễn Văn A</h3>
+              <p class="text-secondary text-sm mt-1">Nhân viên sản xuất</p>
+              <a href="10_profile.html" class="link-btn text-sm mt-2">Xem hồ sơ đầy đủ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- App Settings -->
+      <section class="section">
+        <h3 class="section-title mb-3">Ứng dụng</h3>
+        <div class="space-y-2">
+          <!-- Theme Toggle -->
+          <div class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined">dark_mode</span>
+                <span>Chế độ tối</span>
+              </div>
+              <input type="checkbox" class="input-checkbox"/>
+            </div>
+          </div>
+
+          <!-- Language -->
+          <a href="#" class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined">language</span>
+                <div>
+                  <p class="font-medium">Ngôn ngữ</p>
+                  <p class="text-secondary text-xs">Tiếng Việt</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
+            </div>
+          </a>
+
+          <!-- Notifications -->
+          <a href="#" class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined">notifications</span>
+                <span>Thông báo</span>
+              </div>
+              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Account Settings -->
+      <section class="section">
+        <h3 class="section-title mb-3">Tài khoản</h3>
+        <div class="space-y-2">
+          <!-- Change Password -->
+          <a href="#" class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined">lock</span>
+                <span>Đổi mật khẩu</span>
+              </div>
+              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
+            </div>
+          </a>
+
+          <!-- Security -->
+          <a href="#" class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined">security</span>
+                <span>Bảo mật</span>
+              </div>
+              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
+            </div>
+          </a>
+
+          <!-- Privacy -->
+          <a href="#" class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined">privacy_tip</span>
+                <span>Quyền riêng tư</span>
+              </div>
+              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section">
+        <h3 class="section-title mb-3">Về ứng dụng</h3>
+        <div class="space-y-2">
+          <!-- Help Center -->
+          <a href="16_faq.html" class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined">help</span>
+                <span>Trung tâm trợ giúp</span>
+              </div>
+              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
+            </div>
+          </a>
+
+          <!-- About App -->
+          <a href="#" class="card">
+            <div class="row row-between">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined">info</span>
+                <span>Về Andromeda</span>
+              </div>
+              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
+            </div>
+          </a>
+
+          <!-- Version -->
+          <div class="card">
+            <div class="flex justify-between text-sm">
+              <span class="text-secondary">Phiên bản</span>
+              <span class="font-medium">2.4.0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Logout -->
+      <section class="section">
+        <a href="01_login.html" class="btn btn-danger btn-lg btn-full" style="background-color: var(--color-danger);">
+          <span class="material-symbols-outlined">logout</span>
+          <span>Đăng xuất</span>
+        </a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

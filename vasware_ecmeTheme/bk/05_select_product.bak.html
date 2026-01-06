@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Màn hình Chọn Sản phẩm</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3487f4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-slate-900 shadow-2xl">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-20 flex items-center bg-white dark:bg-slate-900 p-4 pb-2 justify-between border-b border-slate-100 dark:border-slate-800">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">hexagon</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Andromeda</h2>
+</div>
+<div class="flex w-10 items-center justify-end">
+<button class="relative flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-2 right-2 size-2.5 rounded-full bg-red-500 border-2 border-white dark:border-slate-900"></span>
+</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="bg-white dark:bg-slate-900 px-4 py-3 sticky top-[65px] z-10">
+<label class="flex flex-col w-full">
+<div class="flex w-full items-center rounded-xl h-12 bg-slate-100 dark:bg-slate-800 focus-within:ring-2 ring-primary/50 transition-shadow">
+<div class="text-slate-400 flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="flex-1 bg-transparent border-none text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-0 px-2 text-base font-normal h-full rounded-r-xl" placeholder="Nhập mã hoặc tên sản phẩm..."/>
+<div class="pr-2">
+<button class="p-2 text-primary">
+<span class="material-symbols-outlined text-[24px]">qr_code_scanner</span>
+</button>
+</div>
+</div>
+</label>
+</div>
+<!-- Scrollable Content -->
+<main class="flex-1 flex flex-col pb-24"> <!-- Padding bottom for fixed footer -->
+<!-- Section Header -->
+<div class="flex items-center justify-between px-4 pb-2 pt-4">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Danh sách sản phẩm</h3>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-full">5 Items</span>
+</div>
+<!-- List Items -->
+<div class="flex flex-col gap-1">
+<!-- Item 1 (Selected State Example) -->
+<label class="relative group cursor-pointer">
+<input checked="" class="peer sr-only" name="product_selection" type="radio"/>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 px-4 py-3 border-b border-slate-50 dark:border-slate-800 peer-checked:bg-primary/5 dark:peer-checked:bg-primary/10 transition-colors">
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-16 shadow-sm border border-slate-100 dark:border-slate-700" data-alt="Stack of brown corrugated cardboard boxes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQxIBRTq765XHyq1znCj0b6QiBsdpo3i2W_n9FJJdr8DpQnxoMUXNFhCMtX_eLkVPB-IJEAD0cW_RCVMv9e-fCLcPrCMis8B9s7NL8SGy2rgKPQgBHGp7p98IvQTLFecpJfX-ti_HQI3v7XLOFwdDuL8RTl1baPitGtxfuN69aqN-350miPTFemShgWkCwpKXo56-WGDXIV2eDjmlTUSRun0UGTPXdh6H4DYa3i4ItvJFt7AYApBg5327IkKC3_hRiKPvaNn7v71c");'></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide">Ready</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-tight line-clamp-1 group-hover:text-primary transition-colors">Hộp Carton 5 Lớp</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-0.5">Code: <span class="font-mono text-slate-600 dark:text-slate-300">CT-5L-001</span></p>
+</div>
+<div class="shrink-0">
+<div class="size-6 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary text-white transition-all">
+<span class="material-symbols-outlined text-[16px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Item 2 -->
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="product_selection" type="radio"/>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 px-4 py-3 border-b border-slate-50 dark:border-slate-800 peer-checked:bg-primary/5 dark:peer-checked:bg-primary/10 transition-colors">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-16 shadow-sm border border-slate-100 dark:border-slate-700" data-alt="Roll of clear packaging tape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-vFcv1RhVDqKbWNkDGHhsiZckL7qlKojAj04cPy5WWWtHbr8e2Vg0rDsRVvZEzCT7-ASvKHhxt9dqYbDW8UeRMoKobhuX58KNYQO51jS6cjmaWSKbI9ZTUQsf3xTO6ISK_FJBy-fTA9CYAk3cteEue8ac9T9pW61pkV1yfqrXIMPLNDinInWN9wj7ryPtqZF_CDcoWTYPBsK0G0_aXpJyhZWVxnnTESiIGALBebF6zsqNg6jWuWqK4H_TfF4CuTuq6Kzwwlqd6IE");'></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-tight line-clamp-1 group-hover:text-primary transition-colors">Băng Keo Trong 5cm</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-0.5">Code: <span class="font-mono text-slate-600 dark:text-slate-300">BK-TR-055</span></p>
+</div>
+<div class="shrink-0">
+<div class="size-6 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary text-white transition-all">
+<span class="material-symbols-outlined text-[16px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Item 3 -->
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="product_selection" type="radio"/>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 px-4 py-3 border-b border-slate-50 dark:border-slate-800 peer-checked:bg-primary/5 dark:peer-checked:bg-primary/10 transition-colors">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-16 shadow-sm border border-slate-100 dark:border-slate-700" data-alt="Wooden pallet stack" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUgkswG7LUHfEO8LjRVhlM9WNX_ZnHLa2raT-_GUbk_hH8n5rVMKrtV5zPYUD1bsGhYvOrbSURJYl55KjpxMsmek-XUPXEqz_iLn0D25UNl1IhFf252682Xunnt_DgNQLmy90Qm34oqCuFw3mjiN5bzTDSpU1En_-CG_9YOAkFPqRnkRfURPgqMjlwzZ-BO4Tv6gBEr7rFFc5VJdKy4zJRD_HJrLTyJqp5A-m6w7rcP6lWBkDlWkgbHBBCv4m3NR7Qi2iEahmSyrc");'></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-tight line-clamp-1 group-hover:text-primary transition-colors">Pallet Gỗ Thông</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-0.5">Code: <span class="font-mono text-slate-600 dark:text-slate-300">PL-GT-202</span></p>
+</div>
+<div class="shrink-0">
+<div class="size-6 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary text-white transition-all">
+<span class="material-symbols-outlined text-[16px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Item 4 -->
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="product_selection" type="radio"/>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 px-4 py-3 border-b border-slate-50 dark:border-slate-800 peer-checked:bg-primary/5 dark:peer-checked:bg-primary/10 transition-colors">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-16 shadow-sm border border-slate-100 dark:border-slate-700" data-alt="Industrial stretch film plastic roll" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDp-VJg0Dy-ygEkK4o5w4j1mTGa0qyxZCxfyBRMSoRRkBZG-pcJiY3GLtUKucZMzBBljGKah0LCOaSgEAyFsGRbXJymudm-Q40lAtJ1khBDaamRzgMVOWRd0poqqqn7lOBwLOnXSJLFyQ6OWkrVa3NTqmOYUiiZUIs3903qPP1iKz-pQcnY-u-5HOBQyZ9rXW0qcISllp3fF2Cfmvf7i4qwq7b5B-AqgtwbyCC7AM354G-9JxYedWvMSLK18fmOrxQN6AZhR7v8vRg");'></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-tight line-clamp-1 group-hover:text-primary transition-colors">Màng PE Quấn Pallet</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-0.5">Code: <span class="font-mono text-slate-600 dark:text-slate-300">PE-QP-100</span></p>
+</div>
+<div class="shrink-0">
+<div class="size-6 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary text-white transition-all">
+<span class="material-symbols-outlined text-[16px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Item 5 -->
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="product_selection" type="radio"/>
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 px-4 py-3 border-b border-slate-50 dark:border-slate-800 peer-checked:bg-primary/5 dark:peer-checked:bg-primary/10 transition-colors">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-16 shadow-sm border border-slate-100 dark:border-slate-700" data-alt="Roll of white barcode labels" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNNyTi5qKY3yal1fY2C2KuYedmXm8rNfwlRi7yrG3TlcqYMVfjlYDgPq0StDn7KYHrvghltmiHhc8nKRZH52TIheaVIptGBRfD9g0lnvohH7lE1j3RqXWaGnWhqxsWOl1J3mDm9_4bj8JcDd4l72TJiPGKLf0hr6mwsPy6IcDEQ1aXWf-kqa5CRv75u4Mz9tNtmOrrX9FoQLAadnYk5oEUVpCSLiZzkKdv45S1HwMzKbQFgCU80a3se113dX5C5VY2bounVJrhATw");'></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400 text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide">Low Stock</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-medium leading-tight line-clamp-1 group-hover:text-primary transition-colors">Tem Nhãn Barcode 4x6</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-0.5">Code: <span class="font-mono text-slate-600 dark:text-slate-300">TM-BC-046</span></p>
+</div>
+<div class="shrink-0">
+<div class="size-6 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary text-white transition-all">
+<span class="material-symbols-outlined text-[16px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+</div>
+</label>
+</div>
+</main>
+<!-- Fixed Bottom Action Bar (Floating above Bottom Nav) -->
+<div class="fixed bottom-[60px] left-0 right-0 p-4 max-w-md mx-auto z-20 pointer-events-none">
+<button class="pointer-events-auto w-full bg-primary text-white font-bold text-base h-12 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span>Bắt đầu sản xuất</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 z-30 w-full bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 pb-safe pt-2 max-w-md mx-auto">
+<div class="flex justify-around items-center h-14">
+<a class="flex flex-col items-center gap-1 w-full text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-medium">Trang chủ</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-full text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] fill-current">conveyor_belt</span>
+<span class="text-[10px] font-medium">Sản xuất</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-full text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">history</span>
+<span class="text-[10px] font-medium">Lịch sử</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-full text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px] font-medium">Tài khoản</span>
+</a>
+</div>
+</nav>
+<!-- Safe area spacer for notched phones if content scrolls behind nav -->
+<div class="h-6 bg-white dark:bg-slate-900"></div>
+</div>
+<script>
+        // Simple logic to visually toggle the radio buttons in this static prototype
+        // In a real app, React/Vue would handle state
+        const items = document.querySelectorAll('input[name="product_selection"]');
+        items.forEach(item => {
+            item.addEventListener('change', () => {
+                // The visual changes are handled by peer-checked in Tailwind
+                console.log('Selected:', item.parentElement.querySelector('p').innerText);
+            });
+        });
+    </script>
+</body></html>

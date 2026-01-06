@@ -1,0 +1,306 @@
+/* ============================================
+   Focus Layout - For timer focused pages
+   timer.html, break.html, lunch.html
+   ============================================ */
+
+.focus-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  padding: var(--space-4);
+}
+
+.focus-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* Header */
+.focus-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.focus-title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.20;
+  color: var(--text-light);
+  margin-bottom: var(--space-2);
+}
+
+.focus-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.50;
+  color: var(--text-light-secondary);
+}
+
+/* Timer Display */
+.timer-display {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--bg-light-secondary);
+  border: 2px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.timer-time {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.20;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.50;
+  color: var(--text-light-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Status Display */
+.status-display {
+  width: 100%;
+  text-align: center;
+  padding: var(--space-4);
+  background-color: var(--bg-light-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.status-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.50;
+  color: var(--text-light-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.status-value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.20;
+  color: var(--text-light);
+}
+
+/* Controls */
+.focus-controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.control-group {
+  display: flex;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.control-group .btn {
+  flex: 1;
+}
+
+.focus-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+/* Quick Actions */
+.focus-quick-actions {
+  width: 100%;
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.quick-action-btn {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Info Card */
+.focus-info {
+  width: 100%;
+  padding: var(--space-4);
+  background-color: var(--bg-light-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) 0;
+}
+
+.info-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.50;
+  color: var(--text-light-secondary);
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.50;
+  color: var(--text-light);
+}
+
+.info-item:not(:last-child) {
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Footer */
+.focus-footer {
+  width: 100%;
+  text-align: center;
+  padding: var(--space-4) 0;
+  margin-top: var(--space-6);
+  opacity: 0.8;
+}
+
+.focus-footer-text {
+  font-size: 12px;
+  color: var(--text-light-tertiary);
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timer-display {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.timer-display.active {
+  animation: pulse 2s infinite;
+}
+
+/* Dark Mode */
+html.dark .focus-layout {
+  background-color: var(--bg-light);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .focus-container {
+    max-width: 100%;
+    gap: var(--space-4);
+  }
+
+  .timer-display {
+    max-width: 200px;
+  }
+
+  .timer-time {
+    font-size: 48px;
+  }
+
+  .focus-title {
+    font-size: 24px;
+  }
+
+  .control-group {
+    flex-direction: column;
+  }
+
+  .control-group .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .focus-layout {
+    padding: var(--space-3);
+  }
+
+  .focus-container {
+    gap: var(--space-4);
+  }
+
+  .timer-display {
+    max-width: 150px;
+    padding: var(--space-4);
+  }
+
+  .timer-time {
+    font-size: 36px;
+  }
+
+  .timer-label {
+    font-size: 12px;
+  }
+
+  .focus-title {
+    font-size: 20px;
+  }
+
+  .focus-subtitle {
+    font-size: 12px;
+  }
+
+  .status-value {
+    font-size: 18px;
+  }
+
+  .quick-action-btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: 11px;
+  }
+
+  .focus-info {
+    padding: var(--space-3);
+  }
+
+  .info-item {
+    padding: var(--space-1) 0;
+  }
+}

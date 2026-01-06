@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Chọn Khách hàng & Công việc - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
+      <h1 class="app-header-title">Andromeda</h1>
+      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content scrollable">
+      <!-- Search Bar -->
+      <div class="search-sticky">
+        <div class="input-wrapper">
+          <span class="material-symbols-outlined input-wrapper-icon">search</span>
+          <input type="text" class="input-field input-field-with-icon" 
+                 placeholder="Tìm kiếm khách hàng hoặc công việc..." value=""/>
+        </div>
+      </div>
+
+      <!-- Section 1: Select Customer -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Chọn Khách hàng</h2>
+          <span class="badge badge-primary">Bắt buộc</span>
+        </div>
+
+        <div class="stack-compact">
+          <!-- Customer Item - Selected -->
+          <a href="#" class="card" style="border: 2px solid var(--color-primary);">
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="text-base font-bold text-primary">ABC Corp Vietnam</h3>
+                <p class="text-secondary text-sm mt-1">Nhân viên sản xuất</p>
+              </div>
+              <span class="material-symbols-outlined" style="color: var(--color-primary);">check_circle</span>
+            </div>
+          </a>
+
+          <!-- Customer Item -->
+          <a href="#" class="card">
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="text-base font-bold">XYZ Manufacturing</h3>
+                <p class="text-secondary text-sm mt-1">Nhân viên lắp ráp</p>
+              </div>
+              <span class="material-symbols-outlined" style="color: var(--text-tertiary);">radio_button_unchecked</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 2: Select Job -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Chọn Công việc</h2>
+          <span class="badge badge-primary">Bắt buộc</span>
+        </div>
+
+        <div class="stack-compact">
+          <!-- Job Item - Selected -->
+          <a href="#" class="card" style="border: 2px solid var(--color-primary);">
+            <div class="flex justify-between items-center">
+              <div class="flex-1">
+                <h3 class="text-base font-bold text-primary">Sản xuất Mainboard</h3>
+                <p class="text-secondary text-sm mt-1">Chi tiết: Lắp ráp Board A1</p>
+              </div>
+              <span class="material-symbols-outlined" style="color: var(--color-primary);">check_circle</span>
+            </div>
+          </a>
+
+          <!-- Job Item -->
+          <a href="#" class="card">
+            <div class="flex justify-between items-center">
+              <div class="flex-1">
+                <h3 class="text-base font-bold">Kiểm tra chất lượng</h3>
+                <p class="text-secondary text-sm mt-1">Chi tiết: QC Board B2</p>
+              </div>
+              <span class="material-symbols-outlined" style="color: var(--text-tertiary);">radio_button_unchecked</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Action Buttons -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-surface-primary border-t border-border-primary flex gap-3">
+      <a href="#" class="btn btn-secondary btn-lg flex-1">Quay lại</a>
+      <a href="05_select_product.html" class="btn btn-primary btn-lg flex-1">Tiếp tục</a>
+    </div>
+  </div>
+</body>
+</html>

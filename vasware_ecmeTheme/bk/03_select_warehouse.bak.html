@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Andromeda - Select Warehouse</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3487f4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gray-100">
+<div class="relative mx-auto flex h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark overflow-hidden shadow-2xl sm:rounded-[30px] sm:border-[8px] sm:border-gray-900 sm:h-[850px]">
+<!-- Status Bar Placeholder for iOS feel -->
+<div class="w-full h-11 bg-background-light dark:bg-background-dark shrink-0 hidden sm:block"></div>
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark px-4 py-3 justify-between sticky top-0 z-10">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">menu</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">token</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Andromeda</h2>
+</div>
+<div class="flex items-center justify-end">
+<button class="relative flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">notifications</span>
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-background-dark"></span>
+</button>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar pb-24">
+<!-- HeadlineText -->
+<div class="px-4 pb-2 pt-4">
+<h2 class="text-slate-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight text-left">Chọn Kho Làm Việc</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Chọn địa điểm để bắt đầu ca làm việc của bạn</p>
+</div>
+<!-- SearchBar -->
+<div class="px-4 py-4 sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+<label class="flex flex-col h-12 w-full shadow-sm rounded-xl">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<div class="text-slate-400 dark:text-slate-500 flex items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined" style="font-size: 24px;">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-white focus:outline-0 bg-transparent placeholder:text-slate-400 dark:placeholder:text-slate-500 px-3 h-full text-base font-normal leading-normal" placeholder="Tìm kiếm kho..." value=""/>
+</div>
+</label>
+</div>
+<!-- List Content -->
+<div class="flex flex-col gap-3 px-4">
+<!-- Section Header -->
+<div class="flex items-center justify-between pt-2 pb-1">
+<h3 class="text-slate-900 dark:text-white font-semibold text-sm uppercase tracking-wider opacity-60">Gần đây</h3>
+</div>
+<!-- ListItem 1 -->
+<button class="group flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-primary flex items-center justify-center rounded-xl bg-primary/10 shrink-0 size-12 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">warehouse</span>
+</div>
+<div class="flex flex-col justify-center text-left">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal line-clamp-1">Kho A - KCN Tân Bình</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="size-2 rounded-full bg-green-500"></span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-1">Hoạt động • 123 Đường ABC</p>
+</div>
+</div>
+</div>
+<div class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">chevron_right</span>
+</div>
+</button>
+<!-- Section Header -->
+<div class="flex items-center justify-between pt-4 pb-1">
+<h3 class="text-slate-900 dark:text-white font-semibold text-sm uppercase tracking-wider opacity-60">Tất cả kho</h3>
+</div>
+<!-- ListItem 2 -->
+<button class="group flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-slate-600 dark:text-slate-300 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700 shrink-0 size-12 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">factory</span>
+</div>
+<div class="flex flex-col justify-center text-left">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal line-clamp-1">Kho B - KCN VSIP 1</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="size-2 rounded-full bg-green-500"></span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-1">Hoạt động • 456 Đại lộ Hữu Nghị</p>
+</div>
+</div>
+</div>
+<div class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">chevron_right</span>
+</div>
+</button>
+<!-- ListItem 3 -->
+<button class="group flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-slate-600 dark:text-slate-300 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700 shrink-0 size-12 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">warehouse</span>
+</div>
+<div class="flex flex-col justify-center text-left">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal line-clamp-1">Kho C - Logis Center</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="size-2 rounded-full bg-green-500"></span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-1">Hoạt động • 789 Đường 3/2</p>
+</div>
+</div>
+</div>
+<div class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">chevron_right</span>
+</div>
+</button>
+<!-- ListItem 4 - Maintenance -->
+<button class="group flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 opacity-80 hover:opacity-100 transition-all">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-slate-400 dark:text-slate-500 flex items-center justify-center rounded-xl bg-slate-50 dark:bg-slate-700/50 shrink-0 size-12">
+<span class="material-symbols-outlined" style="font-size: 24px;">build</span>
+</div>
+<div class="flex flex-col justify-center text-left">
+<p class="text-slate-500 dark:text-slate-400 text-base font-semibold leading-normal line-clamp-1">Nhà máy 2 - Long An</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="size-2 rounded-full bg-orange-400"></span>
+<p class="text-slate-400 dark:text-slate-500 text-sm font-normal leading-normal line-clamp-1">Đang bảo trì • 12 QL1A</p>
+</div>
+</div>
+</div>
+<div class="shrink-0 text-slate-200 dark:text-slate-700">
+<span class="material-symbols-outlined" style="font-size: 24px;">lock</span>
+</div>
+</button>
+</div>
+<div class="h-8"></div>
+</div>
+<!-- Bottom Navigation -->
+<div class="bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 px-6 py-2 flex justify-between items-center absolute bottom-0 w-full z-20 pb-6 sm:pb-2 sm:rounded-b-[22px]">
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1; font-size: 24px;">home</span>
+<span class="text-[10px] font-medium">Trang chủ</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">history</span>
+<span class="text-[10px] font-medium">Lịch sử</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">person</span>
+<span class="text-[10px] font-medium">Hồ sơ</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+<span class="text-[10px] font-medium">Cài đặt</span>
+</button>
+</div>
+</div>
+</body></html>

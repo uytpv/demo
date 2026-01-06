@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lunch Break - Andromeda</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3487f4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col text-[#0d131c] dark:text-white transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+<button class="flex items-center justify-center w-10 h-10 rounded-full active:bg-gray-200 dark:active:bg-gray-800 transition-colors text-[#0d131c] dark:text-white">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+<h2 class="text-lg font-bold tracking-tight text-[#0d131c] dark:text-white">Andromeda</h2>
+<button class="flex items-center justify-center w-10 h-10 rounded-full active:bg-gray-200 dark:active:bg-gray-800 transition-colors text-[#0d131c] dark:text-white relative">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<!-- Notification Dot -->
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-background-light dark:border-background-dark"></span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 w-full max-w-md mx-auto relative overflow-hidden">
+<!-- Decorative Background Circle -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
+<!-- Status Icon -->
+<div class="relative group">
+<div class="w-32 h-32 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mb-8 ring-8 ring-primary/5 dark:ring-primary/10">
+<span class="material-symbols-outlined text-primary text-[64px] drop-shadow-sm">soup_kitchen</span>
+</div>
+<!-- Pulse animation effect -->
+<div class="absolute inset-0 rounded-full border border-primary/30 scale-110 animate-pulse"></div>
+</div>
+<!-- Headline -->
+<h1 class="text-3xl font-bold text-center text-[#0d131c] dark:text-white mb-2 leading-tight">
+            Đang nghỉ ăn trưa
+        </h1>
+<!-- Status Badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium mb-8">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            Đang đếm giờ
+        </div>
+<!-- Countdown Timer -->
+<div class="flex flex-col items-center mb-8 w-full">
+<div class="text-[80px] font-black text-primary font-mono leading-none tracking-tighter tabular-nums drop-shadow-sm">
+                24:15
+            </div>
+<p class="text-sm font-medium text-gray-400 dark:text-gray-500 mt-2 uppercase tracking-widest text-center">Thời gian còn lại</p>
+</div>
+<!-- Info Card -->
+<div class="w-full bg-white dark:bg-gray-800/50 rounded-xl p-4 border border-gray-100 dark:border-gray-700/50 shadow-sm flex items-start gap-3">
+<span class="material-symbols-outlined text-gray-400 mt-0.5 text-[20px]">info</span>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-[#0d131c] dark:text-gray-200">Quy định nghỉ trưa</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Thời gian nghỉ tiêu chuẩn là 30 phút. Vui lòng quay lại làm việc đúng giờ.</span>
+</div>
+</div>
+</main>
+<!-- Bottom Action Area -->
+<div class="sticky bottom-0 w-full p-6 pb-8 bg-background-light dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 backdrop-blur-xl bg-opacity-90 dark:bg-opacity-90">
+<button class="group relative w-full h-14 bg-primary hover:bg-blue-600 active:scale-[0.98] transition-all duration-200 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-primary/30 overflow-hidden">
+<!-- Button sheen effect -->
+<div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
+<span class="material-symbols-outlined text-white z-10">play_arrow</span>
+<span class="text-white font-bold text-lg z-10 tracking-wide">Tiếp tục làm việc</span>
+</button>
+<p class="text-xs text-center text-gray-400 dark:text-gray-600 mt-4">
+            Nhấn nút để kết thúc giờ nghỉ và bắt đầu ca chiều
+        </p>
+</div>
+<!-- Animation Keyframes -->
+<style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</body></html>

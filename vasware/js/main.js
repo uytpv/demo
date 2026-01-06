@@ -177,6 +177,118 @@
     };
 
     // ================================
+    // Product Timer Management
+    // ================================
+    let productTimerInterval = null;
+    let productWorkingSeconds = 0;
+
+    // Load saved product time from localStorage
+    function loadProductTimer() {
+        const saved = localStorage.getItem('productWorkingTime');
+        const savedTimestamp = localStorage.getItem('productTimerStartTime');
+
+        if (saved && savedTimestamp) {
+            const elapsed = Math.floor((Date.now() - parseInt(savedTimestamp)) / 1000);
+            productWorkingSeconds = parseInt(saved) + elapsed;
+        } else {
+            productWorkingSeconds = 0;
+        }
+    }
+
+    // Format seconds to HH:MM:SS
+    function formatTime(seconds) {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    // Update product timer display
+    function updateProductTimerDisplay() {
+        const timerElement = document.querySelector('.timer-working-time');
+        if (timerElement) {
+            timerElement.textContent = formatTime(productWorkingSeconds);
+        }
+    }
+
+    // Start product timer
+    window.startProductTimer = function () {
+        if (productTimerInterval) return; // Already running
+
+        loadProductTimer();
+
+        productTimerInterval = setInterval(() => {
+            productWorkingSeconds++;
+            updateProductTimerDisplay();
+
+            // Save to localStorage every 5 seconds
+            if (productWorkingSeconds % 5 === 0) {
+                localStorage.setItem('productWorkingTime', productWorkingSeconds);
+                localStorage.setItem('productTimerStartTime', Date.now());
+            }
+        }, 1000);
+
+        updateProductTimerDisplay();
+    };
+
+    // Stop product timer
+    window.stopProductTimer = function () {
+        if (productTimerInterval) {
+            clearInterval(productTimerInterval);
+            productTimerInterval = null;
+            localStorage.setItem('productWorkingTime', productWorkingSeconds);
+            localStorage.setItem('productTimerStartTime', Date.now());
+        }
+    };
+
+    // Reset product timer
+    window.resetProductTimer = function () {
+        if (productTimerInterval) {
+            clearInterval(productTimerInterval);
+            productTimerInterval = null;
+        }
+        productWorkingSeconds = 0;
+        localStorage.removeItem('productWorkingTime');
+        localStorage.removeItem('productTimerStartTime');
+        updateProductTimerDisplay();
+    };
+
+    // Update product info
+    window.updateProductInfo = function (warehouse, customer, task, productName, productCode, imageSrc) {
+        // Update warehouse
+        const warehouseValue = document.querySelector('.info-card:nth-child(1) .info-value');
+        if (warehouseValue) warehouseValue.textContent = warehouse;
+
+        // Update customer
+        const customerValue = document.querySelector('.info-card:nth-child(2) .info-value');
+        if (customerValue) customerValue.textContent = customer;
+
+        // Update task
+        const taskValue = document.querySelector('.info-card:nth-child(3) .info-value');
+        if (taskValue) taskValue.textContent = task;
+
+        // Update product name
+        const productNameElement = document.querySelector('.product-name');
+        if (productNameElement) productNameElement.textContent = productName;
+
+        // Update product code
+        const productCodeElement = document.querySelector('.product-code');
+        if (productCodeElement) productCodeElement.textContent = productCode;
+
+        // Update product image
+        const productImageElement = document.querySelector('.product-image');
+        if (productImageElement && imageSrc) {
+            productImageElement.src = imageSrc;
+            productImageElement.alt = productName;
+        }
+
+        // Reset timer when product changes
+        resetProductTimer();
+        startProductTimer();
+    };
+
+    // ================================
     // App Initialization
     // ================================
     function init() {
@@ -192,6 +304,12 @@
         // Add Android specific styles
         if (isAndroid) {
             document.documentElement.classList.add('android');
+        }
+
+        // Start product timer if on timer page
+        if (document.querySelector('.timer-working-time')) {
+            loadProductTimer();
+            startProductTimer();
         }
 
         // Prevent double-tap zoom on buttons

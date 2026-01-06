@@ -1,0 +1,23 @@
+/* ================================
+   Timer Display Components
+   ================================ */
+
+/* Timer Display Container */
+.timer-display {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Timer Time Display */
+.timer-time {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Nasalization', monospace;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-align: center;
+}

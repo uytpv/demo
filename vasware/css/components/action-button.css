@@ -1,0 +1,189 @@
+/* ================================
+   Action Button Components
+   ================================ */
+
+/* Action Button Grid */
+.action-buttons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Action Button */
+.action-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-radius: 1.875rem;
+  border: 1px solid var(--gray-100);
+  background-color: white;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  align-items: flex-start;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.action-button.dark {
+  background-color: #1a2632;
+  border-color: var(--gray-800);
+}
+
+.action-button:active {
+  transform: scale(0.95);
+}
+
+/* Hover Effects by Color */
+.action-button.break:hover {
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.action-button.break.dark:hover {
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+.action-button.lunch:hover {
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.action-button.lunch.dark:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.action-button.switch:hover {
+  border-color: rgba(147, 51, 234, 0.2);
+}
+
+.action-button.switch.dark:hover {
+  border-color: rgba(147, 51, 234, 0.4);
+}
+
+.action-button.logout:hover {
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.action-button.logout.dark:hover {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* Action Button Icon */
+.action-icon {
+  padding: 0.75rem;
+  border-radius: 1rem;
+  color: inherit;
+  transition: all var(--transition-base);
+}
+
+/* Break Button (Orange) */
+.action-button.break .action-icon {
+  background-color: #fed7aa;
+  color: #ea580c;
+}
+
+.action-button.break.dark .action-icon {
+  background-color: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+.action-button.break:hover .action-icon {
+  background-color: #fdba74;
+}
+
+.action-button.break.dark:hover .action-icon {
+  background-color: rgba(249, 115, 22, 0.3);
+}
+
+/* Lunch Button (Blue) */
+.action-button.lunch .action-icon {
+  background-color: #bfdbfe;
+  color: #1e40af;
+}
+
+.action-button.lunch.dark .action-icon {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.action-button.lunch:hover .action-icon {
+  background-color: #93c5fd;
+}
+
+.action-button.lunch.dark:hover .action-icon {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Switch Button (Purple) */
+.action-button.switch .action-icon {
+  background-color: #e9d5ff;
+  color: #6b21a8;
+}
+
+.action-button.switch.dark .action-icon {
+  background-color: rgba(147, 51, 234, 0.2);
+  color: #d8b4fe;
+}
+
+.action-button.switch:hover .action-icon {
+  background-color: #d8b4fe;
+}
+
+.action-button.switch.dark:hover .action-icon {
+  background-color: rgba(147, 51, 234, 0.3);
+}
+
+/* Logout Button (Red) */
+.action-button.logout .action-icon {
+  background-color: #fecaca;
+  color: #dc2626;
+}
+
+.action-button.logout.dark .action-icon {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.action-button.logout:hover .action-icon {
+  background-color: #fca5a5;
+}
+
+.action-button.logout.dark:hover .action-icon {
+  background-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Button Content */
+.action-content {
+  width: 100%;
+  text-align: left;
+}
+
+.action-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111418;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.action-button.dark .action-title {
+  color: white;
+}
+
+.action-description {
+  font-size: 0.75rem;
+  color: #617589;
+  margin: 0.25rem 0 0 0;
+  line-height: 1.2;
+}
+
+.action-button.dark .action-description {
+  color: var(--gray-400);
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yêu cầu nghỉ bệnh - Andromeda</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3487f4",
+              "background-light": "#f5f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-50 antialiased selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24 max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-20 flex items-center justify-between bg-white/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 border-b border-slate-100 dark:border-slate-800">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Andromeda</h1>
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white relative">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-2 right-2 size-2.5 rounded-full bg-red-500 border-2 border-white dark:border-background-dark"></span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-4 pt-6">
+<!-- Headline -->
+<div class="mb-6">
+<h2 class="text-2xl font-bold leading-tight text-slate-900 dark:text-white tracking-tight">Yêu cầu nghỉ bệnh</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Điền thông tin chi tiết để tạo yêu cầu mới</p>
+</div>
+<!-- Form Fields -->
+<div class="flex flex-col gap-5">
+<!-- Date Range Picker -->
+<div class="grid grid-cols-2 gap-4">
+<label class="flex flex-col flex-1 gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Từ ngày</span>
+<div class="relative">
+<input class="w-full rounded-xl border-slate-200 bg-slate-50 dark:bg-slate-800/50 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary h-12 px-3 text-base" type="date" value="2023-10-24"/>
+</div>
+</label>
+<label class="flex flex-col flex-1 gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Đến ngày</span>
+<div class="relative">
+<input class="w-full rounded-xl border-slate-200 bg-slate-50 dark:bg-slate-800/50 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary h-12 px-3 text-base" type="date" value="2023-10-25"/>
+</div>
+</label>
+</div>
+<!-- Meta Info: Total Days -->
+<div class="flex items-center gap-2 bg-primary/10 dark:bg-primary/20 p-3 rounded-lg border border-primary/20">
+<span class="material-symbols-outlined text-primary text-xl">info</span>
+<p class="text-primary text-sm font-medium">Tổng thời gian nghỉ: <span class="font-bold">2 ngày</span></p>
+</div>
+<!-- Reason Text Area -->
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Lý do nghỉ</span>
+<textarea class="w-full min-h-[120px] rounded-xl border-slate-200 bg-slate-50 dark:bg-slate-800/50 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary p-4 text-base placeholder:text-slate-400 resize-none" placeholder="Nhập chi tiết lý do xin nghỉ..."></textarea>
+</label>
+<!-- File Upload (Optional) -->
+<div class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Minh chứng y tế (Nếu có)</span>
+<button class="group flex w-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30 p-6 transition-colors hover:border-primary hover:bg-primary/5 dark:hover:bg-primary/10">
+<div class="flex size-10 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 group-hover:bg-primary/20 group-hover:text-primary transition-colors mb-2">
+<span class="material-symbols-outlined">cloud_upload</span>
+</div>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400">Chạm để tải ảnh lên</p>
+<p class="text-xs text-slate-400 dark:text-slate-500 mt-1">PNG, JPG, PDF (Max 5MB)</p>
+</button>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="mt-8 mb-4">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-base font-bold text-white shadow-lg shadow-primary/30 transition-transform active:scale-[0.98] hover:bg-blue-600">
+<span>Gửi yêu cầu</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex h-[80px] w-full max-w-md mx-auto items-center justify-around border-t border-slate-200 bg-white dark:bg-background-dark dark:border-slate-800 pb-4">
+<a class="group flex flex-col items-center justify-center gap-1 p-2 text-slate-400 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">home</span>
+<span class="text-[10px] font-medium">Trang chủ</span>
+</a>
+<a class="group flex flex-col items-center justify-center gap-1 p-2 text-slate-400 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">calendar_month</span>
+<span class="text-[10px] font-medium">Chấm công</span>
+</a>
+<a class="group flex flex-col items-center justify-center gap-1 p-2 text-primary" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[26px] fill-current">assignment</span>
+<!-- Active Indicator Dot -->
+<span class="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-background-dark"></span>
+</div>
+<span class="text-[10px] font-bold">Yêu cầu</span>
+</a>
+<a class="group flex flex-col items-center justify-center gap-1 p-2 text-slate-400 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">person</span>
+<span class="text-[10px] font-medium">Cá nhân</span>
+</a>
+</nav>
+</div>
+</body></html>

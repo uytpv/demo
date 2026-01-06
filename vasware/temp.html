@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Product Manufacturing Timer</title>
+  
+  <!-- Font Imports -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- CSS Imports -->
+  <link href="css/reset.css" rel="stylesheet"/>
+  <link href="css/variables.css" rel="stylesheet"/>
+  <link href="css/base.css" rel="stylesheet"/>
+  
+  <!-- Components -->
+  <link href="css/components/card.css" rel="stylesheet"/>
+  <link href="css/components/timer-display.css" rel="stylesheet"/>
+  <link href="css/components/stats-box.css" rel="stylesheet"/>
+  <link href="css/components/action-button.css" rel="stylesheet"/>
+  
+  <!-- Layouts -->
+  <link href="css/layouts/timer.css" rel="stylesheet"/>
+  
+  <!-- Utilities -->
+  <link href="css/utilities/flex.css" rel="stylesheet"/>
+  <link href="css/utilities/spacing.css" rel="stylesheet"/>
+  <link href="css/utilities/typography.css" rel="stylesheet"/>
+  
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--gray-100);
+      font-family: 'Inter', ui-sans-serif, system-ui;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="light">
+<div class="timer-page">
+  <div class="timer-content">
+    
+    <!-- Product Card -->
+    <div class="card product-card with-accent">
+      <div class="product-card-header">
+        <div class="product-info">
+          <h2 class="product-title">Assembly Line B</h2>
+          <p class="product-sku">SKU-90210</p>
+        </div>
+        <a class="btn-add-box" href="#" title="Add Box">
+          <span class="material-symbols-outlined">add_box</span>
+        </a>
+      </div>
+      
+      <!-- Timer Display -->
+      <div class="timer-display">
+        <div class="timer-time">01:45:12</div>
+      </div>
+    </div>
+    
+    <!-- Add Product Button -->
+    <button class="btn-add-product" title="Add Product">
+      <span class="material-symbols-outlined">add</span>
+      <span>Add Product</span>
+    </button>
+    <!-- Stats Box -->
+    <div class="stats-box">
+      <div class="stats-content">
+        <div class="stats-icon">
+          <span class="material-symbols-outlined">speed</span>
+        </div>
+        <div>
+          <p class="stats-label">Average Speed</p>
+          <div class="stats-value-container">
+            <span class="stats-value">425</span>
+            <span class="stats-unit">/ hr</span>
+          </div>
+        </div>
+      </div>
+      <div class="stats-right">
+        <div class="stats-badge">Excellent</div>
+        <p class="stats-note">Target: &gt;400</p>
+      </div>
+    </div>
+    
+    
+    
+    <!-- Action Buttons Grid -->
+    <div class="action-buttons-grid">
+      <button class="action-button break" title="Short Break - Pause timer">
+        <div class="action-icon">
+          <span class="material-symbols-outlined">coffee</span>
+        </div>
+        <div class="action-content">
+          <h2 class="action-title">Short Break</h2>
+          <p class="action-description">Pause timer</p>
+        </div>
+      </button>
+
+      <a class="action-button lunch" href="#" title="Lunch - 60 min pause">
+        <div class="action-icon">
+          <span class="material-symbols-outlined">restaurant</span>
+        </div>
+        <div class="action-content">
+          <h2 class="action-title">Lunch</h2>
+          <p class="action-description">60 min pause</p>
+        </div>
+      </a>
+
+      <a class="action-button switch" href="#" title="Switch Task - Select new job">
+        <div class="action-icon">
+          <span class="material-symbols-outlined">swap_horiz</span>
+        </div>
+        <div class="action-content">
+          <h2 class="action-title">Switch Task</h2>
+          <p class="action-description">Select new job</p>
+        </div>
+      </a>
+
+      <button class="action-button logout" onclick="alert('Are you sure you want to end your shift?\nOK: Select Warehouse\nCancel: Close')" title="End Shift - Complete day">
+        <div class="action-icon">
+          <span class="material-symbols-outlined">logout</span>
+        </div>
+        <div class="action-content">
+          <h2 class="action-title">End Shift</h2>
+          <p class="action-description">Complete day</p>
+        </div>
+      </button>
+    </div>
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Trung tâm trợ giúp - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
+      <h1 class="app-header-title">Andromeda</h1>
+      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </a>
+    </header>
+
+    <!-- Hero / Greeting -->
+    <section class="section">
+      <h1 class="text-2xl font-bold">Trung tâm trợ giúp</h1>
+      <p class="text-secondary text-sm mt-1">Chúng tôi có thể giúp gì cho bạn hôm nay?</p>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-sticky">
+      <div class="input-wrapper">
+        <span class="material-symbols-outlined input-wrapper-icon">search</span>
+        <input type="text" class="input-field input-field-with-icon" 
+               placeholder="Tìm kiếm câu hỏi hoặc chủ đề..." value=""/>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-content scrollable">
+      <!-- Quick Categories -->
+      <section class="section">
+        <h2 class="section-title mb-3">Các chủ đề phổ biến</h2>
+        <div class="grid-2">
+          <a href="#" class="card text-center">
+            <span class="material-symbols-outlined text-primary" style="font-size: 36px; display: block; margin: 0 auto 8px;">help</span>
+            <h3 class="font-bold text-sm">Cách sử dụng</h3>
+          </a>
+          <a href="#" class="card text-center">
+            <span class="material-symbols-outlined text-primary" style="font-size: 36px; display: block; margin: 0 auto 8px;">account_balance</span>
+            <h3 class="font-bold text-sm">Lương &amp; Thanh toán</h3>
+          </a>
+          <a href="#" class="card text-center">
+            <span class="material-symbols-outlined text-primary" style="font-size: 36px; display: block; margin: 0 auto 8px;">schedule</span>
+            <h3 class="font-bold text-sm">Lịch làm việc</h3>
+          </a>
+          <a href="#" class="card text-center">
+            <span class="material-symbols-outlined text-primary" style="font-size: 36px; display: block; margin: 0 auto 8px;">security</span>
+            <h3 class="font-bold text-sm">An toàn &amp; Bảo mật</h3>
+          </a>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="section">
+        <h2 class="section-title mb-3">Câu hỏi thường gặp</h2>
+        <div class="space-y-2">
+          <!-- FAQ Item 1 -->
+          <details class="card cursor-pointer">
+            <summary class="font-bold flex justify-between items-center">
+              <span>Làm cách nào để bắt đầu chấm công?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </summary>
+            <p class="text-secondary text-sm mt-3">Sau khi đăng nhập, hãy chọn kho làm việc, khách hàng, công việc và sản phẩm. Sau đó nhấn nút "Bắt đầu" để bắt đầu bộ đếm thời gian.</p>
+          </details>
+
+          <!-- FAQ Item 2 -->
+          <details class="card cursor-pointer">
+            <summary class="font-bold flex justify-between items-center">
+              <span>Tôi quên mật khẩu phải làm sao?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </summary>
+            <p class="text-secondary text-sm mt-3">Nhấn vào liên kết "Quên mật khẩu?" trên màn hình đăng nhập. Nhập email của bạn và chúng tôi sẽ gửi hướng dẫn đặt lại mật khẩu.</p>
+          </details>
+
+          <!-- FAQ Item 3 -->
+          <details class="card cursor-pointer">
+            <summary class="font-bold flex justify-between items-center">
+              <span>Làm sao để yêu cầu nghỉ phép?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </summary>
+            <p class="text-secondary text-sm mt-3">Đi đến Cài đặt &gt; Quản lý phép năm &gt; Gửi yêu cầu. Chọn ngày và loại phép, sau đó gửi cho quản lý của bạn để phê duyệt.</p>
+          </details>
+
+          <!-- FAQ Item 4 -->
+          <details class="card cursor-pointer">
+            <summary class="font-bold flex justify-between items-center">
+              <span>Dữ liệu của tôi có an toàn không?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </summary>
+            <p class="text-secondary text-sm mt-3">Vâng, chúng tôi sử dụng mã hóa cấp độ ngân hàng và tuân thủ các tiêu chuẩn an toàn dữ liệu quốc tế để bảo vệ thông tin của bạn.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Contact Support -->
+      <section class="section">
+        <div class="card" style="border: 1px solid var(--color-primary-20); background-color: var(--color-primary-10);">
+          <h3 class="font-bold mb-2">Vẫn cần giúp đỡ?</h3>
+          <p class="text-secondary text-sm mb-4">Liên hệ với đội hỗ trợ của chúng tôi để được giúp đỡ thêm</p>
+          <div class="space-y-2">
+            <a href="#" class="row gap-2 text-sm">
+              <span class="material-symbols-outlined">email</span>
+              <span>support@andromeda.com</span>
+            </a>
+            <a href="#" class="row gap-2 text-sm">
+              <span class="material-symbols-outlined">phone</span>
+              <span>+84 (0) 123 456 789</span>
+            </a>
+            <a href="#" class="row gap-2 text-sm">
+              <span class="material-symbols-outlined">schedule</span>
+              <span>Thứ 2 - Thứ 6: 9:00 AM - 6:00 PM</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

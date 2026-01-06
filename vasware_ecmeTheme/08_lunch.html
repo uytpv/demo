@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Giờ ăn trưa - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+      <h1 class="app-header-title">Ăn trưa</h1>
+      <div class="btn-icon"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content flex flex-col items-center justify-center">
+      <div class="hero">
+        <div class="hero-icon">
+          <span class="material-symbols-outlined">lunch_dining</span>
+        </div>
+        <h1 class="hero-title">Giờ Ăn Trưa</h1>
+        <span class="status-indicator status-active mb-4">
+          <span class="status-dot active"></span>
+          <span>Đang ăn trưa</span>
+        </span>
+
+        <!-- Countdown Timer -->
+        <div class="timer-display">
+          <div class="timer-value" id="countdownDisplay">60:00</div>
+          <p class="timer-label">Thời gian còn lại</p>
+        </div>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="w-full px-4 space-y-4" style="max-width: 340px; margin: 24px auto;">
+        <div class="card">
+          <div class="flex items-center justify-between">
+            <span class="text-secondary">Bắt đầu:</span>
+            <span class="font-medium">12:00</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="flex items-center justify-between">
+            <span class="text-secondary">Kết thúc dự kiến:</span>
+            <span class="font-medium">13:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resume Button -->
+      <a href="06_timer.html" class="btn btn-primary btn-lg" style="width: 100%; max-width: 340px; margin: 0 16px;">
+        <span>Quay lại làm việc</span>
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </main>
+  </div>
+
+  <script>
+    let remaining = 3600; // 60 minutes
+    setInterval(() => {
+      if (remaining > 0) {
+        remaining--;
+        const minutes = Math.floor(remaining / 60);
+        const seconds = remaining % 60;
+        document.getElementById('countdownDisplay').textContent = 
+          `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

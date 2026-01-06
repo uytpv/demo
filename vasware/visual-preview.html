@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Preview - Tính Năng Thông Tin Sản Phẩm</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      padding: 2rem 1rem;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+    
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .layout-item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .layout-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1rem;
+      font-weight: 600;
+    }
+    
+    .layout-content {
+      padding: 1.5rem;
+      background: white;
+    }
+    
+    /* Desktop Layout */
+    .desktop-preview {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #fff;
+    }
+    
+    .info-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .info-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .icon-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    .icon-warehouse {
+      background: rgba(0, 136, 255, 0.1);
+      color: #0088FF;
+    }
+    
+    .icon-customer {
+      background: rgba(76, 175, 80, 0.1);
+      color: #4CAF50;
+    }
+    
+    .icon-task {
+      background: rgba(255, 193, 7, 0.1);
+      color: #FFC107;
+    }
+    
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    .card-label {
+      font-size: 0.7rem;
+      color: #888;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    
+    .card-value {
+      font-size: 0.95rem;
+      color: #333;
+      font-weight: 600;
+    }
+    
+    .product-display {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .product-image {
+      width: 100px;
+      height: 100px;
+      background: #e2e8f0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 2rem;
+    }
+    
+    .product-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    
+    .product-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .product-label {
+      font-size: 0.85rem;
+      color: #888;
+      font-weight: 500;
+      min-width: 80px;
+    }
+    
+    .product-value {
+      font-size: 0.95rem;
+      color: #333;
+      font-weight: 500;
+    }
+    
+    .product-name {
+      color: #0088FF;
+      font-weight: 600;
+    }
+    
+    .product-code {
+      font-family: 'Courier New', monospace;
+      color: #333;
+      letter-spacing: 0.05em;
+    }
+    
+    .timer-section {
+      margin-top: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      background: rgba(0, 136, 255, 0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .timer-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0088FF;
+      font-family: 'Courier New', monospace;
+    }
+    
+    /* Mobile Layout */
+    .mobile-preview {
+      width: 280px;
+      margin: 0 auto;
+      border: 8px solid #333;
+      border-radius: 20px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    .mobile-header {
+      background: #f5f5f5;
+      padding: 0.75rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .mobile-content {
+      padding: 1rem;
+      height: 500px;
+      overflow-y: auto;
+    }
+    
+    .mobile-info-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .mobile-info-card {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: #f8f9fa;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .mobile-icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .mobile-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    
+    .mobile-card-label {
+      font-size: 0.65rem;
+      color: #888;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    
+    .mobile-card-value {
+      font-size: 0.8rem;
+      color: #333;
+      font-weight: 600;
+    }
+    
+    .mobile-product {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: #f8f9fa;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .mobile-product-image {
+      width: 100%;
+      height: 100px;
+      background: #e2e8f0;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    
+    .mobile-product-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    .features-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    
+    .features-section h2 {
+      color: #333;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .feature-card {
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+      border: 1px solid #667eea30;
+      border-radius: 8px;
+    }
+    
+    .feature-card h3 {
+      color: #667eea;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .feature-card p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .code-example {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      margin-top: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .info-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .product-display {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .product-image {
+        width: 100%;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📱 Visual Preview</h1>
+    <p class="subtitle">Tính Năng Hiển Thị Thông Tin Sản Phẩm và Đồng Hồ Tính Thời Gian</p>
+    
+    <!-- Layout Preview -->
+    <div class="layout-grid">
+      <!-- Desktop Layout -->
+      <div class="layout-item">
+        <div class="layout-header">💻 Desktop (1024px+)</div>
+        <div class="layout-content">
+          <div class="desktop-preview">
+            <!-- Info Cards -->
+            <div class="info-cards">
+              <div class="info-card">
+                <div class="icon-circle icon-warehouse">⚙️</div>
+                <div class="card-content">
+                  <div class="card-label">Kho</div>
+                  <div class="card-value">A1</div>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="icon-circle icon-customer">✓</div>
+                <div class="card-content">
+                  <div class="card-label">Khách Hàng</div>
+                  <div class="card-value">VN Corp</div>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="icon-circle icon-task">✅</div>
+                <div class="card-content">
+                  <div class="card-label">Task</div>
+                  <div class="card-value">Assembly</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Product Display -->
+            <div class="product-display">
+              <div class="product-image">📦</div>
+              <div class="product-info">
+                <div class="product-row">
+                  <span class="product-label">Sản phẩm:</span>
+                  <span class="product-value product-name">Valve Assembly</span>
+                </div>
+                <div class="product-row">
+                  <span class="product-label">Mã:</span>
+                  <span class="product-value product-code">VAL-2024-001</span>
+                </div>
+                <div class="timer-section">
+                  <span class="product-label">Thời gian:</span>
+                  <div class="timer-value">00:15:32</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile Layout -->
+      <div class="layout-item">
+        <div class="layout-header">📱 Mobile (320px)</div>
+        <div class="layout-content">
+          <div class="mobile-preview">
+            <div class="mobile-header">Assembly Line B</div>
+            <div class="mobile-content">
+              <div class="mobile-info-cards">
+                <div class="mobile-info-card">
+                  <div class="mobile-icon-circle icon-warehouse">⚙️</div>
+                  <div class="mobile-card-content">
+                    <div class="mobile-card-label">Kho</div>
+                    <div class="mobile-card-value">A1</div>
+                  </div>
+                </div>
+                <div class="mobile-info-card">
+                  <div class="mobile-icon-circle icon-customer">✓</div>
+                  <div class="mobile-card-content">
+                    <div class="mobile-card-label">Khách</div>
+                    <div class="mobile-card-value">VN Corp</div>
+                  </div>
+                </div>
+                <div class="mobile-info-card">
+                  <div class="mobile-icon-circle icon-task">✅</div>
+                  <div class="mobile-card-content">
+                    <div class="mobile-card-label">Task</div>
+                    <div class="mobile-card-value">Assembly</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mobile-product">
+                <div class="mobile-product-image">📦</div>
+                <div class="mobile-product-row">
+                  <span class="product-label">Sản phẩm:</span>
+                  <span class="product-value product-name">Valve Assembly</span>
+                </div>
+                <div class="mobile-product-row">
+                  <span class="product-label">Mã:</span>
+                  <span class="product-value product-code">VAL-2024-001</span>
+                </div>
+                <div class="timer-section">
+                  <span class="product-label">Thời gian:</span>
+                  <div class="timer-value">00:15:32</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Features Section -->
+    <div class="features-section">
+      <h2>✨ Các Tính Năng</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>⚙️ Hiển Thị Kho</h3>
+          <p>Mã kho nơi sản phẩm đang được xử lý với icon và tô màu xanh dương.</p>
+        </div>
+        <div class="feature-card">
+          <h3>👥 Khách Hàng</h3>
+          <p>Tên khách hàng đặt hàng với icon và tô màu xanh lá.</p>
+        </div>
+        <div class="feature-card">
+          <h3>✅ Task Hiện Tại</h3>
+          <p>Loại công việc đang thực hiện (Assembly, Packaging, etc.) với icon vàng.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🖼️ Hình Ảnh Sản Phẩm</h3>
+          <p>Hiển thị ảnh sản phẩm (100x100px) để nhận diện trực quan.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📦 Tên & Mã Sản Phẩm</h3>
+          <p>Tên sản phẩm bằng tiếng Việt và mã định danh (font monospace).</p>
+        </div>
+        <div class="feature-card">
+          <h3>⏱️ Đồng Hồ Tính Thời Gian</h3>
+          <p>Tính thời gian làm việc (HH:MM:SS) với tích lũy tự động.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Features Section 2 -->
+    <div class="features-section">
+      <h2>🚀 Chức Năng JavaScript</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>⏯️ startProductTimer()</h3>
+          <p>Bắt đầu đếm thời gian làm việc cho sản phẩm hiện tại.</p>
+          <div class="code-example">startProductTimer();</div>
+        </div>
+        <div class="feature-card">
+          <h3>⏸️ stopProductTimer()</h3>
+          <p>Tạm dừng đếm nhưng giữ lại dữ liệu thời gian.</p>
+          <div class="code-example">stopProductTimer();</div>
+        </div>
+        <div class="feature-card">
+          <h3>🔄 resetProductTimer()</h3>
+          <p>Đặt lại đồng hồ về 00:00:00 và xóa dữ liệu.</p>
+          <div class="code-example">resetProductTimer();</div>
+        </div>
+        <div class="feature-card">
+          <h3>📋 updateProductInfo()</h3>
+          <p>Cập nhật toàn bộ thông tin sản phẩm cùng lúc.</p>
+          <div class="code-example">updateProductInfo(
+  'A1', 'VN Corp', 
+  'Assembly', 'Valve',
+  'VAL-001', 'img.jpg'
+);</div>
+        </div>
+        <div class="feature-card">
+          <h3>💾 localStorage</h3>
+          <p>Tự động lưu dữ liệu mỗi 5 giây để tồn tại khi reload.</p>
+          <div class="code-example">productWorkingTime
+productTimerStartTime</div>
+        </div>
+        <div class="feature-card">
+          <h3>🌓 Dark Mode</h3>
+          <p>Hỗ trợ đầy đủ chế độ tối với CSS variables.</p>
+          <div class="code-example">html.dark .info-card
+  background: #0f1823;</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Responsive Grid -->
+    <div class="features-section">
+      <h2>📐 Responsive Design</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background: #f5f5f5;">
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Kích Thước</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Grid Thông Tin</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Sản Phẩm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Desktop (1024px+)</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">3 cột</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Ngang (ảnh + chi tiết)</td>
+          </tr>
+          <tr style="background: #f9f9f9;">
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Tablet (768px-1023px)</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">2 cột</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Ngang</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Mobile (< 768px)</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">1 cột</td>
+            <td style="padding: 0.75rem; border: 1px solid #ddd;">Dọc (ảnh trên, chi tiết dưới)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

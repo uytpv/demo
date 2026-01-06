@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Bộ đếm thời gian - Andromeda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .timer-large {
+      font-size: 3.5rem;
+      font-weight: 900;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 2px;
+      color: var(--color-primary);
+    }
+  </style>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col">
+    <!-- Header -->
+    <header class="app-header">
+      <a href="#" class="btn-icon btn-ghost">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
+      <h1 class="app-header-title">Andromeda</h1>
+      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content flex flex-col items-center justify-center">
+      <!-- Status Indicator -->
+      <div class="status-indicator status-active mb-6 mt-8">
+        <span class="status-dot active"></span>
+        <span>Đang làm việc</span>
+      </div>
+
+      <!-- Session ID -->
+      <p class="text-tertiary text-xs mb-6">#SESSION-884</p>
+
+      <!-- Large Timer Display -->
+      <div class="text-center mb-8">
+        <div class="timer-large" id="timerDisplay">02:45:30</div>
+        <p class="text-tertiary text-sm mt-4">Mainboard A1 - ABC Corp</p>
+      </div>
+
+      <!-- Current Task Info Card -->
+      <div class="card w-full mb-6" style="max-width: 340px;">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined" style="color: var(--color-primary);">info</span>
+          <span class="text-sm font-semibold">Thông tin công việc hiện tại</span>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between text-sm">
+            <span class="text-secondary">Khách hàng:</span>
+            <span class="font-medium">ABC Corp Vietnam</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-secondary">Sản phẩm:</span>
+            <span class="font-medium">Mainboard A1</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-secondary">Năng suất:</span>
+            <span class="font-medium text-success">125 / 100</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-3 w-full px-4" style="max-width: 340px; margin-bottom: 24px;">
+        <a href="07_break.html" class="btn btn-secondary btn-lg flex-1">
+          <span class="material-symbols-outlined">local_cafe</span>
+          <span>Nghỉ</span>
+        </a>
+        <a href="08_lunch.html" class="btn btn-secondary btn-lg flex-1">
+          <span class="material-symbols-outlined">lunch_dining</span>
+          <span>Ăn trưa</span>
+        </a>
+      </div>
+
+      <!-- Stop Work Button -->
+      <a href="#" class="btn btn-danger btn-lg w-full" style="max-width: 340px; margin: 0 16px; background-color: var(--color-danger);">
+        <span>Kết thúc ca làm việc</span>
+        <span class="material-symbols-outlined">stop</span>
+      </a>
+    </main>
+  </div>
+
+  <script>
+    let seconds = 0;
+    setInterval(() => {
+      seconds++;
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const secs = seconds % 60;
+      document.getElementById('timerDisplay').textContent = 
+        `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }, 1000);
+  </script>
+</body>
+</html>

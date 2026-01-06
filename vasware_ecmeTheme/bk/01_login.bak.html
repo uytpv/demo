@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Đăng nhập - Andromeda</title>
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="page">
+  <div class="container-mobile flex flex-col items-center justify-center min-h-screen p-4">
+    <!-- Header: Logo and Title -->
+    <div class="flex flex-col items-center gap-6 mb-8 w-full">
+<!-- Header Section -->
+<div class="flex flex-col items-center gap-6 mb-8 w-full animate-fade-in-down">
+<!-- Logo Container -->
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-blue-300 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-slate-100 dark:border-slate-700 h-32 w-32 flex items-center justify-center bg-cover bg-center" data-alt="Abstract 3D blue geometric shape representing technology and structure" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFl6FHCHbqtC9kUr8NXaoE35QHhwn0sqcNy4VPZaiXvNEBRNi8DQHKlt1z_nmR3VBIN9c8Xev1dTgctLeExjJHa9afFO84ZAfNlpLX4FKZ7hSYmYf6Zb2xviguYaYhh7pTdjQb9juulA3r42YpPF_QR1ZnphpqvV-cGDfji_8Y-vd5L9AjsrZ98c5u9NEyzQAjQZX1_DR3h-l0-4R8YzCf5gNOW4ov8eeVtS3wy6zVPypdf0NguRGwKt2FaeOneiuaSGBf8MOqBYQ");'>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center space-y-1">
+<h1 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight tracking-tight text-center">Andromeda</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal text-center">Chấm công &amp; Quản lý</p>
+</div>
+</div>
+<!-- Form Section -->
+<div class="w-full flex flex-col gap-5">
+<!-- Username Field -->
+<div class="flex flex-col gap-2 w-full">
+<label class="text-slate-900 dark:text-slate-200 text-sm font-medium leading-normal ml-1">
+                    Tên đăng nhập / Mã nhân viên
+                </label>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-slate-400 material-symbols-outlined select-none">person</span>
+<input class="w-full h-14 pl-12 pr-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 text-base font-normal shadow-sm" placeholder="Nhập ID hoặc tên đăng nhập" type="text" value=""/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2 w-full">
+<label class="text-slate-900 dark:text-slate-200 text-sm font-medium leading-normal ml-1">
+                    Mật khẩu
+                </label>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-slate-400 material-symbols-outlined select-none">lock</span>
+<input class="w-full h-14 pl-12 pr-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 text-base font-normal shadow-sm" placeholder="Nhập mật khẩu" type="password" value=""/>
+<button class="absolute right-0 top-0 bottom-0 px-4 flex items-center justify-center text-slate-400 hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[24px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Login Button -->
+<button class="w-full mt-4 h-14 bg-primary hover:bg-blue-600 active:scale-[0.98] transition-all duration-200 rounded-xl text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 group">
+<span class="truncate">Đăng nhập</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<!-- Forgot Password -->
+<div class="w-full flex justify-center py-2">
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary text-sm font-medium transition-colors duration-200" href="#">
+                    Quên mật khẩu?
+                </a>
+</div>
+</div>
+<!-- Footer / Support -->
+<div class="mt-12 flex flex-col items-center justify-center gap-2 opacity-80">
+<div class="w-12 h-1 bg-slate-200 dark:bg-slate-700 rounded-full mb-4"></div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">headset_mic</span>
+<span>Cần hỗ trợ? Liên hệ IT</span>
+</button>
+<p class="text-slate-400 text-xs mt-2">v2.4.0</p>
+</div>
+</div>
+</body></html>

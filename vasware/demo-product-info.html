@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo - Tính Năng Thông Tin Sản Phẩm</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .demo-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .demo-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+    }
+
+    .demo-section h2 {
+      color: #667eea;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .demo-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .demo-btn {
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .demo-btn-primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .demo-btn-primary:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .demo-btn-secondary {
+      background: #48bb78;
+      color: white;
+    }
+
+    .demo-btn-secondary:hover {
+      background: #38a169;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+    }
+
+    .demo-btn-danger {
+      background: #f56565;
+      color: white;
+    }
+
+    .demo-btn-danger:hover {
+      background: #e53e3e;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(245, 101, 101, 0.4);
+    }
+
+    .code-block {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-top: 1rem;
+    }
+
+    .status-box {
+      background: white;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .status-item:last-child {
+      border-bottom: none;
+    }
+
+    .status-label {
+      color: #718096;
+      font-weight: 500;
+    }
+
+    .status-value {
+      color: #2d3748;
+      font-weight: 600;
+      font-family: 'Courier New', monospace;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .feature-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #4a5568;
+    }
+
+    .feature-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #48bb78;
+      font-weight: bold;
+    }
+
+    .warning {
+      background: #fef5e7;
+      border-left: 4px solid #f39c12;
+      padding: 1rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      color: #7d6608;
+      font-size: 0.9rem;
+    }
+
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <h1>🎯 Demo Tính Năng Sản Phẩm</h1>
+
+    <!-- Section 1: Product Timer -->
+    <div class="demo-section">
+      <h2>⏱️ Quản Lý Đồng Hồ Sản Phẩm</h2>
+      <p style="margin-bottom: 1rem; color: #4a5568;">
+        Kiểm soát đồng hồ tính thời gian làm việc cho sản phẩm hiện tại.
+      </p>
+      <div class="demo-buttons">
+        <button class="demo-btn demo-btn-secondary" onclick="demoStartTimer()">▶️ Bắt Đầu</button>
+        <button class="demo-btn demo-btn-primary" onclick="demoPauseTimer()">⏸️ Tạm Dừng</button>
+        <button class="demo-btn demo-btn-danger" onclick="demoResetTimer()">🔄 Reset</button>
+        <button class="demo-btn demo-btn-primary" onclick="showTimerCode()">📝 Xem Code</button>
+      </div>
+      <div class="status-box">
+        <div class="status-item">
+          <span class="status-label">Trạng Thái Timer:</span>
+          <span class="status-value" id="timer-status">Dừng</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Thời Gian Làm Việc:</span>
+          <span class="status-value" id="timer-display">00:00:00</span>
+        </div>
+      </div>
+      <div class="code-block" id="timer-code" style="display: none;">
+startProductTimer();  // Bắt đầu
+stopProductTimer();   // Tạm dừng
+resetProductTimer();  // Reset
+      </div>
+    </div>
+
+    <!-- Section 2: Update Product Info -->
+    <div class="demo-section">
+      <h2>📦 Cập Nhật Thông Tin Sản Phẩm</h2>
+      <p style="margin-bottom: 1rem; color: #4a5568;">
+        Thay đổi thông tin kho, khách hàng, task và sản phẩm.
+      </p>
+      <div class="demo-buttons">
+        <button class="demo-btn demo-btn-primary" onclick="demoProduct1()">Sản Phẩm 1</button>
+        <button class="demo-btn demo-btn-primary" onclick="demoProduct2()">Sản Phẩm 2</button>
+        <button class="demo-btn demo-btn-secondary" onclick="showProductCode()">📝 Xem Code</button>
+      </div>
+      <div class="status-box">
+        <div class="status-item">
+          <span class="status-label">Kho:</span>
+          <span class="status-value" id="current-warehouse">A1</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Khách Hàng:</span>
+          <span class="status-value" id="current-customer">VN Corp</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Task:</span>
+          <span class="status-value" id="current-task">Assembly</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Sản Phẩm:</span>
+          <span class="status-value" id="current-product">Valve Assembly</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Mã:</span>
+          <span class="status-value" id="current-code">VAL-2024-001</span>
+        </div>
+      </div>
+      <div class="code-block" id="product-code" style="display: none;">
+updateProductInfo(
+  'A1',                    // warehouse
+  'VN Corp',               // customer
+  'Assembly',              // task
+  'Valve Assembly',        // productName
+  'VAL-2024-001',         // productCode
+  'assets/images/product-01.jpg' // imageSrc
+);
+      </div>
+    </div>
+
+    <!-- Section 3: Features -->
+    <div class="demo-section">
+      <h2>✨ Tính Năng Chính</h2>
+      <ul class="feature-list">
+        <li>📊 Hiển thị thông tin Kho, Khách hàng, Task</li>
+        <li>🖼️ Hiển thị ảnh, tên và mã sản phẩm</li>
+        <li>⏱️ Đồng hồ tính thời gian tích lũy (HH:MM:SS)</li>
+        <li>💾 Lưu trữ tự động vào localStorage</li>
+        <li>🎨 Hỗ trợ Dark Mode và Responsive Design</li>
+        <li>🔄 Reset timer khi thay đổi sản phẩm</li>
+      </ul>
+    </div>
+
+    <!-- Section 4: Browser Storage -->
+    <div class="demo-section">
+      <h2>💾 Dữ Liệu Lưu Trữ</h2>
+      <p style="margin-bottom: 1rem; color: #4a5568;">
+        Các dữ liệu được lưu trong localStorage của trình duyệt.
+      </p>
+      <div class="demo-buttons">
+        <button class="demo-btn demo-btn-primary" onclick="showStorageData()">Xem Dữ Liệu</button>
+        <button class="demo-btn demo-btn-danger" onclick="clearStorageData()">Xóa Dữ Liệu</button>
+      </div>
+      <div class="status-box">
+        <div class="status-item">
+          <span class="status-label">Storage productWorkingTime:</span>
+          <span class="status-value" id="storage-working-time">-</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Storage startTime:</span>
+          <span class="status-value" id="storage-start-time">-</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning">
+      ⚠️ <strong>Lưu Ý:</strong> Để sử dụng các hàm này, bạn cần mở trang <code>timer.html</code> trong trình duyệt. 
+      Demo này chỉ hiển thị cách sử dụng các API.
+    </div>
+  </div>
+
+  <script>
+    // Simulated data
+    let timerRunning = false;
+    let timerSeconds = 0;
+    let timerInterval = null;
+
+    function demoStartTimer() {
+      if (!timerRunning) {
+        timerRunning = true;
+        document.getElementById('timer-status').textContent = '⏱️ Đang Chạy';
+        document.getElementById('timer-status').style.color = '#48bb78';
+        
+        timerInterval = setInterval(() => {
+          timerSeconds++;
+          updateTimerDisplay();
+        }, 1000);
+      }
+    }
+
+    function demoPauseTimer() {
+      if (timerRunning) {
+        timerRunning = false;
+        clearInterval(timerInterval);
+        document.getElementById('timer-status').textContent = '⏸️ Tạm Dừng';
+        document.getElementById('timer-status').style.color = '#f39c12';
+      }
+    }
+
+    function demoResetTimer() {
+      timerRunning = false;
+      timerSeconds = 0;
+      clearInterval(timerInterval);
+      updateTimerDisplay();
+      document.getElementById('timer-status').textContent = 'Dừng';
+      document.getElementById('timer-status').style.color = '#e53e3e';
+    }
+
+    function updateTimerDisplay() {
+      const hours = String(Math.floor(timerSeconds / 3600)).padStart(2, '0');
+      const minutes = String(Math.floor((timerSeconds % 3600) / 60)).padStart(2, '0');
+      const seconds = String(timerSeconds % 60).padStart(2, '0');
+      document.getElementById('timer-display').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    function demoProduct1() {
+      updateCurrentProduct('A1', 'VN Corp', 'Assembly', 'Valve Assembly', 'VAL-2024-001');
+    }
+
+    function demoProduct2() {
+      updateCurrentProduct('B2', 'ACME Industries', 'Packaging', 'Polymer Case', 'POLY-2024-042');
+    }
+
+    function updateCurrentProduct(warehouse, customer, task, product, code) {
+      document.getElementById('current-warehouse').textContent = warehouse;
+      document.getElementById('current-customer').textContent = customer;
+      document.getElementById('current-task').textContent = task;
+      document.getElementById('current-product').textContent = product;
+      document.getElementById('current-code').textContent = code;
+      demoResetTimer();
+    }
+
+    function showTimerCode() {
+      const codeBlock = document.getElementById('timer-code');
+      codeBlock.style.display = codeBlock.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function showProductCode() {
+      const codeBlock = document.getElementById('product-code');
+      codeBlock.style.display = codeBlock.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function showStorageData() {
+      const workingTime = localStorage.getItem('productWorkingTime') || 'Chưa có';
+      const startTime = localStorage.getItem('productTimerStartTime') || 'Chưa có';
+      document.getElementById('storage-working-time').textContent = workingTime;
+      document.getElementById('storage-start-time').textContent = startTime;
+    }
+
+    function clearStorageData() {
+      localStorage.removeItem('productWorkingTime');
+      localStorage.removeItem('productTimerStartTime');
+      alert('✓ Đã xóa dữ liệu lưu trữ!');
+      showStorageData();
+    }
+
+    // Initialize
+    showStorageData();
+  </script>
+</body>
+</html>

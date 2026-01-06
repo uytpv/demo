@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập - Andromeda</title>
+    <link rel="stylesheet" href="css/base/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/components/components.css" />
+    <link rel="stylesheet" href="css/layouts/auth-layout.css" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  </head>
+<body class="auth-layout">
+  <div class="auth-container">
+    <!-- Logo and Branding -->
+    <div class="logo-section">
+      <div class="logo-box">
+        <img src="assets/images/logo.png" alt="VasWare Logo" class="logo-image" />
+      </div>
+      <div class="branding">
+        <h1>VasWare</h1>
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <form class="auth-form">
+      <!-- Username Field -->
+      <div class="auth-form-group">
+        <label class="input-label">Tên đăng nhập / Mã nhân viên</label>
+        <div class="input-with-icon">
+          <span class="input-icon-left material-symbols-outlined">person</span>
+          <input 
+            type="text" 
+            class="input-field input-with-left-icon" 
+            placeholder="Nhập ID hoặc tên đăng nhập"
+          />
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="auth-form-group">
+        <label class="input-label">Mật khẩu</label>
+        <div class="input-with-icon">
+          <span class="input-icon-left material-symbols-outlined">lock</span>
+          <input 
+            type="password" 
+            class="input-field input-with-left-icon input-with-right-icon" 
+            placeholder="Nhập mật khẩu"
+            id="passwordInput"
+          />
+          <button 
+            type="button"
+            class="input-icon-right" 
+            onclick="togglePassword(event)"
+            aria-label="Toggle password visibility"
+          >
+            <span class="material-symbols-outlined" id="toggleIcon">visibility_off</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Login Button -->
+      <button type="submit" class="btn btn-primary btn-lg auth-action">
+        <span>Đăng nhập</span>
+      </button>
+
+      <!-- Forgot Password Link -->
+      <div class="auth-link">
+        <a href="02_forgotpassword.html" class="link-btn">Quên mật khẩu?</a>
+      </div>
+    </form>
+
+    <!-- Support Footer -->
+    <div class="auth-footer">
+      <div class="auth-divider"></div>
+      <div class="auth-support">
+        <span class="material-symbols-outlined">headset_mic</span>
+        <span>Nếu không thể đăng nhập, hãy liên hệ quản lý.</span>
+      </div>
+      <p class="auth-version">v1.0.0</p>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(event) {
+      event.preventDefault();
+      const passwordInput = document.getElementById('passwordInput');
+      const toggleIcon = document.getElementById('toggleIcon');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.textContent = 'visibility';
+      } else {
+        passwordInput.type = 'password';
+        toggleIcon.textContent = 'visibility_off';
+      }
+    }
+  </script>
+</body>
+</html>

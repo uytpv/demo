@@ -1,0 +1,207 @@
+/* ================================
+   Card Components
+   ================================ */
+
+/* Base Card */
+.card {
+  background-color: var(--surface-light);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  padding: 1.25rem;
+  transition: all var(--transition-base);
+}
+
+.card.dark {
+  background-color: #1a2632;
+  border-color: var(--gray-800);
+}
+
+/* Card with top border accent */
+.card.card-accent {
+  border-top: 4px solid var(--primary);
+}
+
+/* Product Card */
+.product-card {
+  background-color: var(--surface-light);
+  border-radius: 1.875rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  position: relative;
+}
+
+.product-card.dark {
+  background-color: #1a2632;
+  border-color: var(--gray-800);
+}
+
+.product-card.with-accent {
+  border-top: 4px solid var(--primary);
+}
+
+.product-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111418;
+  line-height: 1.25;
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+
+.product-card.dark .product-title {
+  color: white;
+}
+
+.product-sku {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  color: #617589;
+  margin: 0;
+  margin-top: 0.25rem;
+}
+
+.product-card.dark .product-sku {
+  color: var(--gray-400);
+}
+
+/* Add Box Button */
+.btn-add-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #dbeafe;
+  border-radius: 0.75rem;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+.btn-add-box.dark {
+  background-color: #1e3a8a;
+}
+
+.btn-add-box:hover {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-add-box.dark:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Image Card */
+.image-card {
+  display: block;
+  width: 100%;
+  height: 9rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1.875rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  group: true;
+}
+
+.image-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  transition: background-color var(--transition-base);
+  z-index: 1;
+}
+
+.image-card:hover::before {
+  background-color: rgba(15, 23, 42, 0.5);
+}
+
+.image-card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.image-card-button {
+  background-color: white;
+  color: #111418;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transform: scale(1);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.image-card:hover .image-card-button {
+  transform: scale(1.05);
+}
+
+/* Add Product Button */
+.btn-add-product {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-base);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-add-product:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 136, 255, 0.3);
+}
+
+.btn-add-product:active {
+  transform: scale(0.98);
+}
