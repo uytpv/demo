@@ -120,18 +120,24 @@
                     <img id="detailProductImage" src="" alt="Product" />
                   </div>
                   <div class="product-detail-info">
-                    <h3 id="detailProductName" class="product-detail-name">Tên sản phẩm</h3>
-                    <p id="detailProductCode" class="product-detail-code">Mã: 0000</p>
+                    <div class="product-detail-header">
+                      <h3 id="detailProductName" class="product-detail-name">Tên sản phẩm</h3>
+                      <p id="detailProductCode" class="product-detail-code">Mã: 0000</p>
+                    </div>
                     <div class="product-detail-stats">
                       <div class="stat-item">
                         <span class="stat-label">Hoàn thành</span>
-                        <span class="stat-value" id="completedBoxes">2</span>
-                        <span class="stat-unit">(80 cái)</span>
+                        <div class="stat-value-unit">
+                          <span class="stat-value" id="completedBoxes">2</span>
+                          <span class="stat-unit">(400 cái)</span>
+                        </div>
                       </div>
                       <div class="stat-item">
                         <span class="stat-label">Mục tiêu</span>
-                        <span class="stat-value">400</span>
-                        <span class="stat-unit">cái/h</span>
+                        <div class="stat-value-unit">
+                          <span class="stat-value">400</span>
+                          <span class="stat-unit">(cái/h)</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -146,16 +152,17 @@
 
               <!-- Timer & Performance Section -->
               <div class="timer-detail-section performance-section">
-                <div class="large-timer" id="detailTimer">00:00:00</div>
-                <div class="performance-display">
-                  <div class="performance-label-small">Hiệu suất trung bình</div>
-                  <div class="performance-value-large" id="performanceValue">380</div>
-                  <div class="performance-status-bar">
-                    <div class="status-bar-fill" id="statusBarFill" style="width: 95%;"></div>
+                <div class="performance-bg-wrapper">
+                  <div class="large-timer" id="detailTimer">00:00:00</div>
+                  <div class="performance-display">
+                    <div class="performance-label-small">Hiệu suất trung bình</div>
+                    <div class="performance-value-large" id="performanceValue">380</div>
+                    <div class="performance-status-bar">
+                      <div class="status-bar-fill" id="statusBarFill" style="width: 95%;"></div>
+                    </div>
                   </div>
-                  <div class="performance-status-text" id="performanceStatus">Giảm</div>
+                  <button class="btn btn-add-box" id="addBoxBtn">+ Thêm hộp</button>
                 </div>
-                <button class="btn btn-add-box" id="addBoxBtn">+ Thêm hộp</button>
               </div>
 
               <!-- Statistics Table -->
@@ -488,32 +495,64 @@
       const performanceValue = Math.floor(Math.random() * (450 - 300) + 300);
       document.getElementById('performanceValue').textContent = performanceValue;
 
+      // Helper function to determine status class
+      function getStatusClass(value) {
+        if (value < 350) return 'status-danger';
+        if (value < 400) return 'status-warning';
+        return 'status-safe';
+      }
+
+      // Helper function to get status text
+      function getStatusText(value) {
+        if (value < 350) return 'Nguy hiểm';
+        if (value < 400) return 'Giảm';
+        return 'An toàn';
+      }
+
+      // Helper function to get status color
+      function getStatusColor(value) {
+        if (value < 350) return '#ef4444';
+        if (value < 400) return '#f59e0b';
+        return '#10b981';
+      }
+
+      const statusClass = getStatusClass(performanceValue);
+      const statusColor = getStatusColor(performanceValue);
+
       // Update status bar and text based on performance
       const statusBarFill = document.getElementById('statusBarFill');
-      const performanceStatus = document.getElementById('performanceStatus');
       const performanceDisplay = document.querySelector('.performance-display');
+      const performanceBgWrapper = document.querySelector('.performance-bg-wrapper');
+      const detailTimer = document.getElementById('detailTimer');
+      const performanceValueElement = document.getElementById('performanceValue');
+      const completedBoxesElement = document.getElementById('completedBoxes');
 
-      performanceDisplay.classList.remove('status-danger', 'status-warning', 'status-safe');
-
-      if (performanceValue < 350) {
-        statusBarFill.style.width = (performanceValue / 450 * 100) + '%';
-        statusBarFill.style.backgroundColor = '#ef4444';
-        performanceStatus.textContent = 'Nguy hiểm';
-        performanceStatus.style.color = '#ef4444';
-        performanceDisplay.classList.add('status-danger');
-      } else if (performanceValue < 400) {
-        statusBarFill.style.width = (performanceValue / 450 * 100) + '%';
-        statusBarFill.style.backgroundColor = '#f59e0b';
-        performanceStatus.textContent = 'Giảm';
-        performanceStatus.style.color = '#f59e0b';
-        performanceDisplay.classList.add('status-warning');
-      } else {
-        statusBarFill.style.width = '100%';
-        statusBarFill.style.backgroundColor = '#10b981';
-        performanceStatus.textContent = 'An toàn';
-        performanceStatus.style.color = '#10b981';
-        performanceDisplay.classList.add('status-safe');
+      // Get target value element (the one showing 400)
+      const targetValueElements = document.querySelectorAll('.stat-value');
+      let targetElement = null;
+      if (targetValueElements.length > 1) {
+        targetElement = targetValueElements[1]; // Second stat-value is the target
       }
+
+      // Remove all status classes
+      performanceDisplay.classList.remove('status-danger', 'status-warning', 'status-safe');
+      performanceBgWrapper.classList.remove('status-danger', 'status-warning', 'status-safe');
+      detailTimer.classList.remove('status-danger', 'status-warning', 'status-safe');
+      performanceValueElement.classList.remove('status-danger', 'status-warning', 'status-safe');
+      completedBoxesElement.classList.remove('status-danger', 'status-warning', 'status-safe');
+      if (targetElement) targetElement.classList.remove('status-danger', 'status-warning', 'status-safe');
+
+      // Add status class to all elements
+      performanceDisplay.classList.add(statusClass);
+      performanceBgWrapper.classList.add(statusClass);
+      detailTimer.classList.add(statusClass);
+      performanceValueElement.classList.add(statusClass);
+      completedBoxesElement.classList.add(statusClass);
+      if (targetElement) targetElement.classList.add(statusClass);
+
+      // Update status bar
+      statusBarFill.style.width = (performanceValue / 450 * 100) + '%';
+      statusBarFill.style.backgroundColor = statusColor;
 
       productGridView.style.display = 'none';
       timerDetailView.style.display = 'block';

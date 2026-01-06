@@ -97,8 +97,8 @@ html.dark .timer-detail-section {
 }
 
 .product-detail-image {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background-color: #f5f7f8;
     border-radius: 12px;
     overflow: hidden;
@@ -122,6 +122,12 @@ html.dark .product-detail-image {
     gap: 6px;
 }
 
+.product-detail-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
 .product-detail-name {
     font-size: 14px;
     font-weight: 600;
@@ -138,6 +144,7 @@ html.dark .product-detail-name {
     font-size: 12px;
     color: #6b7280;
     margin: 0;
+    white-space: nowrap;
 }
 
 html.dark .product-detail-code {
@@ -166,10 +173,45 @@ html.dark .stat-label {
     color: #9ca3af;
 }
 
+.stat-value-unit {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+}
+
 .stat-value {
     font-size: 16px;
     font-weight: 700;
     color: #1d4ed8;
+    transition: color 0.3s ease;
+}
+
+html.dark .stat-value {
+    color: #60a5fa;
+}
+
+.stat-value.status-danger {
+    color: #ef4444;
+}
+
+html.dark .stat-value.status-danger {
+    color: #f87171;
+}
+
+.stat-value.status-warning {
+    color: #f59e0b;
+}
+
+html.dark .stat-value.status-warning {
+    color: #fbbf24;
+}
+
+.stat-value.status-safe {
+    color: #10b981;
+}
+
+html.dark .stat-value.status-safe {
+    color: #34d399;
 }
 
 .stat-unit {
@@ -290,16 +332,81 @@ html.dark .btn-switch:hover {
     text-align: center;
 }
 
+.performance-bg-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    padding: 24px 16px;
+    background-color: #f5f7f8;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+html.dark .performance-bg-wrapper {
+    background-color: #334155;
+}
+
+.performance-bg-wrapper.status-danger {
+    background-color: #fee2e2;
+}
+
+html.dark .performance-bg-wrapper.status-danger {
+    background-color: #7f1d1d;
+}
+
+.performance-bg-wrapper.status-warning {
+    background-color: #fef3c7;
+}
+
+html.dark .performance-bg-wrapper.status-warning {
+    background-color: #78350f;
+}
+
+.performance-bg-wrapper.status-safe {
+    background-color: #dcfce7;
+}
+
+html.dark .performance-bg-wrapper.status-safe {
+    background-color: #052e16;
+}
+
 .large-timer {
     font-family: 'JetBrains Mono', monospace;
     font-size: 48px;
     font-weight: 700;
     color: #1d4ed8;
     letter-spacing: 0.1em;
+    transition: color 0.3s ease;
 }
 
 html.dark .large-timer {
     color: #60a5fa;
+}
+
+.large-timer.status-danger {
+    color: #ef4444;
+}
+
+html.dark .large-timer.status-danger {
+    color: #f87171;
+}
+
+.large-timer.status-warning {
+    color: #f59e0b;
+}
+
+html.dark .large-timer.status-warning {
+    color: #fbbf24;
+}
+
+.large-timer.status-safe {
+    color: #10b981;
+}
+
+html.dark .large-timer.status-safe {
+    color: #34d399;
 }
 
 .performance-display {
@@ -308,13 +415,13 @@ html.dark .large-timer {
     flex-direction: column;
     gap: 8px;
     align-items: center;
-    padding: 16px;
-    background-color: #f5f7f8;
+    padding: 0;
+    background-color: transparent;
     border-radius: 12px;
 }
 
 html.dark .performance-display {
-    background-color: #334155;
+    background-color: transparent;
 }
 
 .performance-label-small {
@@ -334,10 +441,35 @@ html.dark .performance-label-small {
     font-weight: 700;
     color: #1d4ed8;
     line-height: 1;
+    transition: color 0.3s ease;
 }
 
 html.dark .performance-value-large {
     color: #60a5fa;
+}
+
+.performance-value-large.status-danger {
+    color: #ef4444;
+}
+
+html.dark .performance-value-large.status-danger {
+    color: #f87171;
+}
+
+.performance-value-large.status-warning {
+    color: #f59e0b;
+}
+
+html.dark .performance-value-large.status-warning {
+    color: #fbbf24;
+}
+
+.performance-value-large.status-safe {
+    color: #10b981;
+}
+
+html.dark .performance-value-large.status-safe {
+    color: #34d399;
 }
 
 .performance-status-text {
@@ -350,8 +482,7 @@ html.dark .performance-value-large {
 
 /* Add Box Button */
 .btn-add-box {
-    width: 100%;
-    max-width: 200px;
+    width: calc(100% - 32px);
     height: 56px;
     background-color: #ef4444;
     color: #ffffff;
