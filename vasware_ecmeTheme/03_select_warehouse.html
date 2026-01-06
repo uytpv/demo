@@ -1,88 +1,254 @@
 <!DOCTYPE html>
 <html class="light" lang="vi">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Chọn Kho - Andromeda</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Chọn Kho - VasWare</title>
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/components/components.css" />
+  <link rel="stylesheet" href="css/layouts/main-layout.css" />
+  <link rel="stylesheet" href="css/components/page-heading.css" />
+  <link rel="stylesheet" href="css/components/search.css" />
+  <link rel="stylesheet" href="css/components/list.css" />
+  <link rel="stylesheet" href="css/components/list-item.css" />
+  <link rel="stylesheet" href="css/pages/warehouse/warehouse-select.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 </head>
-<body class="page">
-  <div class="container-mobile flex flex-col">
-    <!-- Header -->
-    <header class="app-header">
-      <a href="#" class="btn-icon btn-ghost">
+
+<body>
+  <div class="main-layout">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <button class="top-nav-menu-btn" id="menuBtn">
         <span class="material-symbols-outlined">menu</span>
-      </a>
-      <h1 class="app-header-title">Andromeda</h1>
-      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+      </button>
+      <div class="top-nav-center">
+        <div class="top-nav-logo">
+          <img src="assets/images/logo.png" alt="VasWare Logo"
+            style="width: 100%; height: 100%; object-fit: contain;" />
+        </div>
+        <div class="top-nav-title">VasWare</div>
+      </div>
+      <button class="top-nav-notification-btn">
         <span class="material-symbols-outlined">notifications</span>
         <span class="notification-badge"></span>
-      </a>
-    </header>
+      </button>
+    </div>
 
-    <!-- Main Content -->
-    <main class="page-content scrollable">
-      <!-- Page Title -->
-      <section class="section">
-        <h2 class="section-title">Chọn Kho Làm Việc</h2>
-        <p class="section-subtitle">Chọn địa điểm để bắt đầu ca làm việc của bạn</p>
-      </section>
+    <!-- Main Layout Wrapper -->
+    <div class="main-layout-wrapper">
+      <!-- Sidebar Menu -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+          <nav style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">schedule</span>
+              <span>Thẻ giờ</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">sick</span>
+              <span>Nghỉ bệnh</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">help</span>
+              <span>Hướng dẫn</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">policy</span>
+              <span>Quy định làm việc</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">person</span>
+              <span>Hồ sơ người dùng</span>
+            </a>
+          </nav>
+        </div>
 
-      <!-- Search Bar -->
-      <div class="search-sticky">
-        <div class="input-wrapper">
-          <span class="material-symbols-outlined input-wrapper-icon">search</span>
-          <input type="text" class="input-field input-field-with-icon" 
-                 placeholder="Tìm kiếm kho..." value=""/>
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <nav style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">settings</span>
+              <span>Cài đặt</span>
+            </a>
+            <a href="index.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">logout</span>
+              <span>Đăng xuất</span>
+            </a>
+          </nav>
+          <div class="sidebar-user">
+            <div class="sidebar-user-email">nhanvien@vasware.com</div>
+            <div style="font-size: 12px; color: #9ca3af;">Internal worker</div>
+          </div>
+          <div class="sidebar-version">v1.0.0</div>
+        </div>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
+      <div class="main-content-area">
+        <div class="list">
+          <div class="list-header">
+            <h2 class="page-heading">Chọn Kho Làm Việc</h2>
+            <p class="page-subheading">Chọn địa điểm để bắt đầu ca làm việc của bạn</p>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="search-bar">
+            <div class="search-wrapper">
+              <span class="search-icon material-symbols-outlined">search</span>
+              <input type="text" class="search-input" placeholder="Tìm kiếm kho..." id="searchInput" />
+            </div>
+          </div>
+
+          <!-- Recent Section -->
+          <div class="list-section">
+            <h3 class="list-section-title">Gần đây</h3>
+            <div class="list-items">
+              <a href="#" class="list-item warehouse" data-warehouse-id="1" data-warehouse-name="Posti Tuusula">
+                <div class="list-item-icon">
+                  <span class="material-symbols-outlined">warehouse</span>
+                </div>
+                <div class="list-item-content">
+                  <p class="list-item-title">Posti Tuusula</p>
+                  <div class="list-item-info">
+                    <span class="list-item-status"></span>
+                    <p class="list-item-subtitle">Hoạt động • Palkkitie 1, 04300 Tuusula</p>
+                  </div>
+                </div>
+                <div class="list-item-action">
+                  <span class="material-symbols-outlined">chevron_right</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- All Warehouses Section -->
+          <div class="list-section">
+            <h3 class="list-section-title">Tất cả kho</h3>
+            <div class="list-items">
+              <a href="#" class="list-item warehouse" data-warehouse-id="2" data-warehouse-name="Posti Tuusula">
+                <div class="list-item-icon">
+                  <span class="material-symbols-outlined">factory</span>
+                </div>
+                <div class="list-item-content">
+                  <p class="list-item-title">Posti Tuusula</p>
+                  <div class="list-item-info">
+                    <span class="list-item-status"></span>
+                    <p class="list-item-subtitle">Hoạt động • Palkkitie 1, 04300 Tuusula</p>
+                  </div>
+                </div>
+                <div class="list-item-action">
+                  <span class="material-symbols-outlined">chevron_right</span>
+                </div>
+              </a>
+
+              <a href="#" class="list-item warehouse" data-warehouse-id="3" data-warehouse-name="Posti Sipoo">
+                <div class="list-item-icon">
+                  <span class="material-symbols-outlined">warehouse</span>
+                </div>
+                <div class="list-item-content">
+                  <p class="list-item-title">Posti Sipoo</p>
+                  <div class="list-item-info">
+                    <span class="list-item-status"></span>
+                    <p class="list-item-subtitle">Hoạt động • Rekkatie 2, 04220 Kerava</p>
+                  </div>
+                </div>
+                <div class="list-item-action">
+                  <span class="material-symbols-outlined">chevron_right</span>
+                </div>
+              </a>
+
+              <a href="#" class="list-item warehouse disabled" data-warehouse-id="4"
+                data-warehouse-name="Posti Järvenpää">
+                <div class="list-item-icon">
+                  <span class="material-symbols-outlined">build</span>
+                </div>
+                <div class="list-item-content">
+                  <p class="list-item-title">Posti Järvenpää</p>
+                  <div class="list-item-info">
+                    <span class="list-item-status maintenance"></span>
+                    <p class="list-item-subtitle">Đang bảo trì • Soolokatu 5, 04410 Järvenpää</p>
+                  </div>
+                </div>
+                <div class="list-item-action">
+                  <span class="material-symbols-outlined">lock</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Continue Button -->
+        <div class="warehouse-page-action">
+          <button class="warehouse-page-action-btn" id="continueBtn" disabled>Tiếp tục</button>
         </div>
       </div>
-
-      <!-- Warehouse List -->
-      <section class="section-container">
-        <!-- Warehouse Item 1 - Selected -->
-        <a href="#" class="card" style="border: 2px solid var(--color-primary);">
-          <div class="flex justify-between items-start gap-4">
-            <div class="flex-1">
-              <h3 class="text-lg font-bold text-primary mb-1">Kho Hàng Chính</h3>
-              <p class="text-secondary text-sm mb-2">Tầng 1, 123 Đường Võ Văn Kiệt</p>
-              <p class="text-tertiary text-xs">Mở: 8:00 AM - 5:00 PM</p>
-            </div>
-            <span class="material-symbols-outlined" style="color: var(--color-primary); font-size: 24px;">check_circle</span>
-          </div>
-        </a>
-
-        <!-- Warehouse Item 2 -->
-        <a href="#" class="card">
-          <div class="flex justify-between items-start gap-4">
-            <div class="flex-1">
-              <h3 class="text-lg font-bold mb-1">Kho Phụ Kiện</h3>
-              <p class="text-secondary text-sm mb-2">Tầng 2, 123 Đường Võ Văn Kiệt</p>
-              <p class="text-tertiary text-xs">Mở: 8:00 AM - 5:00 PM</p>
-            </div>
-            <span class="material-symbols-outlined" style="color: var(--text-tertiary); font-size: 24px;">radio_button_unchecked</span>
-          </div>
-        </a>
-
-        <!-- Warehouse Item 3 -->
-        <a href="#" class="card">
-          <div class="flex justify-between items-start gap-4">
-            <div class="flex-1">
-              <h3 class="text-lg font-bold mb-1">Kho Đông Lạnh</h3>
-              <p class="text-secondary text-sm mb-2">Khu công nghiệp, Quận 1</p>
-              <p class="text-tertiary text-xs">Mở: 9:00 AM - 6:00 PM</p>
-            </div>
-            <span class="material-symbols-outlined" style="color: var(--text-tertiary); font-size: 24px;">radio_button_unchecked</span>
-          </div>
-        </a>
-      </section>
-    </main>
-
-    <!-- Confirm Button -->
-    <div class="fixed bottom-0 left-0 right-0 p-4 bg-surface-primary border-t border-border-primary flex gap-3">
-      <a href="#" class="btn btn-secondary btn-lg flex-1">Hủy</a>
-      <a href="04_select_customer_and_task.html" class="btn btn-primary btn-lg flex-1">Tiếp tục</a>
     </div>
   </div>
+
+  <script>
+    let selectedWarehouse = null;
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    // Toggle sidebar
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // Warehouse selection
+    document.querySelectorAll('.list-item.warehouse:not(.disabled)').forEach(item => {
+      item.addEventListener('click', function () {
+        // Remove previous selection
+        document.querySelectorAll('.list-item.warehouse').forEach(i => {
+          i.classList.remove('selected');
+        });
+
+        // Add selection to current item
+        this.classList.add('selected');
+        selectedWarehouse = this.getAttribute('data-warehouse-id');
+
+        // Enable button
+        document.getElementById('continueBtn').disabled = false;
+
+        // Close sidebar on mobile if it's open
+        if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
+          toggleSidebar();
+        }
+      });
+    });
+
+    // Continue button
+    document.getElementById('continueBtn').addEventListener('click', function () {
+      if (selectedWarehouse) {
+        window.location.href = '04_select_customer_and_task.html';
+      }
+    });
+
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('input', function (e) {
+      const searchTerm = e.target.value.toLowerCase();
+      document.querySelectorAll('.list-item.warehouse').forEach(item => {
+        const name = item.getAttribute('data-warehouse-name').toLowerCase();
+        if (name.includes(searchTerm)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

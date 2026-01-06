@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html class="light" lang="vi">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng nhập - Andromeda</title>
-    <link rel="stylesheet" href="css/base/reset.css" />
-    <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/components/components.css" />
-    <link rel="stylesheet" href="css/layouts/auth-layout.css" />
-    <!-- Material Symbols -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập - Andromeda</title>
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/components/components.css" />
+  <link rel="stylesheet" href="css/layouts/auth-layout.css" />
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+</head>
+
 <body class="auth-layout">
   <div class="auth-container">
     <!-- Logo and Branding -->
@@ -30,11 +34,7 @@
         <label class="input-label">Tên đăng nhập / Mã nhân viên</label>
         <div class="input-with-icon">
           <span class="input-icon-left material-symbols-outlined">person</span>
-          <input 
-            type="text" 
-            class="input-field input-with-left-icon" 
-            placeholder="Nhập ID hoặc tên đăng nhập"
-          />
+          <input type="text" class="input-field input-with-left-icon" placeholder="Nhập ID hoặc tên đăng nhập" />
         </div>
       </div>
 
@@ -43,27 +43,19 @@
         <label class="input-label">Mật khẩu</label>
         <div class="input-with-icon">
           <span class="input-icon-left material-symbols-outlined">lock</span>
-          <input 
-            type="password" 
-            class="input-field input-with-left-icon input-with-right-icon" 
-            placeholder="Nhập mật khẩu"
-            id="passwordInput"
-          />
-          <button 
-            type="button"
-            class="input-icon-right" 
-            onclick="togglePassword(event)"
-            aria-label="Toggle password visibility"
-          >
+          <input type="password" class="input-field input-with-left-icon input-with-right-icon"
+            placeholder="Nhập mật khẩu" id="passwordInput" />
+          <button type="button" class="input-icon-right" onclick="togglePassword(event)"
+            aria-label="Toggle password visibility">
             <span class="material-symbols-outlined" id="toggleIcon">visibility_off</span>
           </button>
         </div>
       </div>
 
       <!-- Login Button -->
-      <button type="submit" class="btn btn-primary btn-lg auth-action">
+      <a href="03_select_warehouse.html" class="btn btn-primary btn-lg auth-action">
         <span>Đăng nhập</span>
-      </button>
+      </a>
 
       <!-- Forgot Password Link -->
       <div class="auth-link">
@@ -76,7 +68,7 @@
       <div class="auth-divider"></div>
       <div class="auth-support">
         <span class="material-symbols-outlined">headset_mic</span>
-        <span>Nếu không thể đăng nhập, liên hệ admin.</span>
+        <span>Nếu không thể đăng nhập, liên hệ quản lý.</span>
       </div>
       <p class="auth-version">v1.0.0</p>
     </div>
@@ -87,7 +79,7 @@
       event.preventDefault();
       const passwordInput = document.getElementById('passwordInput');
       const toggleIcon = document.getElementById('toggleIcon');
-      
+
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
         toggleIcon.textContent = 'visibility';
@@ -98,4 +90,5 @@
     }
   </script>
 </body>
+
 </html>

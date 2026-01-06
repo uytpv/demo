@@ -1,0 +1,75 @@
+/* ============================================
+   Warehouse Selection Page
+   Specific styles for warehouse-select.html
+   ============================================ */
+
+/* Page-specific bottom action */
+.warehouse-page-action {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    z-index: 20;
+}
+
+html.dark .warehouse-page-action {
+    background-color: #1e293b;
+    border-top-color: #475569;
+}
+
+.warehouse-page-action-btn {
+    width: 100%;
+    height: 56px;
+    background-color: #1d4ed8;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.warehouse-page-action-btn:hover:not(:disabled) {
+    background-color: #1e40af;
+    box-shadow: 0 10px 25px rgba(29, 78, 216, 0.3);
+}
+
+.warehouse-page-action-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.warehouse-page-action-btn:disabled {
+    background-color: #d1d5db;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Warehouse item variants */
+.list-item.warehouse {
+    /* Inherits from .list-item */
+}
+
+.list-item.warehouse .list-item-icon {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+html.dark .list-item.warehouse .list-item-icon {
+    background-color: #1e3a5f;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .warehouse-page-action {
+        padding: 12px;
+    }
+
+    .warehouse-page-action-btn {
+        height: 48px;
+        font-size: 14px;
+    }
+}

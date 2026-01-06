@@ -1,0 +1,54 @@
+/* ============================================
+   List Component
+   Generic list container
+   ============================================ */
+
+.list {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 100px;
+}
+
+.list-header {
+    padding: 16px 16px 8px 16px;
+}
+
+.list-section {
+    padding: 0 16px;
+}
+
+.list-section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.6;
+    padding: 16px 0 8px 0;
+    margin: 0;
+}
+
+html.dark .list-section-title {
+    color: #9ca3af;
+}
+
+.list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .list {
+        padding-bottom: 80px;
+    }
+
+    .list-header {
+        padding: 16px;
+    }
+
+    .list-section {
+        padding: 0 16px;
+    }
+}

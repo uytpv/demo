@@ -75,8 +75,15 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
 }
 
 /* ============================================================================
@@ -415,10 +422,6 @@
   transition: background-color var(--transition-fast);
 }
 
-.list-item:last-child {
-  border-bottom: none;
-}
-
 .list-item:hover {
   background-color: var(--bg-secondary);
 }
@@ -517,12 +520,10 @@
    ============================================================================ */
 
 .skeleton {
-  background: linear-gradient(
-    90deg,
-    var(--bg-secondary) 25%,
-    var(--bg-tertiary) 50%,
-    var(--bg-secondary) 75%
-  );
+  background: linear-gradient(90deg,
+      var(--bg-secondary) 25%,
+      var(--bg-tertiary) 50%,
+      var(--bg-secondary) 75%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
@@ -531,6 +532,7 @@
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }
@@ -671,6 +673,7 @@
   from {
     transform: translateY(100%);
   }
+
   to {
     transform: translateY(0);
   }

@@ -1,0 +1,40 @@
+/* ============================================
+   Page Heading Component
+   Reusable heading styles for pages
+   ============================================ */
+
+.page-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+html.dark .page-heading {
+    color: #ffffff;
+}
+
+.page-subheading {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6b7280;
+    line-height: 1.5;
+    margin: 0;
+}
+
+html.dark .page-subheading {
+    color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .page-heading {
+        font-size: 24px;
+    }
+
+    .page-subheading {
+        font-size: 13px;
+    }
+}

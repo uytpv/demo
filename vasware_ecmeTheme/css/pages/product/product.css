@@ -1,0 +1,1081 @@
+/* ============================================
+   Product Page Specific CSS
+   For select product page with timer (SPA)
+   ============================================ */
+
+/* View Container */
+.view {
+    display: block;
+}
+
+/* Timer Detail View Header */
+.timer-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+html.dark .timer-detail-header {
+    background-color: #1e293b;
+    border-bottom-color: #475569;
+}
+
+.timer-detail-back-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #1f2937;
+    font-size: 24px;
+    transition: background-color 0.2s ease;
+}
+
+html.dark .timer-detail-back-btn {
+    color: #ffffff;
+}
+
+.timer-detail-back-btn:hover {
+    background-color: #f5f7f8;
+    border-radius: 8px;
+}
+
+html.dark .timer-detail-back-btn:hover {
+    background-color: #334155;
+}
+
+.timer-detail-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    flex: 1;
+    text-align: center;
+}
+
+html.dark .timer-detail-title {
+    color: #ffffff;
+}
+
+/* Timer Detail Content */
+.timer-detail-content {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Timer Detail Sections */
+.timer-detail-section {
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+html.dark .timer-detail-section {
+    border-bottom-color: #475569;
+}
+
+/* Product Detail Section */
+.product-detail-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px !important;
+}
+
+.product-detail-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.product-detail-image {
+    width: 60px;
+    height: 60px;
+    background-color: #f5f7f8;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+html.dark .product-detail-image {
+    background-color: #334155;
+}
+
+.product-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.product-detail-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.2;
+}
+
+html.dark .product-detail-name {
+    color: #ffffff;
+}
+
+.product-detail-code {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+}
+
+html.dark .product-detail-code {
+    color: #9ca3af;
+}
+
+.product-detail-stats {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 12px;
+}
+
+.stat-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+html.dark .stat-label {
+    color: #9ca3af;
+}
+
+.stat-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1d4ed8;
+}
+
+.stat-unit {
+    color: #9ca3af;
+    font-size: 10px;
+}
+
+/* Product Detail Buttons */
+.product-detail-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 0 !important;
+    border-bottom: none !important;
+}
+
+.btn {
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-complete {
+    background-color: #1d4ed8;
+    color: #ffffff;
+}
+
+.btn-complete:hover {
+    background-color: #1e40af;
+}
+
+.btn-complete:active {
+    transform: scale(0.98);
+}
+
+.btn-switch {
+    background-color: #e5e7eb;
+    color: #1f2937;
+}
+
+html.dark .btn-switch {
+    background-color: #475569;
+    color: #ffffff;
+}
+
+.btn-switch:hover {
+    background-color: #d1d5db;
+}
+
+html.dark .btn-switch:hover {
+    background-color: #64748b;
+}
+
+/* Performance Section (Large Timer) */
+;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+padding: 16px;
+border-bottom: 1px solid #e5e7eb;
+}
+
+html.dark .product-detail-buttons {
+    border-bottom-color: #475569;
+}
+
+.btn {
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-complete {
+    background-color: #1d4ed8;
+    color: #ffffff;
+}
+
+.btn-complete:hover {
+    background-color: #1e40af;
+}
+
+.btn-complete:active {
+    transform: scale(0.98);
+}
+
+.btn-switch {
+    background-color: #e5e7eb;
+    color: #1f2937;
+}
+
+html.dark .btn-switch {
+    background-color: #475569;
+    color: #ffffff;
+}
+
+.btn-switch:hover {
+    background-color: #d1d5db;
+}
+
+html.dark .btn-switch:hover {
+    background-color: #64748b;
+}
+
+/* Performance Section (Large Timer) */
+.performance-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px;
+    align-items: center;
+    text-align: center;
+}
+
+.large-timer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1d4ed8;
+    letter-spacing: 0.1em;
+}
+
+html.dark .large-timer {
+    color: #60a5fa;
+}
+
+.performance-display {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    padding: 16px;
+    background-color: #f5f7f8;
+    border-radius: 12px;
+}
+
+html.dark .performance-display {
+    background-color: #334155;
+}
+
+.performance-label-small {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+html.dark .performance-label-small {
+    color: #9ca3af;
+}
+
+.performance-value-large {
+    font-size: 56px;
+    font-weight: 700;
+    color: #1d4ed8;
+    line-height: 1;
+}
+
+html.dark .performance-value-large {
+    color: #60a5fa;
+}
+
+.performance-status-text {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+/* Add Box Button */
+.btn-add-box {
+    width: 100%;
+    max-width: 200px;
+    height: 56px;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-add-box:hover {
+    background-color: #dc2626;
+}
+
+.btn-add-box:active {
+    transform: scale(0.98);
+}
+
+/* Statistics Section */
+.stats-section {
+    padding: 16px;
+}
+
+.stats-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 12px 0;
+}
+
+html.dark .stats-title {
+    color: #ffffff;
+}
+
+.stats-table {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+html.dark .stats-table {
+    border-color: #475569;
+}
+
+.stats-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+    background-color: #f5f7f8;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+html.dark .stats-header {
+    background-color: #334155;
+    color: #9ca3af;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 13px;
+    color: #1f2937;
+}
+
+html.dark .stats-row {
+    border-top-color: #475569;
+    color: #ffffff;
+}
+
+.stats-col {
+    display: flex;
+    align-items: center;
+}
+
+.product-code-col {
+    font-weight: 600;
+}
+
+.boxes-col {
+    justify-content: center;
+}
+
+.time-col {
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+html.dark .modal-content {
+    background-color: #1e293b;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+}
+
+html.dark .modal-header {
+    background-color: #1e293b;
+    border-bottom-color: #475569;
+}
+
+.modal-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+html.dark .modal-title {
+    color: #ffffff;
+}
+
+.modal-close-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #6b7280;
+    font-size: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: #f5f7f8;
+    border-radius: 8px;
+}
+
+html.dark .modal-close-btn:hover {
+    background-color: #334155;
+}
+
+.modal-body {
+    padding: 16px;
+    min-height: 100px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding: 16px 16px 16px 16px;
+}
+
+@media (min-width: 700px) {
+    .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 920px) {
+    .product-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1140px) {
+    .product-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.product-item:active {
+    transform: scale(0.95);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f3f4f6;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.product-item:hover .product-image img {
+    transform: scale(1.05);
+}
+
+html.dark .product-image {
+    background-color: #334155;
+}
+
+.product-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.3;
+}
+
+html.dark .product-name {
+    color: #ffffff;
+}
+
+.product-code {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+html.dark .product-code {
+    color: #9ca3af;
+}
+
+/* Task Timer Section */
+.task-timer-section {
+    padding: 16px;
+    margin-bottom: 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+html.dark .task-timer-section {
+    border-top-color: #475569;
+}
+
+.timer-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.timer-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    flex: 1;
+}
+
+html.dark .timer-name {
+    color: #ffffff;
+}
+
+.timer-display {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d4ed8;
+    font-family: 'Courier New', monospace;
+}
+
+/* Task Timer Buttons */
+.task-timer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.timer-btn {
+    height: 48px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    touch-action: none;
+    display: flex;
+    align-items: center;
+}
+
+.timer-btn-break {
+    background-color: #f59e0b;
+    color: #ffffff;
+    padding: 0 16px;
+    border-radius: 12px;
+    width: auto;
+    min-width: 120px;
+}
+
+.timer-btn-break:hover:not(:disabled) {
+    background-color: #d97706;
+}
+
+.timer-btn-break:disabled {
+    background-color: #d1d5db;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Break swipe button (when inside swipe container) */
+.timer-btn-swipe.timer-btn-break {
+    background-color: #fef3c7;
+    width: 100%;
+    border-radius: 24px;
+    padding: 0;
+    min-width: auto;
+}
+
+html.dark .timer-btn-swipe.timer-btn-break {
+    background-color: #78350f;
+}
+
+.timer-btn-swipe.timer-btn-break .timer-btn-swipe-thumb {
+    background-color: #f59e0b;
+}
+
+.timer-btn-swipe.timer-btn-break .timer-btn-swipe-text {
+    color: #92400e;
+}
+
+html.dark .timer-btn-swipe.timer-btn-break .timer-btn-swipe-text {
+    color: #fcd34d;
+}
+
+/* Swipe Button Styles */
+.timer-btn-swipe {
+    background-color: #e5e7eb;
+    width: 100%;
+    border-radius: 24px;
+    padding: 0;
+    position: relative;
+    height: 48px;
+    user-select: none;
+    cursor: grab;
+}
+
+html.dark .timer-btn-swipe {
+    background-color: #475569;
+}
+
+.timer-btn-swipe:active {
+    cursor: grabbing;
+}
+
+/* Swipe Button Thumb */
+.timer-btn-swipe-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 48px;
+    border-radius: 24px;
+    background-color: #1d4ed8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: grab;
+    box-shadow: 0 3px 1px -2px rgba(145, 158, 171, 0.2),
+        0 2px 2px 0 rgba(145, 158, 171, 0.14),
+        0 1px 5px 0 rgba(145, 158, 171, 0.12);
+    z-index: 2;
+    user-select: none;
+}
+
+.timer-btn-swipe:active .timer-btn-swipe-thumb {
+    cursor: grabbing;
+}
+
+/* Swipe Button Text */
+.timer-btn-swipe-text {
+    position: absolute;
+    left: 56px;
+    top: 0;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    transition: color 0.3s ease;
+    padding-left: 12px;
+    z-index: 1;
+    user-select: none;
+}
+
+html.dark .timer-btn-swipe-text {
+    color: #9ca3af;
+}
+
+/* Timer display inside swipe button */
+.timer-btn-display {
+    position: absolute;
+    right: 12px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1d4ed8;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    z-index: 3;
+    user-select: none;
+}
+
+html.dark .timer-btn-display {
+    color: #60a5fa;
+}
+
+/* Timer display inside break button */
+.timer-btn-swipe.timer-btn-break .timer-btn-display {
+    color: #92400e;
+}
+
+html.dark .timer-btn-swipe.timer-btn-break .timer-btn-display {
+    color: #fcd34d;
+}
+
+/* Disabled state for swipe buttons */
+.timer-btn-swipe.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.timer-btn-swipe.disabled .timer-btn-swipe-thumb {
+    cursor: not-allowed;
+}
+
+.timer-btn-swipe.disabled .timer-btn-swipe-text {
+    color: #9ca3af;
+}
+
+html.dark .timer-btn-swipe.disabled .timer-btn-swipe-text {
+    color: #6b7280;
+}
+
+.timer-btn-swipe .swipe-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Shift Timer Section */
+.shift-timer-section {
+    padding: 16px;
+    margin-bottom: 0;
+    border-radius: 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+html.dark .shift-timer-section {
+    background-color: #1e293b;
+    border-top-color: #475569;
+}
+
+.shift-timer-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.shift-timer-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    flex: 1;
+}
+
+html.dark .shift-timer-label {
+    color: #9ca3af;
+}
+
+.shift-timer-display {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+    font-family: 'Courier New', monospace;
+}
+
+html.dark .shift-timer-display {
+    color: #ffffff;
+}
+
+.shift-timer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.shift-timer-btn {
+    height: 48px;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: grab;
+    background-color: #fee2e2;
+    color: #991b1b;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+html.dark .shift-timer-btn {
+    background-color: #7f1d1d;
+    color: #fecaca;
+}
+
+.shift-timer-btn:active {
+    cursor: grabbing;
+}
+
+/* Shift Timer Button Thumb */
+.shift-timer-btn-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 48px;
+    border-radius: 24px;
+    background-color: #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: grab;
+    box-shadow: 0 3px 1px -2px rgba(145, 158, 171, 0.2),
+        0 2px 2px 0 rgba(145, 158, 171, 0.14),
+        0 1px 5px 0 rgba(145, 158, 171, 0.12);
+    z-index: 2;
+    user-select: none;
+}
+
+.shift-timer-btn:active .shift-timer-btn-thumb {
+    cursor: grabbing;
+}
+
+/* Shift Timer Button Text */
+.shift-timer-btn-text {
+    position: absolute;
+    left: 56px;
+    top: 0;
+    height: 100%;
+    width: calc(100% - 56px);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 12px;
+    z-index: 1;
+    user-select: none;
+}
+
+/* Search bar with barcode icon */
+.search-bar {
+    padding: 16px 12px;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background-color: rgba(245, 247, 248, 0.95);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+html.dark .search-bar {
+    background-color: rgba(16, 24, 34, 0.95);
+}
+
+.search-bar .search-wrapper {
+    flex: 1;
+
+    .product-barcode-btn {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        cursor: pointer;
+        color: #1d4ed8;
+        transition: all 0.2s ease;
+        padding: 0;
+    }
+
+    html.dark .product-barcode-btn {
+        background-color: #1e293b;
+        border-color: #475569;
+    }
+
+    .product-barcode-btn:hover {
+        border-color: rgba(29, 78, 216, 0.5);
+        transform: scale(0.95);
+    }
+
+    .product-barcode-btn .material-symbols-outlined {
+        font-size: 24px;
+    }
+
+    /* Section container */
+    .product-section {
+        border-top: 1px solid #e5e7eb;
+        margin-top: 16px;
+        padding-top: 16px;
+    }
+
+    html.dark .product-section {
+        border-top-color: #475569;
+    }
+
+    /* Product list */
+    .product-list {
+        padding-bottom: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .product-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 0 12px 12px 12px;
+        }
+
+        .product-name {
+            font-size: 12px;
+        }
+
+        .product-code {
+            font-size: 10px;
+        }
+
+        .timer-display {
+            font-size: 20px;
+        }
+
+        .shift-timer-display {
+            font-size: 24px;
+        }
+
+        .task-timer-section,
+        .shift-timer-section {
+            padding: 12px;
+        }
+
+        .timer-btn,
+        .shift-timer-btn {
+            height: 44px;
+            font-size: 13px;
+        }
+
+        .product-search-bar {
+            padding: 12px 12px 0 12px;
+        }
+
+        .product-barcode-btn {
+            width: 44px;
+            height: 44px;
+        }
+    }
