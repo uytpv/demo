@@ -3,7 +3,8 @@
 ## 📌 Tóm Tắt
 
 Đã thêm **khu vực hiển thị thông tin sản phẩm toàn diện** trên trang timer với:
-- ✅ Hiển thị Kho, Khách hàng, Task  
+
+- ✅ Hiển thị Kho, Khách hàng, Task
 - ✅ Hiển thị Hình ảnh, Tên, Mã sản phẩm
 - ✅ Đồng hồ tính thời gian tích lũy (HH:MM:SS)
 - ✅ Auto-save vào localStorage
@@ -14,18 +15,21 @@
 ## 🚀 Bắt Đầu Ngay
 
 ### Cách 1: Xem Demo (1 phút)
+
 ```
 Mở: demo-product-info.html
 Bấm các nút để thử
 ```
 
 ### Cách 2: Xem Design (1 phút)
+
 ```
 Mở: visual-preview.html
 Xem desktop/tablet/mobile layouts
 ```
 
 ### Cách 3: Sử Dụng (Ngay)
+
 ```
 Mở: timer.html
 Đồng hồ tự động chạy!
@@ -36,13 +40,13 @@ Dữ liệu tự động lưu
 
 ## 📚 Tài Liệu
 
-| File | Mục Đích |
-|------|---------|
-| **[QUICK_START.md](docs/QUICK_START.md)** | ⚡ Bắt đầu trong 5 phút |
-| **[USAGE_GUIDE.md](docs/USAGE_GUIDE.md)** | 📖 Hướng dẫn chi tiết |
-| **[INDEX.md](docs/INDEX.md)** | 📍 Điều hướng & Roadmap |
+| File                                                         | Mục Đích                |
+| ------------------------------------------------------------ | ----------------------- |
+| **[QUICK_START.md](docs/QUICK_START.md)**                    | ⚡ Bắt đầu trong 5 phút |
+| **[USAGE_GUIDE.md](docs/USAGE_GUIDE.md)**                    | 📖 Hướng dẫn chi tiết   |
+| **[INDEX.md](docs/INDEX.md)**                                | 📍 Điều hướng & Roadmap |
 | **[IMPLEMENTATION_COMPLETE.md](IMPLEMENTATION_COMPLETE.md)** | ✅ Tất cả đã hoàn thành |
-| **[UPDATE_SUMMARY.md](docs/UPDATE_SUMMARY.md)** | 📋 Tóm tắt cập nhật |
+| **[UPDATE_SUMMARY.md](docs/UPDATE_SUMMARY.md)**              | 📋 Tóm tắt cập nhật     |
 
 ---
 
@@ -55,40 +59,44 @@ Dữ liệu tự động lưu
 
 ## 💻 Code Files
 
-| File | Loại | Mô Tả |
-|------|------|-------|
-| [timer.html](timer.html) | HTML | Main page + 80 lines new |
-| [css/components/product-info.css](css/components/product-info.css) | CSS | Complete styling (300+ lines) |
-| [js/main.js](js/main.js) | JavaScript | Timer logic + 150 lines new |
+| File                                                               | Loại       | Mô Tả                         |
+| ------------------------------------------------------------------ | ---------- | ----------------------------- |
+| [timer.html](timer.html)                                           | HTML       | Main page + 80 lines new      |
+| [css/components/product-info.css](css/components/product-info.css) | CSS        | Complete styling (300+ lines) |
+| [js/main.js](js/main.js)                                           | JavaScript | Timer logic + 150 lines new   |
 
 ---
 
 ## 🔧 Các Hàm Chính
 
 ### startProductTimer()
+
 ```javascript
-startProductTimer();  // Bắt đầu/tiếp tục đếm
+startProductTimer(); // Bắt đầu/tiếp tục đếm
 ```
 
 ### stopProductTimer()
+
 ```javascript
-stopProductTimer();   // Tạm dừng (giữ dữ liệu)
+stopProductTimer(); // Tạm dừng (giữ dữ liệu)
 ```
 
 ### resetProductTimer()
+
 ```javascript
-resetProductTimer();  // Reset về 00:00:00
+resetProductTimer(); // Reset về 00:00:00
 ```
 
 ### updateProductInfo()
+
 ```javascript
 updateProductInfo(
-  'A1',                          // Kho
-  'VN Corp',                     // Khách hàng
-  'Assembly',                    // Task
-  'Valve Assembly',              // Tên sản phẩm
-  'VAL-2024-001',               // Mã sản phẩm
-  'assets/images/product-01.jpg' // Ảnh
+  "A1", // Kho
+  "VN Corp", // Khách hàng
+  "Assembly", // Task
+  "Valve Assembly", // Tên sản phẩm
+  "VAL-2024-001", // Mã sản phẩm
+  "assets/images/product-01.jpg" // Ảnh
 );
 ```
 
@@ -97,6 +105,7 @@ updateProductInfo(
 ## ✨ Tính Năng
 
 ### Hiển Thị Thông Tin
+
 ```
 ┌─────────────────────────────────┐
 │ ⚙️ Kho: A1                        │
@@ -110,16 +119,19 @@ updateProductInfo(
 ```
 
 ### Responsive
+
 - ✅ Desktop: 3 cột info, ngang product
-- ✅ Tablet: 2 cột info, ngang product  
+- ✅ Tablet: 2 cột info, ngang product
 - ✅ Mobile: 1 cột info, dọc product
 
 ### Dark Mode
+
 - ✅ Hoàn toàn hỗ trợ
 - ✅ CSS variables
 - ✅ Smooth transitions
 
 ### Lưu Trữ
+
 - ✅ localStorage auto-save mỗi 5 giây
 - ✅ Auto-load khi reload trang
 - ✅ Tính thời gian chính xác
@@ -133,6 +145,7 @@ updateProductInfo(
 <td>
 
 ### Desktop
+
 ```
 ┌──────────────────────────────┐
 │ [⚙️ A1] [✓ VN] [✅ Assm]    │
@@ -146,7 +159,8 @@ updateProductInfo(
 </td>
 <td>
 
-### Mobile  
+### Mobile
+
 ```
 ┌──────────┐
 │[⚙️ A1]   │
@@ -169,19 +183,20 @@ updateProductInfo(
 
 ## 📊 File Stats
 
-| Loại | Số Lượng | Dòng Code |
-|------|----------|----------|
-| HTML Files | 3 | 500+ |
-| CSS Files | 1 | 300+ |
-| JS Files | 1 | 384 |
-| Doc Files | 5 | 1000+ |
-| Total | 10 | 2000+ |
+| Loại       | Số Lượng | Dòng Code |
+| ---------- | -------- | --------- |
+| HTML Files | 3        | 500+      |
+| CSS Files  | 1        | 300+      |
+| JS Files   | 1        | 384       |
+| Doc Files  | 5        | 1000+     |
+| Total      | 10       | 2000+     |
 
 ---
 
 ## ✅ Checklist
 
 ### Tính Năng
+
 - ✅ Hiển thị Kho, Khách hàng, Task
 - ✅ Hiển thị Hình ảnh sản phẩm
 - ✅ Hiển thị Tên & Mã sản phẩm
@@ -191,6 +206,7 @@ updateProductInfo(
 - ✅ Reset khi đổi sản phẩm
 
 ### Design
+
 - ✅ Responsive (Desktop/Tablet/Mobile)
 - ✅ Dark mode
 - ✅ Smooth transitions
@@ -198,6 +214,7 @@ updateProductInfo(
 - ✅ Icons + Colors
 
 ### Code
+
 - ✅ Semantic HTML
 - ✅ Organized CSS
 - ✅ Clean JavaScript
@@ -208,13 +225,13 @@ updateProductInfo(
 
 ## 🔗 Quick Links
 
-| Link | Loại |
-|------|------|
-| 🎮 [Interactive Demo](demo-product-info.html) | HTML |
-| 🎨 [Visual Preview](visual-preview.html) | HTML |
-| ⚡ [5-Minute Guide](docs/QUICK_START.md) | Markdown |
-| 📖 [Usage Guide](docs/USAGE_GUIDE.md) | Markdown |
-| 📍 [Index & Navigation](docs/INDEX.md) | Markdown |
+| Link                                                     | Loại     |
+| -------------------------------------------------------- | -------- |
+| 🎮 [Interactive Demo](demo-product-info.html)            | HTML     |
+| 🎨 [Visual Preview](visual-preview.html)                 | HTML     |
+| ⚡ [5-Minute Guide](docs/QUICK_START.md)                 | Markdown |
+| 📖 [Usage Guide](docs/USAGE_GUIDE.md)                    | Markdown |
+| 📍 [Index & Navigation](docs/INDEX.md)                   | Markdown |
 | ✅ [Implementation Complete](IMPLEMENTATION_COMPLETE.md) | Markdown |
 
 ---
@@ -222,15 +239,24 @@ updateProductInfo(
 ## 🧪 Testing
 
 ### Quick Test
+
 ```javascript
 // Open timer.html, press F12, run:
-updateProductInfo('B2', 'ACME', 'Pack', 'Polymer Case', 'POLY-42', 'assets/images/product-02.jpg');
+updateProductInfo(
+  "B2",
+  "ACME",
+  "Pack",
+  "Polymer Case",
+  "POLY-42",
+  "assets/images/product-02.jpg"
+);
 startProductTimer();
 stopProductTimer();
 resetProductTimer();
 ```
 
 ### Visual Test
+
 - Open timer.html on Desktop/Tablet/Mobile
 - Check all elements display correctly
 - Test Dark mode toggle
@@ -251,16 +277,19 @@ resetProductTimer();
 ## 🎓 Learning Resources
 
 ### For Beginners
+
 1. Mở [demo-product-info.html](demo-product-info.html)
 2. Bấy các nút, xem kết quả
 3. Đọc [QUICK_START.md](docs/QUICK_START.md)
 
 ### For Developers
+
 1. Đọc [USAGE_GUIDE.md](docs/USAGE_GUIDE.md)
 2. Xem code trong timer.html, product-info.css, main.js
 3. Modify theo nhu cầu
 
 ### For Technical Leads
+
 1. Đọc [IMPLEMENTATION_COMPLETE.md](IMPLEMENTATION_COMPLETE.md)
 2. Xem [PRODUCT_INFO_FEATURE.md](docs/PRODUCT_INFO_FEATURE.md)
 3. Audit code & design
@@ -278,11 +307,13 @@ Tất cả tính năng đã hoàn thành, test xong, và sẵn sàng deploy.
 ## 📞 Support
 
 ### Issue?
+
 - Xem [USAGE_GUIDE.md - Troubleshooting](docs/USAGE_GUIDE.md#troubleshooting)
 - Kiểm tra console (F12) có lỗi gì không
 - Test lại với [demo-product-info.html](demo-product-info.html)
 
 ### Need Changes?
+
 - Modify CSS trong `product-info.css`
 - Modify JS trong `main.js`
 - Keep HTML structure

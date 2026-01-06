@@ -1,6 +1,7 @@
 # ⚡ Quick Start - 5 Phút để Bắt Đầu
 
 ## 🎯 Mục Đích
+
 Hướng dẫn nhanh để sử dụng tính năng thông tin sản phẩm và đồng hồ tính thời gian.
 
 ---
@@ -8,6 +9,7 @@ Hướng dẫn nhanh để sử dụng tính năng thông tin sản phẩm và �
 ## 5️⃣ Bước Cơ Bản
 
 ### 1️⃣ Mở Timer Page (30 giây)
+
 ```
 → Mở file: timer.html
 → Xem đồng hồ tự động chạy
@@ -15,6 +17,7 @@ Hướng dẫn nhanh để sử dụng tính năng thông tin sản phẩm và �
 ```
 
 **Kết quả:**
+
 ```
 ┌─────────────────────────────────────┐
 │ ⚙️ Kho: A1  ✓ Khách: VN Corp  ✅ Assm│
@@ -27,6 +30,7 @@ Hướng dẫn nhanh để sử dụng tính năng thông tin sản phẩm và �
 ---
 
 ### 2️⃣ Xem Demo (1 phút)
+
 ```
 → Mở file: demo-product-info.html
 → Bấm nút "Bắt Đầu"
@@ -35,6 +39,7 @@ Hướng dẫn nhanh để sử dụng tính năng thông tin sản phẩm và �
 ```
 
 **Hữu ích để:**
+
 - Hiểu cách hoạt động
 - Test các hàm
 - Kiểm tra localStorage
@@ -42,19 +47,22 @@ Hướng dẫn nhanh để sử dụng tính năng thông tin sản phẩm và �
 ---
 
 ### 3️⃣ Thay Đổi Sản Phẩm (1 phút)
+
 Mở console (F12) trên timer.html:
+
 ```javascript
 updateProductInfo(
-  'B2',                          // Kho mới
-  'ACME Industries',             // Khách hàng mới
-  'Packaging',                   // Task mới
-  'Polymer Case',                // Sản phẩm mới
-  'POLY-2024-042',              // Mã mới
-  'assets/images/product-02.jpg' // Ảnh mới
+  "B2", // Kho mới
+  "ACME Industries", // Khách hàng mới
+  "Packaging", // Task mới
+  "Polymer Case", // Sản phẩm mới
+  "POLY-2024-042", // Mã mới
+  "assets/images/product-02.jpg" // Ảnh mới
 );
 ```
 
 **Kết quả:**
+
 - ✅ Thông tin cập nhật
 - ✅ Timer reset về 0:00:00
 - ✅ Timer bắt đầu chạy
@@ -63,7 +71,9 @@ updateProductInfo(
 ---
 
 ### 4️⃣ Kiểm Soát Timer (30 giây)
+
 Trên console:
+
 ```javascript
 // Bắt đầu
 startProductTimer();
@@ -81,13 +91,14 @@ resetProductTimer();
 ---
 
 ### 5️⃣ Kiểm Tra localStorage (30 giây)
+
 ```javascript
 // Xem thời gian làm việc (giây)
-localStorage.getItem('productWorkingTime');
+localStorage.getItem("productWorkingTime");
 // Output: "925" (tức 15:25)
 
 // Xem khi bắt đầu
-localStorage.getItem('productTimerStartTime');
+localStorage.getItem("productTimerStartTime");
 // Output: "1735371234567" (timestamp)
 ```
 
@@ -98,34 +109,35 @@ localStorage.getItem('productTimerStartTime');
 ### Ví Dụ 1: Nhấn Nút "Đổi Sản Phẩm"
 
 **HTML:**
+
 ```html
 <button onclick="changeProduct()">🔄 Đổi Sản Phẩm</button>
 
 <script>
-function changeProduct() {
-  // Lấy thông tin sản phẩm mới (từ modal/form)
-  const newProduct = {
-    warehouse: 'B2',
-    customer: 'ACME Industries',
-    task: 'Packaging',
-    name: 'Polymer Case',
-    code: 'POLY-2024-042',
-    image: 'assets/images/product-02.jpg'
-  };
-  
-  // Cập nhật
-  updateProductInfo(
-    newProduct.warehouse,
-    newProduct.customer,
-    newProduct.task,
-    newProduct.name,
-    newProduct.code,
-    newProduct.image
-  );
-  
-  // Thông báo
-  alert('✓ Đã cập nhật sản phẩm!');
-}
+  function changeProduct() {
+    // Lấy thông tin sản phẩm mới (từ modal/form)
+    const newProduct = {
+      warehouse: "B2",
+      customer: "ACME Industries",
+      task: "Packaging",
+      name: "Polymer Case",
+      code: "POLY-2024-042",
+      image: "assets/images/product-02.jpg",
+    };
+
+    // Cập nhật
+    updateProductInfo(
+      newProduct.warehouse,
+      newProduct.customer,
+      newProduct.task,
+      newProduct.name,
+      newProduct.code,
+      newProduct.image
+    );
+
+    // Thông báo
+    alert("✓ Đã cập nhật sản phẩm!");
+  }
 </script>
 ```
 
@@ -134,22 +146,25 @@ function changeProduct() {
 ### Ví Dụ 2: Nút "Break"
 
 **HTML:**
+
 ```html
 <button onclick="takeBreak()">☕ Break (15 phút)</button>
 <button onclick="resumeWork()">▶️ Tiếp Tục Làm</button>
 
 <script>
-function takeBreak() {
-  stopProductTimer();
-  console.log('⏸️ Timer tạm dừng');
-  console.log('🕐 Thời gian làm việc:', 
-    localStorage.getItem('productWorkingTime'));
-}
+  function takeBreak() {
+    stopProductTimer();
+    console.log("⏸️ Timer tạm dừng");
+    console.log(
+      "🕐 Thời gian làm việc:",
+      localStorage.getItem("productWorkingTime")
+    );
+  }
 
-function resumeWork() {
-  startProductTimer();
-  console.log('▶️ Timer tiếp tục');
-}
+  function resumeWork() {
+    startProductTimer();
+    console.log("▶️ Timer tiếp tục");
+  }
 </script>
 ```
 
@@ -158,35 +173,36 @@ function resumeWork() {
 ### Ví Dụ 3: Kết Thúc Ca Làm Việc
 
 **HTML:**
+
 ```html
 <button onclick="endShift()">🚪 Kết Thúc Ca</button>
 
 <script>
-function endShift() {
-  // Dừng timer
-  stopProductTimer();
-  
-  // Lấy tổng thời gian
-  const totalSeconds = localStorage.getItem('productWorkingTime');
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  
-  // Hiển thị
-  console.log(`✓ Ca làm việc kết thúc`);
-  console.log(`📊 Tổng thời gian: ${hours}h ${minutes}m`);
-  
-  // Gửi dữ liệu lên server (optional)
-  fetch('/api/end-shift', {
-    method: 'POST',
-    body: JSON.stringify({
-      totalWorkTime: totalSeconds,
-      product: document.querySelector('.product-name').textContent
-    })
-  });
-  
-  // Reset cho ca tiếp theo
-  resetProductTimer();
-}
+  function endShift() {
+    // Dừng timer
+    stopProductTimer();
+
+    // Lấy tổng thời gian
+    const totalSeconds = localStorage.getItem("productWorkingTime");
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+    // Hiển thị
+    console.log(`✓ Ca làm việc kết thúc`);
+    console.log(`📊 Tổng thời gian: ${hours}h ${minutes}m`);
+
+    // Gửi dữ liệu lên server (optional)
+    fetch("/api/end-shift", {
+      method: "POST",
+      body: JSON.stringify({
+        totalWorkTime: totalSeconds,
+        product: document.querySelector(".product-name").textContent,
+      }),
+    });
+
+    // Reset cho ca tiếp theo
+    resetProductTimer();
+  }
 </script>
 ```
 
@@ -197,35 +213,37 @@ function endShift() {
 **File:** `css/components/product-info.css`
 
 ### Đổi Màu Chủ Đạo
+
 ```css
 :root {
-  --primary: #0088FF;  /* Từ xanh dương */
+  --primary: #0088ff; /* Từ xanh dương */
 }
 
 /* Thành màu đỏ */
 :root {
-  --primary: #FF4444;
+  --primary: #ff4444;
 }
 ```
 
 ### Đổi Màu Info Icons
+
 ```css
 /* Warehouse - Từ xanh sang tím */
 .info-icon.warehouse {
   background-color: rgba(147, 51, 234, 0.1);
-  color: #9333EA;
+  color: #9333ea;
 }
 
 /* Customer - Từ xanh lá sang cam */
 .info-icon.customer {
   background-color: rgba(251, 146, 60, 0.1);
-  color: #FB923C;
+  color: #fb923c;
 }
 
 /* Task - Từ vàng sang hồng */
 .info-icon.task {
   background-color: rgba(236, 72, 153, 0.1);
-  color: #EC4899;
+  color: #ec4899;
 }
 ```
 
@@ -234,26 +252,29 @@ function endShift() {
 ## 📐 Thay Đổi Kích Thước
 
 ### Ảnh Sản Phẩm
+
 ```css
 .product-image-container {
-  width: 150px;   /* Từ 100px */
-  height: 150px;  /* Từ 100px */
+  width: 150px; /* Từ 100px */
+  height: 150px; /* Từ 100px */
 }
 ```
 
 ### Spacing
+
 ```css
 .current-product-info {
-  padding: 2rem;  /* Từ 1.5rem */
-  gap: 2rem;      /* Từ 1.5rem */
+  padding: 2rem; /* Từ 1.5rem */
+  gap: 2rem; /* Từ 1.5rem */
 }
 ```
 
 ### Font Size
+
 ```css
 .timer-working-time {
-  font-size: 1.5rem;  /* Từ 1.25rem */
-  font-weight: 800;   /* Từ 700 */
+  font-size: 1.5rem; /* Từ 1.25rem */
+  font-weight: 800; /* Từ 700 */
 }
 ```
 
@@ -312,6 +333,7 @@ Timer Running?
 ```
 
 **Lợi ích:**
+
 - ✅ Không mất dữ liệu khi reload
 - ✅ Không drain battery (mỗi 5 giây)
 - ✅ Tính toán chính xác ngay cả khi app đóng
@@ -321,6 +343,7 @@ Timer Running?
 ## 🧪 Test Checklist
 
 ### Visual Check
+
 - ✅ Thông tin hiển thị đúng
 - ✅ Icon màu sắc đúng
 - ✅ Ảnh sản phẩm hiển thị
@@ -328,17 +351,25 @@ Timer Running?
 - ✅ Dark mode hoạt động
 
 ### Functional Check
+
 ```javascript
 // 1. Timer chạy
 startProductTimer();
 // → Xem số giây tăng dần
 
 // 2. Thay sản phẩm
-updateProductInfo('B2', 'ACME', 'Pack', 'Case', 'POLY-42', 'assets/images/product-02.jpg');
+updateProductInfo(
+  "B2",
+  "ACME",
+  "Pack",
+  "Case",
+  "POLY-42",
+  "assets/images/product-02.jpg"
+);
 // → Thông tin cập nhật, timer reset
 
 // 3. localStorage
-localStorage.getItem('productWorkingTime');
+localStorage.getItem("productWorkingTime");
 // → Có giá trị (không null)
 
 // 4. Reload trang
@@ -350,9 +381,10 @@ localStorage.getItem('productWorkingTime');
 ## 🆘 Khi Có Lỗi
 
 ### Timer không chạy?
+
 ```javascript
 // Check xem element có tồn tại không
-document.querySelector('.timer-working-time');
+document.querySelector(".timer-working-time");
 // Nếu null → thêm element vào HTML
 
 // Check main.js có load không
@@ -361,22 +393,24 @@ console.log(typeof startProductTimer);
 ```
 
 ### Ảnh không hiển thị?
+
 ```javascript
 // Check đường dẫn
-const img = document.querySelector('.product-image');
+const img = document.querySelector(".product-image");
 console.log(img.src);
 // → Kiểm tra đường dẫn có đúng không
 // → File có tồn tại không
 ```
 
 ### Dữ liệu bị mất?
+
 ```javascript
 // Clear site data
 localStorage.clear();
 
 // Hoặc xóa specific keys
-localStorage.removeItem('productWorkingTime');
-localStorage.removeItem('productTimerStartTime');
+localStorage.removeItem("productWorkingTime");
+localStorage.removeItem("productTimerStartTime");
 
 // Reload trang
 location.reload();
@@ -386,12 +420,12 @@ location.reload();
 
 ## 📚 Các Tài Liệu Liên Quan
 
-| Tài Liệu | Mục Đích |
-|---------|---------|
-| [INDEX.md](INDEX.md) | Điều hướng tất cả docs |
-| [USAGE_GUIDE.md](USAGE_GUIDE.md) | Hướng dẫn chi tiết |
-| [PRODUCT_INFO_FEATURE.md](PRODUCT_INFO_FEATURE.md) | Tài liệu kỹ thuật |
-| [UPDATE_SUMMARY.md](UPDATE_SUMMARY.md) | Tóm tắt cập nhật |
+| Tài Liệu                                           | Mục Đích               |
+| -------------------------------------------------- | ---------------------- |
+| [INDEX.md](INDEX.md)                               | Điều hướng tất cả docs |
+| [USAGE_GUIDE.md](USAGE_GUIDE.md)                   | Hướng dẫn chi tiết     |
+| [PRODUCT_INFO_FEATURE.md](PRODUCT_INFO_FEATURE.md) | Tài liệu kỹ thuật      |
+| [UPDATE_SUMMARY.md](UPDATE_SUMMARY.md)             | Tóm tắt cập nhật       |
 
 ---
 
@@ -415,6 +449,7 @@ location.reload();
 ## 🚀 Let's Go!
 
 **Bây giờ:**
+
 1. Mở `timer.html`
 2. Mở Developer Tools (F12)
 3. Chạy: `updateProductInfo('B2', 'ACME', 'Pack', 'Case', 'POLY-42', 'assets/images/product-02.jpg')`
