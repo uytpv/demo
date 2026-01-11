@@ -126,6 +126,22 @@
                       <h3 id="detailProductName" class="product-detail-name">Tên sản phẩm</h3>
                       <p id="detailProductCode" class="product-detail-code">Mã: 0000</p>
                     </div>
+                  </div>
+                </div>
+
+                <!-- Action Buttons removed - moved to FAB menu -->
+              </div>
+
+              <!-- Timer & Performance Section -->
+              <div class="timer-detail-section performance-section">
+                <div class="performance-bg-wrapper">
+                  <div class="large-timer" id="detailTimer">00:00:00</div>
+                  <div class="performance-display">
+                    <div class="performance-label-small">Hiệu suất trung bình</div>
+                    <div class="performance-value-large" id="performanceValue">380</div>
+                    <div class="performance-status-bar">
+                      <div class="status-bar-fill" id="statusBarFill" style="width: 95%;"></div>
+                    </div>
                     <div class="product-detail-stats">
                       <div class="stat-item">
                         <span class="stat-label">Hoàn thành</span>
@@ -143,30 +159,17 @@
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <!-- Action Buttons removed - moved to FAB menu -->
-              </div>
-
-              <!-- Timer & Performance Section -->
-              <div class="timer-detail-section performance-section">
-                <div class="performance-bg-wrapper">
-                  <div class="large-timer" id="detailTimer">00:00:00</div>
-                  <div class="performance-display">
-                    <div class="performance-label-small">Hiệu suất trung bình</div>
-                    <div class="performance-value-large" id="performanceValue">380</div>
-                    <div class="performance-status-bar">
-                      <div class="status-bar-fill" id="statusBarFill" style="width: 95%;"></div>
-                    </div>
-                  </div>
                   <button class="btn btn-add-box" id="addBoxBtn">+ Thêm hộp</button>
                 </div>
               </div>
 
               <!-- Statistics Table -->
               <div class="timer-detail-section stats-section">
-                <h4 class="stats-title">Thống kê</h4>
-                <div class="stats-table">
+                <div class="stats-title-container" id="statsToggle">
+                  <span class="material-symbols-outlined stats-arrow" id="statsArrow">expand_more</span>
+                  <h4 class="stats-title">Thống kê</h4>
+                </div>
+                <div class="stats-table collapsed" id="statsTable">
                   <div class="stats-header">
                     <div class="stats-col product-code-col">Mã SP</div>
                     <div class="stats-col boxes-col">Hoàn thành</div>
@@ -209,9 +212,24 @@
 
         <!-- Task Timer Section -->
         <div class="product-section task-timer-section">
-          <div class="timer-header timer-header-inline">
-            <div class="timer-name" id="taskName">C-Hallii: Vastaanotto / Receiving - Display Mì / Noodle Display</div>
+          <div class="timer-header timer-header-inline" id="taskToggle" style="cursor: pointer;">
+            <div style="display: flex; align-items: center; gap: 8px; flex: 1;">
+              <span class="material-symbols-outlined task-arrow" id="taskArrow"
+                style="font-size: 20px; color: #6b7280; transition: transform 0.3s ease;">expand_more</span>
+              <div class="timer-name" id="taskName">C-Hallii: Vastaanotto / Receiving - Display Mì / Noodle Display
+              </div>
+            </div>
             <div class="timer-btn-display" id="taskTimer">00:00:00</div>
+          </div>
+          <div class="task-subtasks collapsed" id="taskSubtasks">
+            <div class="timer-header timer-header-inline">
+              <div class="timer-name">A-Hallii - Konti</div>
+              <div class="time-range">07:00 - 09:00</div>
+            </div>
+            <div class="timer-header timer-header-inline">
+              <div class="timer-name">D-Hallii - Lumene Display</div>
+              <div class="time-range">09:00 - 11:00</div>
+            </div>
           </div>
         </div>
 
@@ -531,6 +549,30 @@
         showTimerDetailView(productId);
       }
     });
+
+    // Statistics table toggle
+    const statsToggle = document.getElementById('statsToggle');
+    const statsTable = document.getElementById('statsTable');
+    const statsArrow = document.getElementById('statsArrow');
+
+    if (statsToggle) {
+      statsToggle.addEventListener('click', () => {
+        statsTable.classList.toggle('collapsed');
+        statsArrow.classList.toggle('expanded');
+      });
+    }
+
+    // Task subtasks toggle
+    const taskToggle = document.getElementById('taskToggle');
+    const taskSubtasks = document.getElementById('taskSubtasks');
+    const taskArrow = document.getElementById('taskArrow');
+
+    if (taskToggle) {
+      taskToggle.addEventListener('click', () => {
+        taskSubtasks.classList.toggle('collapsed');
+        taskArrow.classList.toggle('expanded');
+      });
+    }
 
     // Initialize
     renderProducts();

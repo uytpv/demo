@@ -98,7 +98,7 @@ html.dark .timer-detail-section {
 
 .product-detail-image {
     width: 80px;
-    height: 80px;
+    height: 60px;
     background-color: #f5f7f8;
     border-radius: 12px;
     overflow: hidden;
@@ -124,12 +124,13 @@ html.dark .product-detail-image {
 
 .product-detail-header {
     display: flex;
+    flex-direction: column;
     align-items: baseline;
     gap: 8px;
 }
 
 .product-detail-name {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     color: #1f2937;
     margin: 0;
@@ -141,7 +142,7 @@ html.dark .product-detail-name {
 }
 
 .product-detail-code {
-    font-size: 12px;
+    font-size: 16px;
     color: #6b7280;
     margin: 0;
     white-space: nowrap;
@@ -160,13 +161,14 @@ html.dark .product-detail-code {
 .stat-item {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    font-size: 12px;
+    gap: 4px;
+    font-size: 14px;
 }
 
 .stat-label {
     color: #6b7280;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 html.dark .stat-label {
@@ -180,7 +182,7 @@ html.dark .stat-label {
 }
 
 .stat-value {
-    font-size: 16px;
+    font-size: 32px;
     font-weight: 700;
     color: #1d4ed8;
     transition: color 0.3s ease;
@@ -216,7 +218,7 @@ html.dark .stat-value.status-safe {
 
 .stat-unit {
     color: #9ca3af;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 /* Product Detail Buttons */
@@ -269,58 +271,6 @@ html.dark .btn-switch:hover {
     background-color: #64748b;
 }
 
-/* Performance Section (Large Timer) */
-;
-grid-template-columns: 1fr 1fr;
-gap: 12px;
-padding: 16px;
-border-bottom: 1px solid #e5e7eb;
-}
-
-html.dark .product-detail-buttons {
-    border-bottom-color: #475569;
-}
-
-.btn {
-    height: 48px;
-    border: none;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.btn-complete {
-    background-color: #1d4ed8;
-    color: #ffffff;
-}
-
-.btn-complete:hover {
-    background-color: #1e40af;
-}
-
-.btn-complete:active {
-    transform: scale(0.98);
-}
-
-.btn-switch {
-    background-color: #e5e7eb;
-    color: #1f2937;
-}
-
-html.dark .btn-switch {
-    background-color: #475569;
-    color: #ffffff;
-}
-
-.btn-switch:hover {
-    background-color: #d1d5db;
-}
-
-html.dark .btn-switch:hover {
-    background-color: #64748b;
-}
 
 /* Performance Section (Large Timer) */
 .performance-section {
@@ -504,14 +454,16 @@ html.dark .performance-value-large.status-safe {
 
 /* Statistics Section */
 .stats-section {
-    padding: 16px;
+    padding: 16px 0;
 }
 
 .stats-title {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     color: #1f2937;
-    margin: 0 0 12px 0;
+    margin: 0;
+    line-height: 1;
+
 }
 
 html.dark .stats-title {
@@ -576,6 +528,89 @@ html.dark .stats-row {
     justify-content: center;
     font-family: 'JetBrains Mono', monospace;
 }
+
+/* Stats Collapsible */
+.stats-title-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-bottom: 6px;
+    user-select: none;
+    transition: opacity 0.2s ease;
+}
+
+.stats-title-container:hover {
+    opacity: 0.7;
+}
+
+.stats-title-container:active {
+    opacity: 0.5;
+}
+
+.stats-arrow {
+    font-size: 18px;
+    color: #6b7280;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(0deg);
+    line-height: 1;
+}
+
+html.dark .stats-arrow {
+    color: #9ca3af;
+}
+
+.stats-arrow.expanded {
+    transform: rotate(-180deg);
+}
+
+.stats-table {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    opacity: 1;
+    margin: 0 16px
+}
+
+.stats-table.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Task Subtasks Collapsible */
+.task-subtasks {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    opacity: 1;
+    padding: 0 28px;
+}
+
+.task-subtasks.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.task-arrow {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(0deg);
+}
+
+.task-arrow.expanded {
+    transform: rotate(-180deg);
+}
+
+/* Time range alignment */
+.time-range {
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: auto;
+    min-width: 90px;
+    margin-right: -28px;
+}
+
+
 
 /* Modal */
 .modal {
@@ -759,7 +794,7 @@ html.dark .product-code {
 
 /* Task Timer Section */
 .task-timer-section {
-    padding: 16px;
+    padding: 16px 0;
     margin-bottom: 0;
     border-top: 1px solid #e5e7eb;
 }
@@ -983,7 +1018,7 @@ html.dark .timer-btn-swipe.disabled .timer-btn-swipe-text {
 
 /* Shift Timer Section */
 .shift-timer-section {
-    padding: 16px;
+    padding: 16px 0 16px 28px;
     margin-bottom: 0;
     border-radius: 0;
     border-top: 1px solid #e5e7eb;
@@ -1210,3 +1245,4 @@ html.dark .search-bar {
             height: 44px;
         }
     }
+}

@@ -1,77 +1,220 @@
 <!DOCTYPE html>
 <html class="light" lang="vi">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Giờ nghỉ - Andromeda</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Nghỉ giải lao - VasWare</title>
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/components/components.css" />
+  <link rel="stylesheet" href="css/layouts/main-layout.css" />
+  <link rel="stylesheet" href="css/pages/break/break.css" />
+  <link rel="stylesheet" href="css/components/fab-menu.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 </head>
-<body class="page">
-  <div class="container-mobile flex flex-col">
-    <!-- Header -->
-    <header class="app-header">
-      <a href="#" class="btn-icon btn-ghost">
-        <span class="material-symbols-outlined">arrow_back</span>
-      </a>
-      <h1 class="app-header-title">Giờ nghỉ</h1>
-      <div class="btn-icon"></div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="page-content flex flex-col items-center justify-center">
-      <div class="hero">
-        <div class="hero-icon">
-          <span class="material-symbols-outlined">local_cafe</span>
+<body>
+  <div class="main-layout">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <button class="top-nav-menu-btn" id="menuBtn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <div class="top-nav-center">
+        <div class="top-nav-logo">
+          <img src="assets/images/logo.png" alt="VasWare Logo" />
         </div>
-        <h1 class="hero-title">Giờ Nghỉ</h1>
-        <span class="status-indicator status-active mb-4">
-          <span class="status-dot active"></span>
-          <span>Đang nghỉ</span>
-        </span>
-
-        <!-- Countdown Timer -->
-        <div class="timer-display">
-          <div class="timer-value" id="countdownDisplay">15:00</div>
-          <p class="timer-label">Thời gian còn lại</p>
-        </div>
+        <div class="top-nav-title">VasWare</div>
       </div>
+      <button class="top-nav-notification-btn">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </button>
+    </div>
 
-      <!-- Info Cards -->
-      <div class="w-full px-4 space-y-4" style="max-width: 340px; margin: 24px auto;">
-        <div class="card">
-          <div class="flex items-center justify-between">
-            <span class="text-secondary">Bắt đầu:</span>
-            <span class="font-medium">14:30</span>
+    <!-- Main Layout Wrapper -->
+    <div class="main-layout-wrapper">
+      <!-- Sidebar Menu -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+          <nav>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">schedule</span>
+              <span>Thẻ giờ</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">sick</span>
+              <span>Nghỉ bệnh</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">help</span>
+              <span>Hướng dẫn</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">policy</span>
+              <span>Quy định làm việc</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">person</span>
+              <span>Hồ sơ người dùng</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <nav>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">settings</span>
+              <span>Cài đặt</span>
+            </a>
+            <a href="index.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">logout</span>
+              <span>Đăng xuất</span>
+            </a>
+          </nav>
+          <div class="sidebar-user">
+            <div class="sidebar-user-email">nhanvien@vasware.com</div>
+            <div class="sidebar-user-role">Internal worker</div>
+          </div>
+          <div class="sidebar-version">v1.0.0</div>
+        </div>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
+      <div class="main-content-area">
+        <div class="list">
+          <!-- Break Content -->
+          <div class="break-content">
+            <!-- Decorative Background -->
+            <div class="break-bg"></div>
+
+            <!-- Icon -->
+            <div class="break-icon">
+              <span class="material-symbols-outlined">coffee</span>
+            </div>
+
+            <!-- Title and Subtitle -->
+            <h1 class="break-title">Nghỉ giải lao</h1>
+            <p class="break-subtitle">Hãy thư giãn và nạp lại năng lượng</p>
+
+            <!-- Timer Card -->
+            <div class="timer-card">
+              <div class="break-timer counting" id="breakTimer">15:00</div>
+              <div class="timer-label">Thời gian còn lại</div>
+              <div class="timer-progress">
+                <div class="timer-progress-bar" id="progressBar"></div>
+              </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="break-info">
+              <div class="info-card">
+                <div class="info-label">Bắt đầu</div>
+                <div class="info-value" id="startTime">--:--</div>
+              </div>
+              <div class="info-card">
+                <div class="info-label">Kết thúc</div>
+                <div class="info-value" id="endTime">--:--</div>
+              </div>
+            </div>
+
+            <!-- Continue Button -->
+            <button class="btn-continue" id="continueBtn">
+              <span>Tiếp tục làm việc</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
           </div>
         </div>
-        <div class="card">
-          <div class="flex items-center justify-between">
-            <span class="text-secondary">Kết thúc dự kiến:</span>
-            <span class="font-medium">14:45</span>
-          </div>
-        </div>
       </div>
-
-      <!-- Resume Button -->
-      <a href="06_timer.html" class="btn btn-primary btn-lg" style="width: 100%; max-width: 340px; margin: 0 16px;">
-        <span>Tiếp tục làm việc</span>
-        <span class="material-symbols-outlined">arrow_forward</span>
-      </a>
-    </main>
+    </div>
   </div>
 
+  <!-- FAB Menu -->
+  <div class="fab-overlay" id="fabOverlay"></div>
+
+  <div class="fab-speed-dial">
+    <div class="fab-speed-dial-actions" id="fabActions"></div>
+  </div>
+
+  <button class="fab-button" id="fabButton" aria-label="Menu hành động">
+    <span class="material-symbols-outlined fab-icon">more_vert</span>
+  </button>
+
   <script>
-    let remaining = 900; // 15 minutes
-    setInterval(() => {
-      if (remaining > 0) {
-        remaining--;
-        const minutes = Math.floor(remaining / 60);
-        const seconds = remaining % 60;
-        document.getElementById('countdownDisplay').textContent = 
-          `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    // Sidebar toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // Time formatting
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function formatClock(date) {
+      const hours = date.getHours();
+      const mins = date.getMinutes();
+      return `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}`;
+    }
+
+    // Initialize start and end times
+    const now = new Date();
+    const endDate = new Date(now.getTime() + 15 * 60 * 1000);
+    document.getElementById('startTime').textContent = formatClock(now);
+    document.getElementById('endTime').textContent = formatClock(endDate);
+
+    // Break timer countdown
+    const breakDuration = 15 * 60;
+    let remainingTime = breakDuration;
+    const timerDisplay = document.getElementById('breakTimer');
+    const progressBar = document.getElementById('progressBar');
+
+    function updateTimer() {
+      timerDisplay.textContent = formatTime(remainingTime);
+
+      // Update progress bar
+      const progress = ((breakDuration - remainingTime) / breakDuration) * 100;
+      progressBar.style.width = progress + '%';
+
+      if (remainingTime > 0) {
+        remainingTime--;
+      } else {
+        clearInterval(timerInterval);
+        window.location.href = '05_select_product.html';
       }
-    }, 1000);
+    }
+
+    // Update every second
+    const timerInterval = setInterval(updateTimer, 1000);
+
+    // Auto-redirect after 15 minutes
+    setTimeout(() => {
+      window.location.href = '05_select_product.html';
+    }, breakDuration * 1000);
+
+    // Continue button
+    document.getElementById('continueBtn').addEventListener('click', () => {
+      clearInterval(timerInterval);
+      window.location.href = '05_select_product.html';
+    });
   </script>
 </body>
+
 </html>

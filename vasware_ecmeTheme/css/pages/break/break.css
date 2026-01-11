@@ -1,0 +1,290 @@
+/* Break & Lunch Pages Styles */
+
+/* Break/Lunch Content Container */
+.break-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 40px 24px;
+    position: relative;
+}
+
+/* Decorative Background */
+.break-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 0 0 32px 32px;
+    opacity: 0.08;
+    z-index: 0;
+}
+
+.lunch-bg {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Icon Container */
+.break-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.lunch-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 8px 24px rgba(240, 147, 251, 0.3);
+}
+
+.break-icon .material-symbols-outlined,
+.lunch-icon .material-symbols-outlined {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Page Title */
+.break-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+html.dark .break-title {
+    color: #ffffff;
+}
+
+/* Subtitle */
+.break-subtitle {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+html.dark .break-subtitle {
+    color: #9ca3af;
+}
+
+/* Timer Card */
+.timer-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 48px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #e5e7eb;
+}
+
+html.dark .timer-card {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Timer Display */
+.break-timer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 64px;
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+}
+
+html.dark .break-timer {
+    color: #ffffff;
+}
+
+/* Timer Label */
+.timer-label {
+    font-size: 13px;
+    color: #9ca3af;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+html.dark .timer-label {
+    color: #64748b;
+}
+
+/* Progress Bar */
+.timer-progress {
+    width: 100%;
+    max-width: 300px;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 24px auto;
+}
+
+html.dark .timer-progress {
+    background: #334155;
+}
+
+.timer-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+    transition: width 1s linear;
+}
+
+.lunch-progress-bar {
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Info Cards */
+.break-info {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.info-card {
+    flex: 1;
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+html.dark .info-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+.info-label {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+html.dark .info-label {
+    color: #64748b;
+}
+
+.info-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+html.dark .info-value {
+    color: #ffffff;
+}
+
+/* Continue Button */
+.btn-continue {
+    background: #1e63dc;
+    color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    padding: 16px 48px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(30, 99, 220, 0.3);
+}
+
+.btn-continue:hover {
+    background: #1557c9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30, 99, 220, 0.4);
+}
+
+.btn-continue:active {
+    transform: translateY(0);
+}
+
+.btn-continue .material-symbols-outlined {
+    font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .break-title {
+        font-size: 24px;
+    }
+
+    .break-timer {
+        font-size: 48px;
+    }
+
+    .timer-card {
+        padding: 32px 24px;
+    }
+
+    .break-info {
+        flex-direction: column;
+    }
+
+    .btn-continue {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Animation for timer counting down */
+@keyframes countdown-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.break-timer.counting {
+    animation: countdown-pulse 1s ease-in-out infinite;
+}
