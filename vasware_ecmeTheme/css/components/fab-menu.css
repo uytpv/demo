@@ -118,6 +118,53 @@ html.dark .fab-action-button .material-symbols-outlined {
   color: #60a5fa;
 }
 
+/* Custom Colors for Action Buttons */
+
+/* Hoàn tất - Green */
+#fabCompleteBtn {
+  background-color: var(--color-success);
+}
+
+#fabCompleteBtn .material-symbols-outlined {
+  color: white;
+}
+
+/* Chuyển sản phẩm - Gray */
+#fabSwitchProductBtn {
+  background-color: #6b7280;
+}
+
+#fabSwitchProductBtn .material-symbols-outlined {
+  color: white;
+}
+
+/* Chuyển việc - Blue */
+#fabSwitchTaskBtn {
+  background-color: #3b82f6;
+}
+
+#fabSwitchTaskBtn .material-symbols-outlined {
+  color: white;
+}
+
+/* Giải lao - Yellow */
+#fabBreakBtn {
+  background-color: var(--color-warning);
+}
+
+#fabBreakBtn .material-symbols-outlined {
+  color: white;
+}
+
+/* Kết thúc ca - Red */
+#fabEndShiftBtn {
+  background-color: var(--color-danger);
+}
+
+#fabEndShiftBtn .material-symbols-outlined {
+  color: white;
+}
+
 /* Action Label */
 .fab-action-label {
   background-color: white;
