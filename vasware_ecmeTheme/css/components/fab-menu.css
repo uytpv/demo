@@ -1,0 +1,177 @@
+/* Speed Dial FAB - Google Keep Style */
+
+/* Main FAB Button */
+.fab-button {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fab-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.fab-button:active {
+  transform: scale(0.95);
+}
+
+.fab-icon {
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Rotate icon when menu is open */
+.fab-button.open .fab-icon {
+  transform: rotate(45deg);
+}
+
+/* Speed Dial Container */
+.fab-speed-dial {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  /* Right align all action items */
+  gap: 16px;
+  pointer-events: none;
+}
+
+/* Speed Dial Actions */
+.fab-speed-dial-actions {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  /* Right align all items */
+  gap: 16px;
+  margin-bottom: 72px;
+  /* Space for main FAB */
+}
+
+/* Individual Action Item */
+.fab-action-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fab-action-item.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+/* Action Button (smaller circle) */
+.fab-action-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.dark .fab-action-button {
+  background-color: #334155;
+}
+
+.fab-action-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fab-action-button:active {
+  transform: scale(0.95);
+}
+
+.fab-action-button .material-symbols-outlined {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+html.dark .fab-action-button .material-symbols-outlined {
+  color: #60a5fa;
+}
+
+/* Action Label */
+.fab-action-label {
+  background-color: white;
+  color: #1f2937;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .fab-action-label {
+  background-color: #334155;
+  color: white;
+}
+
+/* Overlay */
+.fab-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fab-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .fab-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .fab-icon {
+    font-size: 22px;
+  }
+
+  .fab-action-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .fab-action-label {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}

@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="css/components/page-heading.css" />
   <link rel="stylesheet" href="css/components/search.css" />
   <link rel="stylesheet" href="css/pages/product/product.css" />
-  <link rel="stylesheet" href="css/pages/product/fab-timer-override.css" />
-  <link rel="stylesheet" href="css/components/fab-menu.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
@@ -145,7 +143,11 @@
                   </div>
                 </div>
 
-                <!-- Action Buttons removed - moved to FAB menu -->
+                <!-- Action Buttons -->
+                <div class="product-detail-buttons">
+                  <button class="btn btn-complete" id="completeBtn">Hoàn tất</button>
+                  <button class="btn btn-switch" id="switchProductBtn">Chuyển sản phẩm</button>
+                </div>
               </div>
 
               <!-- Timer & Performance Section -->
@@ -209,17 +211,41 @@
 
         <!-- Task Timer Section -->
         <div class="product-section task-timer-section">
-          <div class="timer-header timer-header-inline">
+          <div class="timer-header">
             <div class="timer-name" id="taskName">C-Hallii: Vastaanotto / Receiving - Display Mì / Noodle Display</div>
-            <div class="timer-btn-display" id="taskTimer">00:00:00</div>
+          </div>
+
+          <div class="task-timer-buttons">
+            <div class="timer-btn timer-btn-swipe" id="switchTaskBtn">
+              <div class="timer-btn-swipe-thumb">
+                <span class="material-symbols-outlined">swap_horiz</span>
+              </div>
+              <div class="timer-btn-swipe-text">Chuyển việc</div>
+              <div class="timer-btn-display" id="taskTimer">00:00:00</div>
+            </div>
           </div>
         </div>
 
         <!-- Shift Timer Section -->
         <div class="shift-timer-section">
-          <div class="shift-timer-header shift-timer-header-inline">
+          <div class="shift-timer-header">
             <div class="shift-timer-label">Tổng thời gian làm việc</div>
-            <div class="timer-btn-display" id="shiftTimer">00:00:00</div>
+          </div>
+
+          <div class="shift-timer-buttons">
+            <div class="timer-btn timer-btn-swipe timer-btn-break" id="breakBtn">
+              <div class="timer-btn-swipe-thumb">
+                <span class="material-symbols-outlined">coffee</span>
+              </div>
+              <div class="timer-btn-swipe-text">Giải lao</div>
+              <div class="timer-btn-display" id="shiftTimer">00:00:00</div>
+            </div>
+            <div class="shift-timer-btn" id="endShiftBtn">
+              <div class="shift-timer-btn-thumb">
+                <span class="material-symbols-outlined">logout</span>
+              </div>
+              <div class="shift-timer-btn-text">Kết thúc ca</div>
+            </div>
           </div>
         </div>
       </div>
@@ -243,6 +269,9 @@
     const sidebarOverlay = document.getElementById('sidebarOverlay');
     const taskTimer = document.getElementById('taskTimer');
     const shiftTimer = document.getElementById('shiftTimer');
+    const breakBtn = document.getElementById('breakBtn');
+    const switchTaskBtn = document.getElementById('switchTaskBtn');
+    const endShiftBtn = document.getElementById('endShiftBtn');
     const productGrid = document.getElementById('productGrid');
 
     // Toggle sidebar
@@ -281,23 +310,52 @@
       return Math.floor((Date.now() - startTime) / 60000);
     }
 
-    // Update break button state - No longer used (buttons moved to FAB)
+    // Update break button state based on elapsed time of SHIFT (not task)
     function updateBreakButtonState() {
-      // Empty - logic moved to FAB menu
+      const minutes = getElapsedMinutes(shiftStartTime);
+      const textElement = breakBtn.querySelector('.timer-btn-swipe-text');
+
+      // Logic for break/lunch button based on SHIFT elapsed time
+      // 0-60 min: Break disabled
+      // 61-135 min: Break enabled
+      // 136-240 min: Lunch disabled
+      // 241-270 min: Lunch enabled
+      // 271-375 min: Break enabled
+      // 376-420 min: Break disabled
+
+      if (minutes < 60) {
+        textElement.textContent = 'Giải lao';
+        breakBtn.classList.add('disabled');
+        breakBtn.dataset.href = '';
+      } else if (minutes <= 135) {
+        textElement.textContent = 'Giải lao';
+        breakBtn.classList.remove('disabled');
+        breakBtn.dataset.href = '07_break.html';
+      } else if (minutes <= 240) {
+        textElement.textContent = 'Nghỉ trưa';
+        breakBtn.classList.add('disabled');
+        breakBtn.dataset.href = '';
+      } else if (minutes <= 270) {
+        textElement.textContent = 'Nghỉ trưa';
+        breakBtn.classList.remove('disabled');
+        breakBtn.dataset.href = '08_lunch.html';
+      } else if (minutes <= 375) {
+        textElement.textContent = 'Giải lao';
+        breakBtn.classList.remove('disabled');
+        breakBtn.dataset.href = '07_break.html';
+      } else if (minutes <= 420) {
+        textElement.textContent = 'Giải lao';
+        breakBtn.classList.add('disabled');
+        breakBtn.dataset.href = '';
+      }
     }
 
     // Helper function for testing - use in console like: setShiftMinutes(90)
-    // Expose shiftStartTime for FAB menu
-    window.shiftStartTime = shiftStartTime;
+    // This sets the SHIFT time, which controls Break/Lunch availability
     window.setShiftMinutes = function (minutes) {
       shiftStartTime = Date.now() - (minutes * 60 * 1000);
-      window.shiftStartTime = shiftStartTime;
       console.log(`Shift time set to ${minutes} minutes. Current shift elapsed:`, getElapsedMinutes(shiftStartTime));
-      // Trigger break button state update if available
-      if (window.updateBreakButtonState) {
-        window.updateBreakButtonState();
-        console.log('Break button state updated.');
-      }
+      updateBreakButtonState();
     }
 
     // Helper to set task time - use like: setTaskMinutes(45)
@@ -392,8 +450,22 @@
       }
     }
 
+    // Switch task swipe
+    addSwipeSlider(switchTaskBtn, () => {
+      window.location.href = '04_select_customer_and_task.html';
+    });
 
-    // Swipe slider calls removed - buttons moved to FAB menu
+    // End shift swipe
+    addSwipeSlider(endShiftBtn, () => {
+      window.location.href = '03_select_warehouse.html';
+    });
+
+    // Break button swipe (only when enabled)
+    addSwipeSlider(breakBtn, () => {
+      const breakLink = breakBtn.dataset.href || '07_break.html';
+      window.location.href = breakLink;
+    }, () => breakBtn.classList.contains('disabled'));
+
     // View routing (SPA)
     const productGridView = document.getElementById('productGridView');
     const timerDetailView = document.getElementById('timerDetailView');
@@ -494,12 +566,10 @@
     const switchProductBtn = document.getElementById('switchProductBtn');
     const addBoxBtn = document.getElementById('addBoxBtn');
 
-    // Open completion modal (only if button exists - button removed in FAB version)
-    if (completeBtn) {
-      completeBtn.addEventListener('click', () => {
-        completionModal.style.display = 'flex';
-      });
-    }
+    // Open completion modal
+    completeBtn.addEventListener('click', () => {
+      completionModal.style.display = 'flex';
+    });
 
     // Close modal
     function closeModal() {
@@ -509,10 +579,8 @@
     modalCloseBtn.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', closeModal);
 
-    // Switch product (back to grid) - only if button exists
-    if (switchProductBtn) {
-      switchProductBtn.addEventListener('click', showProductGridView);
-    }
+    // Switch product (back to grid)
+    switchProductBtn.addEventListener('click', showProductGridView);
 
     // Add box button
     addBoxBtn.addEventListener('click', () => {
@@ -537,63 +605,6 @@
     updateTimers();
     setInterval(updateTimers, 1000);
   </script>
-
-  <!-- Overlay for Speed Dial -->
-  <div class="fab-overlay" id="fabOverlay"></div>
-
-  <!-- Speed Dial Container -->
-  <div class="fab-speed-dial">
-    <!-- Speed Dial Actions (stack vertically above FAB) -->
-    <div class="fab-speed-dial-actions" id="fabActions">
-      <!-- Action 1: Hoàn tất -->
-      <div class="fab-action-item" data-action="complete">
-        <span class="fab-action-label">Hoàn tất</span>
-        <button class="fab-action-button" id="fabCompleteBtn">
-          <span class="material-symbols-outlined">check_circle</span>
-        </button>
-      </div>
-
-      <!-- Action 2: Chuyển sản phẩm -->
-      <div class="fab-action-item" data-action="switchProduct">
-        <span class="fab-action-label">Chuyển sản phẩm</span>
-        <button class="fab-action-button" id="fabSwitchProductBtn">
-          <span class="material-symbols-outlined">swap_horiz</span>
-        </button>
-      </div>
-
-      <!-- Action 3: Chuyển việc -->
-      <div class="fab-action-item" data-action="switchTask">
-        <span class="fab-action-label">Chuyển việc</span>
-        <button class="fab-action-button" id="fabSwitchTaskBtn">
-          <span class="material-symbols-outlined">task_alt</span>
-        </button>
-      </div>
-
-      <!-- Action 4: Giải lao -->
-      <div class="fab-action-item" data-action="break">
-        <span class="fab-action-label" id="fabBreakLabel">Giải lao</span>
-        <button class="fab-action-button" id="fabBreakBtn">
-          <span class="material-symbols-outlined">coffee</span>
-        </button>
-      </div>
-
-      <!-- Action 5: Kết thúc ca -->
-      <div class="fab-action-item" data-action="endShift">
-        <span class="fab-action-label">Kết thúc ca</span>
-        <button class="fab-action-button" id="fabEndShiftBtn">
-          <span class="material-symbols-outlined">logout</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main FAB Button -->
-  <button class="fab-button" id="fabButton" aria-label="Menu hành động">
-    <span class="material-symbols-outlined fab-icon">add</span>
-  </button>
-
-  <!-- FAB Menu Script -->
-  <script src="js/fab-menu.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,53 @@
+/* FAB Version Timer Styles - Override for inline layout */
+
+/* CRITICAL: Force inline layout for timer headers */
+.timer-header-inline {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px !important;
+    margin-bottom: 0 !important;
+    gap: 16px !important;
+}
+
+.shift-timer-header-inline {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px !important;
+    gap: 16px !important;
+}
+
+/* Force timer name to flex */
+.timer-header-inline .timer-name {
+    flex: 1 !important;
+    margin: 0 !important;
+    position: static !important;
+}
+
+/* Force shift label to flex */
+.shift-timer-header-inline .shift-timer-label {
+    flex: 1 !important;
+    margin: 0 !important;
+    position: static !important;
+}
+
+/* Force timer display to stay inline */
+.timer-header-inline .timer-btn-display,
+.shift-timer-header-inline .timer-btn-display {
+    position: static !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: var(--color-primary) !important;
+    margin-left: auto !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    flex-shrink: 0 !important;
+}
+
+/* Hide any task/shift timer buttons if they exist */
+.timer-header-inline~.task-timer-buttons,
+.shift-timer-header-inline~.shift-timer-buttons {
+    display: none !important;
+}
