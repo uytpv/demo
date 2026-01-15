@@ -1,93 +1,352 @@
 <!DOCTYPE html>
 <html class="light" lang="vi">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Yêu cầu nghỉ bệnh - Andromeda</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Nghỉ bệnh - VasWare</title>
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/components/components.css" />
+  <link rel="stylesheet" href="css/layouts/main-layout.css" />
+  <link rel="stylesheet" href="css/pages/sickleave/sickleave.css" />
+  <link rel="stylesheet" href="css/components/fab-menu.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 </head>
-<body class="page">
-  <div class="container-mobile flex flex-col">
-    <!-- Header -->
-    <header class="app-header">
-      <a href="#" class="btn-icon btn-ghost">
-        <span class="material-symbols-outlined">arrow_back</span>
-      </a>
-      <h1 class="app-header-title">Nghỉ bệnh</h1>
-      <div class="btn-icon"></div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="page-content scrollable with-bottom-action">
-      <section class="section">
-        <h2 class="section-title">Yêu cầu Nghỉ Bệnh</h2>
-        <p class="section-subtitle">Điền thông tin chi tiết để tạo yêu cầu mới</p>
-      </section>
+<body>
+  <div class="main-layout">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <button class="top-nav-menu-btn" id="menuBtn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <div class="top-nav-center">
+        <div class="top-nav-logo">
+          <img src="assets/images/logo.png" alt="VasWare Logo" />
+        </div>
+        <div class="top-nav-title">VasWare</div>
+      </div>
+      <button class="top-nav-notification-btn">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
+      </button>
+    </div>
 
-      <!-- Form Fields -->
-      <div class="section-container">
-        <!-- Date Range Picker -->
-        <div class="grid-2">
-          <div class="input-group">
-            <label class="input-label">Từ ngày</label>
-            <input type="date" class="input-field" value="2024-01-06"/>
+    <!-- Main Layout Wrapper -->
+    <div class="main-layout-wrapper">
+      <!-- Sidebar Menu -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+          <nav>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">schedule</span>
+              <span>Thẻ giờ</span>
+            </a>
+            <a href="#" class="sidebar-link active">
+              <span class="sidebar-icon material-symbols-outlined">sick</span>
+              <span>Nghỉ bệnh</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">help</span>
+              <span>Hướng dẫn</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">policy</span>
+              <span>Quy định làm việc</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">person</span>
+              <span>Hồ sơ người dùng</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <nav>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">settings</span>
+              <span>Cài đặt</span>
+            </a>
+            <a href="index.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">logout</span>
+              <span>Đăng xuất</span>
+            </a>
+          </nav>
+          <div class="sidebar-user">
+            <div class="sidebar-user-email">nhanvien@vasware.com</div>
+            <div class="sidebar-user-role">Internal worker</div>
           </div>
-          <div class="input-group">
-            <label class="input-label">Đến ngày</label>
-            <input type="date" class="input-field" value="2024-01-07"/>
-          </div>
+          <div class="sidebar-version">v1.0.0</div>
         </div>
+      </aside>
 
-        <!-- Total Days Info -->
-        <div class="card bg-primary/10" style="border: 1px solid var(--color-primary-20);">
-          <div class="flex justify-between items-center">
-            <span class="text-secondary">Tổng số ngày:</span>
-            <span class="text-2xl font-bold text-primary">2 ngày</span>
-          </div>
-        </div>
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-        <!-- Reason -->
-        <div class="input-group">
-          <label class="input-label">Lý do nghỉ bệnh</label>
-          <select class="input-field">
-            <option>Chọn lý do...</option>
-            <option selected>Bệnh thông thường</option>
-            <option>Bệnh mãn tính</option>
-            <option>Phẫu thuật</option>
-            <option>Khác</option>
-          </select>
-        </div>
-
-        <!-- Description -->
-        <div class="input-group">
-          <label class="input-label">Mô tả chi tiết (tùy chọn)</label>
-          <textarea class="input-field" style="min-height: 100px; resize: none;" 
-                    placeholder="Nhập mô tả chi tiết về tình trạng bệnh..."></textarea>
-        </div>
-
-        <!-- Required Documents -->
-        <div class="card">
-          <h3 class="text-sm font-bold mb-3">Tài liệu yêu cầu</h3>
-          <div class="space-y-2 text-sm">
-            <div class="flex items-start gap-2">
-              <span class="material-symbols-outlined text-success" style="font-size: 20px;">check_circle</span>
-              <span>Giấy xác nhận bệnh từ bác sĩ (bắt buộc)</span>
+      <!-- Main Content -->
+      <div class="main-content-area">
+        <div class="list">
+          <div class="sick-content">
+            <!-- Page Title -->
+            <div style="margin-bottom: 32px;">
+              <h1 style="font-size: 28px; font-weight: 700; color: #1f2937; margin-bottom: 8px;">Sick leave</h1>
             </div>
-            <div class="flex items-start gap-2">
-              <span class="material-symbols-outlined" style="font-size: 20px;">radio_button_unchecked</span>
-              <span>Hóa đơn khám bệnh (tùy chọn)</span>
+
+            <!-- Stepper Component -->
+            <div class="stepper-container">
+              <div class="stepper-step completed">
+                <div class="stepper-circle">
+                  <span class="material-symbols-outlined">check</span>
+                </div>
+                <div class="stepper-label">Announce To Supervisor</div>
+              </div>
+
+              <div class="stepper-step active">
+                <div class="stepper-circle">
+                  <span class="material-symbols-outlined">2</span>
+                </div>
+                <div class="stepper-label">Upload Certificate</div>
+              </div>
+
+              <div class="stepper-step">
+                <div class="stepper-circle">
+                  <span class="material-symbols-outlined">3</span>
+                </div>
+                <div class="stepper-label">Send Certificate</div>
+              </div>
+
+              <div class="stepper-step">
+                <div class="stepper-circle">
+                  <span class="material-symbols-outlined">4</span>
+                </div>
+                <div class="stepper-label">Waiting For Approval</div>
+              </div>
+            </div>
+
+            <!-- Upload Document Section -->
+            <h2 class="section-header">Upload Document</h2>
+            <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" style="display: none;" />
+            <div class="upload-area" id="uploadArea">
+              <div class="upload-icon" id="uploadIcon">
+                <span class="material-symbols-outlined">upload_file</span>
+              </div>
+              <div class="upload-filename" id="uploadFilename">Click to upload file</div>
+              <div class="upload-filesize" id="uploadFilesize">PDF, DOC, DOCX, JPG, PNG (Max 10MB)</div>
+            </div>
+
+            <!-- Enter Sick Leave Dates Section -->
+            <h2 class="section-header">Enter Sick Leave Dates</h2>
+            <div class="date-inputs">
+              <div class="date-field">
+                <label class="date-label">
+                  Start Date <span class="required">*</span>
+                </label>
+                <input type="date" class="date-input" id="startDate" value="2026-01-12" />
+              </div>
+              <div class="date-field">
+                <label class="date-label">
+                  End Date <span class="required">*</span>
+                </label>
+                <input type="date" class="date-input" id="endDate" value="2026-01-14" />
+              </div>
+            </div>
+
+            <!-- Duration Info -->
+            <div id="durationInfo"
+              style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 16px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 14px; color: #1e40af; font-weight: 500;">Thời gian nghỉ:</span>
+              <span id="durationDays" style="font-size: 24px; color: #1e63dc; font-weight: 700;">3 ngày</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="btn-action btn-back">
+                <span>Back</span>
+              </button>
+              <button class="btn-action btn-next">
+                <span>Next</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+
+            <!-- History Section (Expandable) -->
+            <div class="history-section">
+              <div class="history-header" id="historyToggle">
+                <div class="history-title">
+                  <span class="material-symbols-outlined">history</span>
+                  <span>Lịch sử nghỉ bệnh</span>
+                </div>
+                <span class="material-symbols-outlined history-toggle" id="historyIcon">
+                  expand_more
+                </span>
+              </div>
+              <div class="history-content" id="historyContent">
+                <div class="history-table-wrapper">
+                  <table class="history-table">
+                    <thead>
+                      <tr>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Số ngày</th>
+                        <th>Lý do</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày nộp</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>15/12/2025</td>
+                        <td>17/12/2025</td>
+                        <td>3</td>
+                        <td>Bệnh cảm cúm</td>
+                        <td><span class="status-badge approved">Đã duyệt</span></td>
+                        <td>14/12/2025</td>
+                      </tr>
+                      <tr>
+                        <td>05/11/2025</td>
+                        <td>06/11/2025</td>
+                        <td>2</td>
+                        <td>Sốt cao</td>
+                        <td><span class="status-badge approved">Đã duyệt</span></td>
+                        <td>04/11/2025</td>
+                      </tr>
+                      <tr>
+                        <td>20/10/2025</td>
+                        <td>22/10/2025</td>
+                        <td>3</td>
+                        <td>Đau dạ dày</td>
+                        <td><span class="status-badge approved">Đã duyệt</span></td>
+                        <td>19/10/2025</td>
+                      </tr>
+                      <tr>
+                        <td>10/09/2025</td>
+                        <td>11/09/2025</td>
+                        <td>2</td>
+                        <td>Kiểm tra sức khỏe</td>
+                        <td><span class="status-badge pending">Chờ duyệt</span></td>
+                        <td>09/09/2025</td>
+                      </tr>
+                      <tr>
+                        <td>25/08/2025</td>
+                        <td>26/08/2025</td>
+                        <td>2</td>
+                        <td>Bệnh thông thường</td>
+                        <td><span class="status-badge rejected">Từ chối</span></td>
+                        <td>24/08/2025</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-
-    <!-- Submit Buttons -->
-    <div class="fixed bottom-0 left-0 right-0 p-4 bg-surface-primary border-t border-border-primary flex gap-3">
-      <a href="#" class="btn btn-secondary btn-lg flex-1">Hủy</a>
-      <a href="#" class="btn btn-primary btn-lg flex-1">Gửi yêu cầu</a>
     </div>
   </div>
+
+  <script>
+    // Sidebar toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // File upload handling
+    const fileInput = document.getElementById('fileInput');
+    const uploadArea = document.getElementById('uploadArea');
+    const uploadIcon = document.getElementById('uploadIcon');
+    const uploadFilename = document.getElementById('uploadFilename');
+    const uploadFilesize = document.getElementById('uploadFilesize');
+
+    uploadArea.addEventListener('click', () => {
+      fileInput.click();
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        // Check file size (10MB max)
+        const maxSize = 10 * 1024 * 1024; // 10MB in bytes
+        if (file.size > maxSize) {
+          alert('File size exceeds 10MB. Please choose a smaller file.');
+          fileInput.value = '';
+          return;
+        }
+
+        // Update UI to show uploaded file
+        uploadArea.classList.add('has-file');
+        uploadIcon.innerHTML = '<span class="material-symbols-outlined">check</span>';
+        uploadFilename.textContent = file.name;
+        uploadFilesize.textContent = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+      }
+    });
+
+    // Date change handling and duration calculation
+    const startDateInput = document.getElementById('startDate');
+    const endDateInput = document.getElementById('endDate');
+    const durationDays = document.getElementById('durationDays');
+
+    function calculateDuration() {
+      const startDate = new Date(startDateInput.value);
+      const endDate = new Date(endDateInput.value);
+
+      if (startDate && endDate && endDate >= startDate) {
+        // Calculate difference in days (inclusive)
+        const diffTime = Math.abs(endDate - startDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+        durationDays.textContent = diffDays + ' ngày';
+      } else {
+        durationDays.textContent = '0 ngày';
+      }
+    }
+
+    startDateInput.addEventListener('change', calculateDuration);
+    endDateInput.addEventListener('change', calculateDuration);
+
+    // Initial calculation
+    calculateDuration();
+
+    // History section expand/collapse
+    const historyToggle = document.getElementById('historyToggle');
+    const historyContent = document.getElementById('historyContent');
+    const historyIcon = document.getElementById('historyIcon');
+
+    historyToggle.addEventListener('click', () => {
+      historyContent.classList.toggle('expanded');
+      historyIcon.classList.toggle('expanded');
+    });
+
+    // Dark mode support for date inputs
+    const htmlElement = document.documentElement;
+    const dateInputs = document.querySelectorAll('.date-input');
+
+    // Apply color scheme based on current theme
+    function updateDateInputTheme() {
+      const isDark = htmlElement.classList.contains('dark');
+      dateInputs.forEach(input => {
+        input.style.colorScheme = isDark ? 'dark' : 'light';
+      });
+    }
+
+    // Initialize theme
+    updateDateInputTheme();
+
+    // Watch for theme changes (if you have a theme toggle)
+    const observer = new MutationObserver(updateDateInputTheme);
+    observer.observe(htmlElement, { attributes: true, attributeFilter: ['class'] });
+  </script>
 </body>
+
 </html>

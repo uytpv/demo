@@ -1,0 +1,567 @@
+/* Profile Page Styles */
+
+/* Profile Content Container */
+.profile-content {
+    padding: 24px 16px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Employee ID Card */
+.employee-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 24px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+html.dark .employee-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-color: #334155;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Edit Button in Corner */
+.employee-card-edit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: #1e63dc;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(30, 99, 220, 0.2);
+}
+
+.employee-card-edit:hover {
+    background: #1557c9;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(30, 99, 220, 0.4);
+}
+
+.employee-card-edit .material-symbols-outlined {
+    font-size: 20px;
+}
+
+/* Card Header with Avatar */
+.employee-card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+html.dark .employee-card-header {
+    border-bottom-color: #334155;
+}
+
+.employee-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+}
+
+.employee-avatar .material-symbols-outlined {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.employee-info {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Name display in view mode */
+.employee-name-display {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+html.dark .employee-name-display {
+    color: #ffffff;
+}
+
+/* Name edit fields in edit mode */
+.employee-name-edit {
+    display: none;
+    margin-bottom: 12px;
+}
+
+.name-field-group {
+    display: flex;
+    gap: 12px;
+}
+
+.name-field {
+    flex: 1;
+}
+
+.name-field-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1e40af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+html.dark .name-field-label {
+    color: #93c5fd;
+}
+
+.name-field-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #bfdbfe;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #ffffff;
+}
+
+html.dark .name-field-input {
+    background: #1e293b;
+    border-color: rgba(96, 165, 250, 0.3);
+    color: #dbeafe;
+}
+
+.name-field-input:focus {
+    outline: none;
+    border-color: #1e63dc;
+    box-shadow: 0 0 0 3px rgba(30, 99, 220, 0.1);
+}
+
+/* Toggle display/edit based on edit mode */
+.profile-content:not(.edit-mode) .employee-name-display {
+    display: block;
+}
+
+.profile-content:not(.edit-mode) .employee-name-edit {
+    display: none;
+}
+
+.profile-content.edit-mode .employee-name-display {
+    display: none;
+}
+
+.profile-content.edit-mode .employee-name-edit {
+    display: block;
+}
+
+/* Hide employee details in edit mode */
+.profile-content.edit-mode .employee-details {
+    display: none;
+}
+
+.employee-role {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+html.dark .employee-role {
+    color: #9ca3af;
+}
+
+/* Card Details Grid */
+.employee-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.employee-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.employee-detail-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #eff6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+html.dark .employee-detail-icon {
+    background: rgba(30, 99, 220, 0.15);
+}
+
+.employee-detail-icon .material-symbols-outlined {
+    font-size: 18px;
+    color: #1e63dc;
+}
+
+html.dark .employee-detail-icon .material-symbols-outlined {
+    color: #60a5fa;
+}
+
+.employee-detail-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.employee-detail-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+
+html.dark .employee-detail-label {
+    color: #64748b;
+}
+
+.employee-detail-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+html.dark .employee-detail-value {
+    color: #ffffff;
+}
+
+/* Contact Info Card */
+.contact-card {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 2px solid #bfdbfe;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+html.dark .contact-card {
+    background: linear-gradient(135deg, rgba(30, 99, 220, 0.1) 0%, rgba(59, 130, 246, 0.15) 100%);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+.contact-card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 20px;
+}
+
+html.dark .contact-card-title {
+    color: #60a5fa;
+}
+
+.contact-card-title .material-symbols-outlined {
+    font-size: 20px;
+}
+
+.contact-fields {
+    display: grid;
+    gap: 16px;
+}
+
+.contact-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-field-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+html.dark .contact-field-icon {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-field-icon .material-symbols-outlined {
+    font-size: 20px;
+    color: #1e63dc;
+}
+
+html.dark .contact-field-icon .material-symbols-outlined {
+    color: #60a5fa;
+}
+
+.contact-field-content {
+    flex: 1;
+}
+
+.contact-field-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1e40af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+html.dark .contact-field-label {
+    color: #93c5fd;
+}
+
+.contact-field-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+html.dark .contact-field-value {
+    color: #dbeafe;
+}
+
+.contact-field-value input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #bfdbfe;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #ffffff;
+}
+
+html.dark .contact-field-value input {
+    background: #1e293b;
+    border-color: rgba(96, 165, 250, 0.3);
+    color: #dbeafe;
+}
+
+.contact-field-value input:focus {
+    outline: none;
+    border-color: #1e63dc;
+    box-shadow: 0 0 0 3px rgba(30, 99, 220, 0.1);
+}
+
+/* Hide inputs in view mode, show in edit mode */
+.profile-content:not(.edit-mode) .contact-field-value input {
+    display: none;
+}
+
+.profile-content:not(.edit-mode) .contact-field-value .display-text {
+    display: block;
+}
+
+.profile-content.edit-mode .contact-field-value .display-text {
+    display: none;
+}
+
+.profile-content.edit-mode .contact-field-value input {
+    display: block;
+}
+
+/* Action Buttons */
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.profile-btn {
+    flex: 1;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+}
+
+.profile-btn-save {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.profile-btn-save:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.profile-btn-cancel {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+html.dark .profile-btn-cancel {
+    background: #1e293b;
+    color: #9ca3af;
+}
+
+.profile-btn-cancel:hover {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+html.dark .profile-btn-cancel:hover {
+    background: #334155;
+    color: #ffffff;
+}
+
+.profile-btn .material-symbols-outlined {
+    font-size: 20px;
+}
+
+/* Info Message */
+.profile-info {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+html.dark .profile-info {
+    background: rgba(30, 99, 220, 0.1);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+.profile-info .material-symbols-outlined {
+    font-size: 20px;
+    color: #1e63dc;
+    flex-shrink: 0;
+}
+
+html.dark .profile-info .material-symbols-outlined {
+    color: #60a5fa;
+}
+
+.profile-info-text {
+    font-size: 14px;
+    color: #1e40af;
+    line-height: 1.5;
+}
+
+html.dark .profile-info-text {
+    color: #93c5fd;
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.employee-info .status-badge {
+    margin-top: 8px;
+}
+
+.status-badge.active {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+html.dark .status-badge.active {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+}
+
+.status-badge .material-symbols-outlined {
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .profile-content {
+        padding: 16px;
+    }
+
+    .employee-card {
+        padding: 24px 16px;
+    }
+
+    .employee-card-edit {
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .employee-card-edit .material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    .employee-card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .employee-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .employee-avatar .material-symbols-outlined {
+        font-size: 36px;
+    }
+
+    .employee-name {
+        font-size: 20px;
+    }
+
+    /* Keep 2 columns even on mobile */
+    .employee-details {
+        gap: 12px;
+    }
+
+    .contact-card {
+        padding: 20px 16px;
+    }
+
+    .profile-actions {
+        flex-direction: column-reverse;
+    }
+}

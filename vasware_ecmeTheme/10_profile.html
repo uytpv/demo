@@ -1,120 +1,354 @@
 <!DOCTYPE html>
 <html class="light" lang="vi">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Hồ sơ cá nhân - Andromeda</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Hồ sơ người dùng - VasWare</title>
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/components/components.css" />
+  <link rel="stylesheet" href="css/layouts/main-layout.css" />
+  <link rel="stylesheet" href="css/pages/profile/profile.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 </head>
-<body class="page">
-  <div class="container-mobile flex flex-col">
-    <!-- Header -->
-    <header class="app-header">
-      <a href="#" class="btn-icon btn-ghost">
+
+<body>
+  <div class="main-layout">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <button class="top-nav-menu-btn" id="menuBtn">
         <span class="material-symbols-outlined">menu</span>
-      </a>
-      <h1 class="app-header-title">Hồ sơ</h1>
-      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+      </button>
+      <div class="top-nav-center">
+        <div class="top-nav-logo">
+          <img src="assets/images/logo.png" alt="VasWare Logo" />
+        </div>
+        <div class="top-nav-title">VasWare</div>
+      </div>
+      <button class="top-nav-notification-btn">
         <span class="material-symbols-outlined">notifications</span>
         <span class="notification-badge"></span>
-      </a>
-    </header>
+      </button>
+    </div>
 
-    <!-- Main Content -->
-    <main class="page-content scrollable">
-      <!-- Profile Header -->
-      <div class="card mb-4">
-        <div class="flex flex-col items-center gap-4">
-          <div class="avatar avatar-lg" style="background-image: url('https://via.placeholder.com/100');">
-            <span class="avatar-status-dot"></span>
+    <!-- Main Layout Wrapper -->
+    <div class="main-layout-wrapper">
+      <!-- Sidebar Menu -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+          <nav>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">schedule</span>
+              <span>Thẻ giờ</span>
+            </a>
+            <a href="09_sickleave.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">sick</span>
+              <span>Nghỉ bệnh</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">help</span>
+              <span>Hướng dẫn</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">policy</span>
+              <span>Quy định làm việc</span>
+            </a>
+            <a href="10_profile.html" class="sidebar-link active">
+              <span class="sidebar-icon material-symbols-outlined">person</span>
+              <span>Hồ sơ người dùng</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <nav>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">settings</span>
+              <span>Cài đặt</span>
+            </a>
+            <a href="index.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">logout</span>
+              <span>Đăng xuất</span>
+            </a>
+          </nav>
+          <div class="sidebar-user">
+            <div class="sidebar-user-email">nhanvien@vasware.com</div>
+            <div class="sidebar-user-role">Internal worker</div>
           </div>
-          <div class="text-center">
-            <h2 class="text-xl font-bold">Nguyễn Văn A</h2>
-            <p class="text-secondary text-sm mt-1">Nhân viên sản xuất</p>
-            <div class="flex gap-2 justify-center mt-3">
-              <span class="badge badge-primary">Đang hoạt động</span>
+          <div class="sidebar-version">v1.0.0</div>
+        </div>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
+      <div class="main-content-area">
+        <div class="list">
+          <div class="profile-content" id="profileContent">
+
+            <!-- Info Message (in edit mode) -->
+            <div class="profile-info" id="editModeInfo" style="display: none;">
+              <span class="material-symbols-outlined">info</span>
+              <div class="profile-info-text">
+                Chế độ chỉnh sửa: Bạn có thể cập nhật thông tin liên hệ bên dưới.
+              </div>
             </div>
-          </div>
-          <div class="divider"></div>
-          <div class="row row-between w-full">
-            <div class="text-center flex-1">
-              <p class="text-secondary text-sm">Mã NV</p>
-              <p class="font-bold mt-1">EMP-001</p>
+
+            <!-- Employee ID Card -->
+            <div class="employee-card">
+              <!-- Edit Button in Corner -->
+              <button class="employee-card-edit" id="editBtn" aria-label="Chỉnh sửa">
+                <span class="material-symbols-outlined">edit</span>
+              </button>
+
+              <!-- Card Header with Avatar and Name -->
+              <div class="employee-card-header">
+                <div class="employee-avatar">
+                  <span class="material-symbols-outlined">person</span>
+                </div>
+                <div class="employee-info">
+                  <div class="employee-name-display">
+                    <span id="displayFullName">Nguyễn Văn A</span>
+                  </div>
+                  <div class="employee-name-edit">
+                    <div class="name-field-group">
+                      <div class="name-field">
+                        <label class="name-field-label">Họ</label>
+                        <input type="text" class="name-field-input" id="fieldLastName" value="Nguyễn"
+                          placeholder="Nhập họ" />
+                      </div>
+                      <div class="name-field">
+                        <label class="name-field-label">Tên</label>
+                        <input type="text" class="name-field-input" id="fieldFirstName" value="Văn A"
+                          placeholder="Nhập tên" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employee-role">Internal Worker</div>
+                  <span class="status-badge active">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <span>Đang hoạt động</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Card Details -->
+              <div class="employee-details">
+                <!-- Row 1, Col 1: Employee ID -->
+                <div class="employee-detail-item">
+                  <div class="employee-detail-icon">
+                    <span class="material-symbols-outlined">badge</span>
+                  </div>
+                  <div class="employee-detail-content">
+                    <div class="employee-detail-label">Employee ID</div>
+                    <div class="employee-detail-value">EMP001</div>
+                  </div>
+                </div>
+
+                <!-- Row 1, Col 2: Social Number -->
+                <div class="employee-detail-item">
+                  <div class="employee-detail-icon">
+                    <span class="material-symbols-outlined">fingerprint</span>
+                  </div>
+                  <div class="employee-detail-content">
+                    <div class="employee-detail-label">Social Number</div>
+                    <div class="employee-detail-value">010185-1234</div>
+                  </div>
+                </div>
+
+                <!-- Row 2, Col 1: Lần cuối -->
+                <div class="employee-detail-item">
+                  <div class="employee-detail-icon">
+                    <span class="material-symbols-outlined">schedule</span>
+                  </div>
+                  <div class="employee-detail-content">
+                    <div class="employee-detail-label">Lần cuối</div>
+                    <div class="employee-detail-value">12/01/2026 19:10</div>
+                  </div>
+                </div>
+
+                <!-- Row 2, Col 2: Date Joined -->
+                <div class="employee-detail-item">
+                  <div class="employee-detail-icon">
+                    <span class="material-symbols-outlined">event</span>
+                  </div>
+                  <div class="employee-detail-content">
+                    <div class="employee-detail-label">Ngày tham gia</div>
+                    <div class="employee-detail-value">15/09/2024</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="divider-vertical"></div>
-            <div class="text-center flex-1">
-              <p class="text-secondary text-sm">Phòng ban</p>
-              <p class="font-bold mt-1">Sản xuất</p>
+
+            <!-- Contact Information Card -->
+            <div class="contact-card">
+              <h3 class="contact-card-title">
+                <span class="material-symbols-outlined">contact_phone</span>
+                <span>Thông tin liên hệ</span>
+              </h3>
+
+              <div class="contact-fields">
+                <!-- Email -->
+                <div class="contact-field">
+                  <div class="contact-field-icon">
+                    <span class="material-symbols-outlined">email</span>
+                  </div>
+                  <div class="contact-field-content">
+                    <div class="contact-field-label">Email</div>
+                    <div class="contact-field-value">
+                      <span class="display-text" id="displayEmail">nhanvien@vasware.com</span>
+                      <input type="email" id="fieldEmail" value="nhanvien@vasware.com" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-field">
+                  <div class="contact-field-icon">
+                    <span class="material-symbols-outlined">phone</span>
+                  </div>
+                  <div class="contact-field-content">
+                    <div class="contact-field-label">Số điện thoại</div>
+                    <div class="contact-field-value">
+                      <span class="display-text" id="displayPhone">+358 40 123 4567</span>
+                      <input type="tel" id="fieldPhone" value="+358 40 123 4567" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons (hidden by default, shown in edit mode) -->
+              <div class="profile-actions" id="editActions" style="display: none;">
+                <button class="profile-btn profile-btn-cancel" id="cancelBtn">
+                  <span class="material-symbols-outlined">close</span>
+                  <span>Hủy</span>
+                </button>
+                <button class="profile-btn profile-btn-save" id="saveBtn">
+                  <span class="material-symbols-outlined">save</span>
+                  <span>Lưu thay đổi</span>
+                </button>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
-
-      <!-- Contact Information -->
-      <section class="section">
-        <h3 class="section-title">Thông tin liên hệ</h3>
-        <div class="space-y-3 mt-4">
-          <div class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3 flex-1">
-                <span class="material-symbols-outlined" style="color: var(--text-tertiary);">email</span>
-                <div>
-                  <p class="text-xs text-secondary">Email</p>
-                  <p class="font-medium text-sm">nguyen.van.a@company.com</p>
-                </div>
-              </div>
-              <span class="material-symbols-outlined text-secondary">content_copy</span>
-            </div>
-          </div>
-          <div class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3 flex-1">
-                <span class="material-symbols-outlined" style="color: var(--text-tertiary);">phone</span>
-                <div>
-                  <p class="text-xs text-secondary">Điện thoại</p>
-                  <p class="font-medium text-sm">+84 912 345 678</p>
-                </div>
-              </div>
-              <span class="material-symbols-outlined text-secondary">content_copy</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Work Information -->
-      <section class="section">
-        <h3 class="section-title">Thông tin công việc</h3>
-        <div class="space-y-3 mt-4">
-          <div class="card">
-            <div class="flex justify-between text-sm">
-              <span class="text-secondary">Ngày bắt đầu:</span>
-              <span class="font-medium">01/01/2020</span>
-            </div>
-          </div>
-          <div class="card">
-            <div class="flex justify-between text-sm">
-              <span class="text-secondary">Chức vụ:</span>
-              <span class="font-medium">Nhân viên sản xuất</span>
-            </div>
-          </div>
-          <div class="card">
-            <div class="flex justify-between text-sm">
-              <span class="text-secondary">Loại hợp đồng:</span>
-              <span class="font-medium">Hợp đồng chính thức</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Action Buttons -->
-      <section class="section">
-        <a href="#" class="btn btn-secondary btn-lg btn-full">
-          <span class="material-symbols-outlined">edit</span>
-          <span>Chỉnh sửa hồ sơ</span>
-        </a>
-      </section>
-    </main>
+    </div>
   </div>
+
+  <script>
+    // Sidebar toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // Edit mode functionality
+    const profileContent = document.getElementById('profileContent');
+    const editBtn = document.getElementById('editBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const editActions = document.getElementById('editActions');
+    const editModeInfo = document.getElementById('editModeInfo');
+
+    // Editable fields
+    const fieldFirstName = document.getElementById('fieldFirstName');
+    const fieldLastName = document.getElementById('fieldLastName');
+    const fieldEmail = document.getElementById('fieldEmail');
+    const fieldPhone = document.getElementById('fieldPhone');
+
+    // Display elements
+    const displayFullName = document.getElementById('displayFullName');
+    const displayEmail = document.getElementById('displayEmail');
+    const displayPhone = document.getElementById('displayPhone');
+
+    // Store original values for cancel
+    let originalValues = {};
+
+    function enterEditMode() {
+      profileContent.classList.add('edit-mode');
+      editBtn.style.display = 'none';
+      editActions.style.display = 'flex';
+      editModeInfo.style.display = 'flex';
+
+      // Store original values
+      originalValues.firstName = fieldFirstName.value;
+      originalValues.lastName = fieldLastName.value;
+      originalValues.email = fieldEmail.value;
+      originalValues.phone = fieldPhone.value;
+    }
+
+    function exitEditMode(save = false) {
+      profileContent.classList.remove('edit-mode');
+      editBtn.style.display = 'flex';
+      editActions.style.display = 'none';
+      editModeInfo.style.display = 'none';
+
+      if (!save) {
+        // Restore original values
+        fieldFirstName.value = originalValues.firstName;
+        fieldLastName.value = originalValues.lastName;
+        fieldEmail.value = originalValues.email;
+        fieldPhone.value = originalValues.phone;
+      } else {
+        // Update display values
+        displayFullName.textContent = fieldLastName.value + ' ' + fieldFirstName.value;
+        displayEmail.textContent = fieldEmail.value;
+        displayPhone.textContent = fieldPhone.value;
+      }
+    }
+
+    editBtn.addEventListener('click', enterEditMode);
+
+    cancelBtn.addEventListener('click', () => {
+      if (confirm('Bạn có chắc muốn hủy các thay đổi?')) {
+        exitEditMode(false);
+      }
+    });
+
+    saveBtn.addEventListener('click', () => {
+      // Validate fields
+      const firstName = fieldFirstName.value.trim();
+      const lastName = fieldLastName.value.trim();
+      const email = fieldEmail.value.trim();
+      const phone = fieldPhone.value.trim();
+
+      if (!firstName || !lastName || !email || !phone) {
+        alert('Vui lòng điền đầy đủ các trường bắt buộc');
+        return;
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Email không hợp lệ');
+        return;
+      }
+
+      // Simulate save
+      exitEditMode(true);
+      alert('Thông tin đã được cập nhật thành công!');
+    });
+
+    // Dark mode support
+    const htmlElement = document.documentElement;
+    const observer = new MutationObserver(() => {
+      // Can add any dark mode specific logic here if needed
+    });
+    observer.observe(htmlElement, { attributes: true, attributeFilter: ['class'] });
+  </script>
 </body>
+
 </html>
