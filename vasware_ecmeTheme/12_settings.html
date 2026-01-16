@@ -1,167 +1,327 @@
 <!DOCTYPE html>
 <html class="light" lang="vi">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Cài đặt - Andromeda</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Cài đặt - VasWare</title>
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/components/components.css" />
+  <link rel="stylesheet" href="css/layouts/main-layout.css" />
+  <link rel="stylesheet" href="css/pages/settings/settings.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 </head>
-<body class="page">
-  <div class="container-mobile flex flex-col">
-    <!-- Header -->
-    <header class="app-header">
-      <a href="#" class="btn-icon btn-ghost">
+
+<body>
+  <div class="main-layout">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <button class="top-nav-menu-btn" id="menuBtn">
         <span class="material-symbols-outlined">menu</span>
-      </a>
-      <h1 class="app-header-title">Cài đặt</h1>
-      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+      </button>
+      <div class="top-nav-center">
+        <div class="top-nav-logo">
+          <img src="assets/images/logo.png" alt="VasWare Logo" />
+        </div>
+        <div class="top-nav-title">VasWare</div>
+      </div>
+      <button class="top-nav-notification-btn">
         <span class="material-symbols-outlined">notifications</span>
         <span class="notification-badge"></span>
-      </a>
-    </header>
+      </button>
+    </div>
 
-    <!-- Main Content -->
-    <main class="page-content scrollable">
-      <!-- Profile Section -->
-      <section class="section">
-        <div class="card">
-          <div class="row gap-4">
-            <div class="avatar avatar-lg" style="background-image: url('https://via.placeholder.com/100');"></div>
-            <div class="flex-1">
-              <h3 class="text-lg font-bold">Nguyễn Văn A</h3>
-              <p class="text-secondary text-sm mt-1">Nhân viên sản xuất</p>
-              <a href="10_profile.html" class="link-btn text-sm mt-2">Xem hồ sơ đầy đủ</a>
-            </div>
-          </div>
+    <!-- Main Layout Wrapper -->
+    <div class="main-layout-wrapper">
+      <!-- Sidebar Menu -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+          <nav>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">schedule</span>
+              <span>Thẻ giờ</span>
+            </a>
+            <a href="09_sickleave.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">sick</span>
+              <span>Nghỉ bệnh</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">help</span>
+              <span>Hướng dẫn</span>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">policy</span>
+              <span>Quy định làm việc</span>
+            </a>
+            <a href="10_profile.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">person</span>
+              <span>Hồ sơ người dùng</span>
+            </a>
+          </nav>
         </div>
-      </section>
 
-      <!-- App Settings -->
-      <section class="section">
-        <h3 class="section-title mb-3">Ứng dụng</h3>
-        <div class="space-y-2">
-          <!-- Theme Toggle -->
-          <div class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined">dark_mode</span>
-                <span>Chế độ tối</span>
-              </div>
-              <input type="checkbox" class="input-checkbox"/>
-            </div>
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <nav>
+            <a href="12_settings.html" class="sidebar-link active">
+              <span class="sidebar-icon material-symbols-outlined">settings</span>
+              <span>Cài đặt</span>
+            </a>
+            <a href="index.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">logout</span>
+              <span>Đăng xuất</span>
+            </a>
+          </nav>
+          <div class="sidebar-user">
+            <div class="sidebar-user-email">nhanvien@vasware.com</div>
+            <div class="sidebar-user-role">Internal worker</div>
           </div>
+          <div class="sidebar-version">v1.0.0</div>
+        </div>
+      </aside>
 
-          <!-- Language -->
-          <a href="#" class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined">language</span>
-                <div>
-                  <p class="font-medium">Ngôn ngữ</p>
-                  <p class="text-secondary text-xs">Tiếng Việt</p>
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
+      <div class="main-content-area">
+        <div class="list">
+          <div class="settings-content" id="settingsContent">
+
+            <!-- Page Title -->
+            <div class="settings-header">
+              <h1 class="settings-title">Cài đặt</h1>
+              <p class="settings-subtitle">Quản lý tùy chọn và cấu hình ứng dụng</p>
+            </div>
+
+            <!-- All Settings Items -->
+            <div class="settings-list">
+              <!-- Language Selector -->
+              <div class="settings-card settings-item" id="languageSelector">
+                <div class="settings-item-content">
+                  <div class="settings-item-icon">
+                    <span class="material-symbols-outlined">language</span>
+                  </div>
+                  <div class="settings-item-text">
+                    <div class="settings-item-title">Ngôn ngữ</div>
+                    <div class="settings-item-subtitle" id="currentLanguage">Tiếng Việt</div>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined settings-chevron">chevron_right</span>
+              </div>
+
+              <!-- Dark Mode Toggle -->
+              <div class="settings-card settings-item">
+                <div class="settings-item-content">
+                  <div class="settings-item-icon">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                  </div>
+                  <div class="settings-item-text">
+                    <div class="settings-item-title">Chế độ tối</div>
+                    <div class="settings-item-subtitle">Giao diện tối cho ánh sáng yếu</div>
+                  </div>
+                </div>
+                <label class="settings-toggle">
+                  <input type="checkbox" id="darkModeToggle" />
+                  <span class="settings-toggle-slider"></span>
+                </label>
+              </div>
+
+              <!-- Change Password -->
+              <a href="#" class="settings-card settings-item" id="changePasswordBtn">
+                <div class="settings-item-content">
+                  <div class="settings-item-icon">
+                    <span class="material-symbols-outlined">lock</span>
+                  </div>
+                  <div class="settings-item-text">
+                    <div class="settings-item-title">Đổi mật khẩu</div>
+                    <div class="settings-item-subtitle">Cập nhật mật khẩu của bạn</div>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined settings-chevron">chevron_right</span>
+              </a>
+
+              <!-- Terms of Use -->
+              <a href="#" class="settings-card settings-item">
+                <div class="settings-item-content">
+                  <div class="settings-item-icon">
+                    <span class="material-symbols-outlined">gavel</span>
+                  </div>
+                  <div class="settings-item-text">
+                    <div class="settings-item-title">Thỏa thuận sử dụng</div>
+                    <div class="settings-item-subtitle">Điều khoản và điều kiện</div>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined settings-chevron">chevron_right</span>
+              </a>
+
+              <!-- Privacy Policy -->
+              <a href="#" class="settings-card settings-item">
+                <div class="settings-item-content">
+                  <div class="settings-item-icon">
+                    <span class="material-symbols-outlined">privacy_tip</span>
+                  </div>
+                  <div class="settings-item-text">
+                    <div class="settings-item-title">Quyền riêng tư</div>
+                    <div class="settings-item-subtitle">Chính sách bảo vệ dữ liệu</div>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined settings-chevron">chevron_right</span>
+              </a>
+
+              <!-- About App -->
+              <a href="#" class="settings-card settings-item">
+                <div class="settings-item-content">
+                  <div class="settings-item-icon">
+                    <span class="material-symbols-outlined">info</span>
+                  </div>
+                  <div class="settings-item-text">
+                    <div class="settings-item-title">Về VasWare</div>
+                    <div class="settings-item-subtitle">Thông tin ứng dụng</div>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined settings-chevron">chevron_right</span>
+              </a>
+
+              <!-- Version Info -->
+              <div class="settings-card settings-item-static">
+                <div class="settings-item-content">
+                  <div class="settings-item-icon">
+                    <span class="material-symbols-outlined">update</span>
+                  </div>
+                  <div class="settings-item-text">
+                    <div class="settings-item-title">Phiên bản</div>
+                    <div class="settings-item-subtitle">1.0.0</div>
+                  </div>
                 </div>
               </div>
-              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
-            </div>
-          </a>
-
-          <!-- Notifications -->
-          <a href="#" class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined">notifications</span>
-                <span>Thông báo</span>
-              </div>
-              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <!-- Account Settings -->
-      <section class="section">
-        <h3 class="section-title mb-3">Tài khoản</h3>
-        <div class="space-y-2">
-          <!-- Change Password -->
-          <a href="#" class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined">lock</span>
-                <span>Đổi mật khẩu</span>
-              </div>
-              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
-            </div>
-          </a>
-
-          <!-- Security -->
-          <a href="#" class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined">security</span>
-                <span>Bảo mật</span>
-              </div>
-              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
-            </div>
-          </a>
-
-          <!-- Privacy -->
-          <a href="#" class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined">privacy_tip</span>
-                <span>Quyền riêng tư</span>
-              </div>
-              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section class="section">
-        <h3 class="section-title mb-3">Về ứng dụng</h3>
-        <div class="space-y-2">
-          <!-- Help Center -->
-          <a href="16_faq.html" class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined">help</span>
-                <span>Trung tâm trợ giúp</span>
-              </div>
-              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
-            </div>
-          </a>
-
-          <!-- About App -->
-          <a href="#" class="card">
-            <div class="row row-between">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined">info</span>
-                <span>Về Andromeda</span>
-              </div>
-              <span class="material-symbols-outlined text-tertiary">chevron_right</span>
-            </div>
-          </a>
-
-          <!-- Version -->
-          <div class="card">
-            <div class="flex justify-between text-sm">
-              <span class="text-secondary">Phiên bản</span>
-              <span class="font-medium">2.4.0</span>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- Logout -->
-      <section class="section">
-        <a href="01_login.html" class="btn btn-danger btn-lg btn-full" style="background-color: var(--color-danger);">
-          <span class="material-symbols-outlined">logout</span>
-          <span>Đăng xuất</span>
-        </a>
-      </section>
-    </main>
+      </div>
+    </div>
   </div>
+
+  <!-- Language Selection Modal -->
+  <div class="settings-modal" id="languageModal">
+    <div class="settings-modal-overlay"></div>
+    <div class="settings-modal-content">
+      <div class="settings-modal-header">
+        <h3>Chọn ngôn ngữ</h3>
+        <button class="settings-modal-close" id="closeLanguageModal">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="settings-modal-body">
+        <div class="settings-language-option" data-lang="vi">
+          <div class="settings-language-info">
+            <div class="settings-language-name">Tiếng Việt</div>
+            <div class="settings-language-native">Vietnamese</div>
+          </div>
+          <span class="material-symbols-outlined settings-language-check">check_circle</span>
+        </div>
+        <div class="settings-language-option" data-lang="en">
+          <div class="settings-language-info">
+            <div class="settings-language-name">English</div>
+            <div class="settings-language-native">English</div>
+          </div>
+          <span class="material-symbols-outlined settings-language-check">check_circle</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const htmlElement = document.documentElement;
+
+    // Check for saved dark mode preference
+    const isDarkMode = localStorage.getItem('darkMode') === 'dark';
+    if (isDarkMode) {
+      htmlElement.classList.remove('light');
+      htmlElement.classList.add('dark');
+      darkModeToggle.checked = true;
+    }
+
+    darkModeToggle.addEventListener('change', () => {
+      if (darkModeToggle.checked) {
+        htmlElement.classList.remove('light');
+        htmlElement.classList.add('dark');
+        localStorage.setItem('darkMode', 'dark');
+      } else {
+        htmlElement.classList.remove('dark');
+        htmlElement.classList.add('light');
+        localStorage.setItem('darkMode', 'light');
+      }
+    });
+
+    // Language modal
+    const languageSelector = document.getElementById('languageSelector');
+    const languageModal = document.getElementById('languageModal');
+    const closeLanguageModal = document.getElementById('closeLanguageModal');
+    const languageOptions = document.querySelectorAll('.settings-language-option');
+    const currentLanguage = document.getElementById('currentLanguage');
+
+    let selectedLang = localStorage.getItem('language') || 'vi';
+    updateLanguageDisplay();
+
+    languageSelector.addEventListener('click', () => {
+      languageModal.classList.add('active');
+    });
+
+    closeLanguageModal.addEventListener('click', () => {
+      languageModal.classList.remove('active');
+    });
+
+    languageModal.querySelector('.settings-modal-overlay').addEventListener('click', () => {
+      languageModal.classList.remove('active');
+    });
+
+    languageOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        selectedLang = option.dataset.lang;
+        localStorage.setItem('language', selectedLang);
+        updateLanguageDisplay();
+        languageModal.classList.remove('active');
+      });
+    });
+
+    function updateLanguageDisplay() {
+      languageOptions.forEach(option => {
+        if (option.dataset.lang === selectedLang) {
+          option.classList.add('selected');
+        } else {
+          option.classList.remove('selected');
+        }
+      });
+
+      currentLanguage.textContent = selectedLang === 'vi' ? 'Tiếng Việt' : 'English';
+    }
+
+    // Change Password
+    const changePasswordBtn = document.getElementById('changePasswordBtn');
+    changePasswordBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Chức năng đổi mật khẩu sẽ được triển khai trong phiên bản tiếp theo.');
+    });
+  </script>
 </body>
+
 </html>
