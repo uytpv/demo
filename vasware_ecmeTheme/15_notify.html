@@ -1,119 +1,506 @@
 <!DOCTYPE html>
 <html class="light" lang="vi">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Thông báo - Andromeda</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Thông báo - VasWare</title>
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/components/components.css" />
+  <link rel="stylesheet" href="css/layouts/main-layout.css" />
+  <link rel="stylesheet" href="css/pages/notify/notify.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 </head>
-<body class="page">
-  <div class="container-mobile flex flex-col">
-    <!-- Header -->
-    <header class="app-header">
-      <a href="#" class="btn-icon btn-ghost">
+
+<body>
+  <div class="main-layout">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <button class="top-nav-menu-btn" id="menuBtn">
         <span class="material-symbols-outlined">menu</span>
-      </a>
-      <h1 class="app-header-title">Thông báo</h1>
-      <a href="#" class="btn-icon btn-ghost">
-        <span class="material-symbols-outlined">settings</span>
-      </a>
-    </header>
-
-    <!-- Page Info -->
-    <section class="section">
-      <h2 class="section-title">Thông báo</h2>
-      <p class="section-subtitle">Bạn có <span class="font-bold text-primary">3 thông báo mới</span> hôm nay</p>
-    </section>
-
-    <!-- Filter Chips -->
-    <div class="filter-bar px-4">
-      <a href="#" class="chip chip-selected">
-        <span>Tất cả</span>
-      </a>
-      <a href="#" class="chip">
-        <span>Chưa đọc</span>
-      </a>
-      <a href="#" class="chip">
-        <span>Quan trọng</span>
+      </button>
+      <div class="top-nav-center">
+        <div class="top-nav-logo">
+          <img src="assets/images/logo.png" alt="VasWare Logo" />
+        </div>
+        <div class="top-nav-title">VasWare</div>
+      </div>
+      <a href="15_notify.html" class="top-nav-notification-btn">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="notification-badge"></span>
       </a>
     </div>
 
-    <!-- Main Content -->
-    <main class="page-content scrollable">
-      <!-- Notification Item 1 - Unread -->
-      <a href="#" class="card" style="border-left: 4px solid var(--color-primary); background-color: var(--color-primary-10);">
-        <div class="flex gap-3 mb-2">
-          <span class="material-symbols-outlined text-primary">notifications_active</span>
-          <div class="flex-1 min-w-0">
-            <div class="flex justify-between items-start gap-2">
-              <h3 class="font-bold text-primary">Yêu cầu nghỉ bệnh được phê duyệt</h3>
-              <span class="text-xs text-tertiary whitespace-nowrap">5 phút trước</span>
-            </div>
-            <p class="text-secondary text-sm mt-1 truncate">Yêu cầu nghỉ bệnh từ 05/01 đến 06/01 đã được quản lý phê duyệt</p>
-          </div>
+    <!-- Main Layout Wrapper -->
+    <div class="main-layout-wrapper">
+      <!-- Sidebar Menu -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+          <nav>
+            <a href="03_select_warehouse.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">schedule</span>
+              <span>Thẻ giờ</span>
+            </a>
+            <a href="09_sickleave.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">sick</span>
+              <span>Nghỉ bệnh</span>
+            </a>
+            <a href="13_safe_guide.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">health_and_safety</span>
+              <span>Hướng dẫn An toàn</span>
+            </a>
+            <a href="14_policy.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">policy</span>
+              <span>Quy định làm việc</span>
+            </a>
+            <a href="10_profile.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">person</span>
+              <span>Hồ sơ người dùng</span>
+            </a>
+          </nav>
         </div>
-        <div class="badge badge-primary">Chưa đọc</div>
-      </a>
 
-      <!-- Notification Item 2 - Unread -->
-      <a href="#" class="card" style="border-left: 4px solid var(--color-primary); background-color: var(--color-primary-10);">
-        <div class="flex gap-3 mb-2">
-          <span class="material-symbols-outlined text-primary">info</span>
-          <div class="flex-1 min-w-0">
-            <div class="flex justify-between items-start gap-2">
-              <h3 class="font-bold text-primary">Lịch chỉnh sửa ca làm việc</h3>
-              <span class="text-xs text-tertiary whitespace-nowrap">2 giờ trước</span>
-            </div>
-            <p class="text-secondary text-sm mt-1 truncate">Ca làm việc của bạn ngày 10/01 đã được chỉnh sửa</p>
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <nav>
+            <a href="12_settings.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">settings</span>
+              <span>Cài đặt</span>
+            </a>
+            <a href="index.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">logout</span>
+              <span>Đăng xuất</span>
+            </a>
+          </nav>
+          <div class="sidebar-user">
+            <div class="sidebar-user-email">nhanvien@vasware.com</div>
+            <div class="sidebar-user-role">Internal worker</div>
           </div>
+          <div class="sidebar-version">v1.0.0</div>
         </div>
-        <div class="badge badge-primary">Chưa đọc</div>
-      </a>
+      </aside>
 
-      <!-- Notification Item 3 - Unread -->
-      <a href="#" class="card" style="border-left: 4px solid var(--color-primary); background-color: var(--color-primary-10);">
-        <div class="flex gap-3 mb-2">
-          <span class="material-symbols-outlined text-primary">celebrate</span>
-          <div class="flex-1 min-w-0">
-            <div class="flex justify-between items-start gap-2">
-              <h3 class="font-bold text-primary">Bạn đạt mục tiêu tháng này!</h3>
-              <span class="text-xs text-tertiary whitespace-nowrap">1 ngày trước</span>
-            </div>
-            <p class="text-secondary text-sm mt-1 truncate">Năng suất của bạn vượt mục tiêu 15% - Giỏi lắm!</p>
-          </div>
-        </div>
-        <div class="badge badge-primary">Chưa đọc</div>
-      </a>
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-      <!-- Notification Item 4 - Read -->
-      <a href="#" class="card">
-        <div class="flex gap-3 mb-2">
-          <span class="material-symbols-outlined text-tertiary">update</span>
-          <div class="flex-1 min-w-0">
-            <div class="flex justify-between items-start gap-2">
-              <h3 class="font-bold">Cập nhật ứng dụng</h3>
-              <span class="text-xs text-tertiary whitespace-nowrap">3 ngày trước</span>
-            </div>
-            <p class="text-secondary text-sm mt-1 truncate">Phiên bản 2.4.0 đã sẵn sàng tải về</p>
-          </div>
-        </div>
-      </a>
+      <!-- Main Content -->
+      <div class="main-content-area">
+        <div class="list">
+          <div class="notify-content" id="notifyContent">
 
-      <!-- Notification Item 5 - Read -->
-      <a href="#" class="card">
-        <div class="flex gap-3 mb-2">
-          <span class="material-symbols-outlined text-tertiary">announcement</span>
-          <div class="flex-1 min-w-0">
-            <div class="flex justify-between items-start gap-2">
-              <h3 class="font-bold">Thông báo từ công ty</h3>
-              <span class="text-xs text-tertiary whitespace-nowrap">1 tuần trước</span>
+            <!-- Header -->
+            <div class="notify-header">
+              <h1 class="notify-title">Thông báo</h1>
+              <button class="notify-mark-all-read" id="markAllReadBtn">
+                <span class="material-symbols-outlined">done_all</span>
+                <span>Đánh dấu tất cả đã đọc</span>
+              </button>
             </div>
-            <p class="text-secondary text-sm mt-1 truncate">Lịch nghỉ tết năm nay được công bố</p>
+
+            <!-- Filter Tabs -->
+            <div class="notify-tabs">
+              <button class="notify-tab active" data-filter="all">
+                <span>Tất cả</span>
+                <span class="notify-tab-badge">5</span>
+              </button>
+              <button class="notify-tab" data-filter="unread">
+                <span>Chưa đọc</span>
+                <span class="notify-tab-badge">3</span>
+              </button>
+              <button class="notify-tab" data-filter="system">
+                <span>Hệ thống</span>
+              </button>
+              <button class="notify-tab" data-filter="manager">
+                <span>Quản lý</span>
+              </button>
+            </div>
+
+            <!-- Notification List -->
+            <div class="notify-list" id="notifyList">
+
+              <!-- Notification 1 - Unread, Shift Assignment -->
+              <div class="notify-item unread" data-id="1" data-type="manager">
+                <div class="notify-item-indicator"></div>
+                <div class="notify-item-icon shift">
+                  <span class="material-symbols-outlined">event</span>
+                </div>
+                <div class="notify-item-content">
+                  <div class="notify-item-header">
+                    <h3 class="notify-item-title">Phân công ca làm việc mới</h3>
+                    <span class="notify-item-time">5 phút trước</span>
+                  </div>
+                  <p class="notify-item-text">Bạn được phân công ca làm việc tại kho A2 vào ngày 18/01/2026, ca sáng
+                    (08:00 - 17:00). Vui lòng xác nhận nhận ca.</p>
+                  <div class="notify-item-meta">
+                    <span class="notify-item-source">
+                      <span class="material-symbols-outlined">person</span>
+                      <span>Nguyễn Văn Quản Lý</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notification 2 - Unread, System -->
+              <div class="notify-item unread" data-id="2" data-type="system">
+                <div class="notify-item-indicator"></div>
+                <div class="notify-item-icon info">
+                  <span class="material-symbols-outlined">info</span>
+                </div>
+                <div class="notify-item-content">
+                  <div class="notify-item-header">
+                    <h3 class="notify-item-title">Cập nhật hệ thống</h3>
+                    <span class="notify-item-time">2 giờ trước</span>
+                  </div>
+                  <p class="notify-item-text">Hệ thống VasWare sẽ được bảo trì vào ngày 19/01/2026 từ 22:00 đến 24:00.
+                    Trong thời gian này, bạn có thể không truy cập được ứng dụng.</p>
+                  <div class="notify-item-meta">
+                    <span class="notify-item-source">
+                      <span class="material-symbols-outlined">settings</span>
+                      <span>Hệ thống</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notification 3 - Read, Approval Required -->
+              <div class="notify-item" data-id="3" data-type="manager">
+                <div class="notify-item-indicator"></div>
+                <div class="notify-item-icon approval">
+                  <span class="material-symbols-outlined">check_circle</span>
+                </div>
+                <div class="notify-item-content">
+                  <div class="notify-item-header">
+                    <h3 class="notify-item-title">Yêu cầu nghỉ phép đã được phê duyệt</h3>
+                    <span class="notify-item-time">1 ngày trước</span>
+                  </div>
+                  <p class="notify-item-text">Yêu cầu nghỉ phép của bạn từ ngày 20/01 đến 22/01 đã được phê duyệt. Chúc
+                    bạn nghỉ ngơi vui vẻ!</p>
+                  <div class="notify-item-meta">
+                    <span class="notify-item-source">
+                      <span class="material-symbols-outlined">person</span>
+                      <span>Nguyễn Văn Quản Lý</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notification 4 - Unread, Important -->
+              <div class="notify-item unread" data-id="4" data-type="system">
+                <div class="notify-item-indicator"></div>
+                <div class="notify-item-icon warning">
+                  <span class="material-symbols-outlined">warning</span>
+                </div>
+                <div class="notify-item-content">
+                  <div class="notify-item-header">
+                    <h3 class="notify-item-title">Nhắc nhở chấm công</h3>
+                    <span class="notify-item-time">3 giờ trước</span>
+                  </div>
+                  <p class="notify-item-text">Bạn chưa kết thúc ca làm việc hôm nay. Vui lòng vào hệ thống và chọn "Kết
+                    thúc công việc".</p>
+                  <div class="notify-item-meta">
+                    <span class="notify-item-source">
+                      <span class="material-symbols-outlined">settings</span>
+                      <span>Hệ thống</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notification 5 - Read -->
+              <div class="notify-item" data-id="5" data-type="system">
+                <div class="notify-item-indicator"></div>
+                <div class="notify-item-icon success">
+                  <span class="material-symbols-outlined">celebration</span>
+                </div>
+                <div class="notify-item-content">
+                  <div class="notify-item-header">
+                    <h3 class="notify-item-title">Chúc mừng! Bạn đã hoàn thành tháng làm việc xuất sắc</h3>
+                    <span class="notify-item-time">2 ngày trước</span>
+                  </div>
+                  <p class="notify-item-text">Bạn đã hoàn thành 100% ca làm việc trong tháng 12/2025 với hiệu suất tốt.
+                    Tiếp tục phát huy nhé!</p>
+                  <div class="notify-item-meta">
+                    <span class="notify-item-source">
+                      <span class="material-symbols-outlined">settings</span>
+                      <span>Hệ thống</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
-      </a>
-    </main>
+      </div>
+    </div>
   </div>
+
+  <!-- Notification Detail Modal -->
+  <div class="notify-modal" id="notifyModal">
+    <div class="notify-modal-overlay"></div>
+    <div class="notify-modal-content">
+      <div class="notify-modal-header">
+        <div class="notify-modal-icon" id="modalIcon">
+          <span class="material-symbols-outlined">event</span>
+        </div>
+        <h2 class="notify-modal-title" id="modalTitle">Chi tiết thông báo</h2>
+        <button class="notify-modal-close" id="modalCloseBtn">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="notify-modal-body" id="modalBody">
+        <div class="notify-modal-time" id="modalTime">5 phút trước</div>
+        <div class="notify-modal-text" id="modalText">
+          <!-- Content will be injected by JavaScript -->
+        </div>
+        <div class="notify-modal-source" id="modalSource">
+          <span class="material-symbols-outlined">person</span>
+          <span>Từ: Nguyễn Văn Quản Lý</span>
+        </div>
+      </div>
+
+      <div class="notify-modal-actions" id="modalActions">
+        <!-- Action buttons will be injected by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // Notification data
+    const notifications = [
+      {
+        id: 1,
+        type: 'manager',
+        category: 'shift',
+        title: 'Phân công ca làm việc mới',
+        text: 'Bạn được phân công ca làm việc tại kho A2 vào ngày 18/01/2026, ca sáng (08:00 - 17:00). Vui lòng xác nhận nhận ca.',
+        fullText: 'Kính gửi bạn,\n\nBạn được phân công ca làm việc với thông tin như sau:\n\n• Kho: A2 - Khu vực nhập hàng\n• Ngày: 18/01/2026\n• Ca: Sáng (08:00 - 17:00)\n• Công việc: Nhập hàng, kiểm kho\n\nVui lòng xác nhận nhận ca trước 17:00 ngày 17/01/2026.\n\nTrân trọng,\nNguyễn Văn Quản Lý',
+        source: 'Nguyễn Văn Quản Lý',
+        time: '5 phút trước',
+        unread: true,
+        actions: ['accept', 'reject']
+      },
+      {
+        id: 2,
+        type: 'system',
+        category: 'info',
+        title: 'Cập nhật hệ thống',
+        text: 'Hệ thống VasWare sẽ được bảo trì vào ngày 19/01/2026 từ 22:00 đến 24:00.',
+        fullText: 'Thông báo bảo trì hệ thống\n\nHệ thống VasWare sẽ được bảo trì và nâng cấp vào:\n\n• Ngày: 19/01/2026\n• Thời gian: 22:00 - 24:00 (2 tiếng)\n• Phạm vi: Toàn bộ hệ thống\n\nTrong thời gian này, bạn có thể không truy cập được ứng dụng. Vui lòng hoàn tất công việc và kết thúc ca trước 22:00.\n\nChúng tôi xin lỗi vì sự bất tiện này!',
+        source: 'Hệ thống',
+        time: '2 giờ trước',
+        unread: true,
+        actions: []
+      },
+      {
+        id: 3,
+        type: 'manager',
+        category: 'approval',
+        title: 'Yêu cầu nghỉ phép đã được phê duyệt',
+        text: 'Yêu cầu nghỉ phép của bạn từ ngày 20/01 đến 22/01 đã được phê duyệt.',
+        fullText: 'Kính gửi bạn,\n\nYêu cầu nghỉ phép của bạn đã được phê duyệt:\n\n• Loại phép: Phép năm\n• Từ ngày: 20/01/2026\n• Đến ngày: 22/01/2026\n• Tổng: 3 ngày\n\nChúc bạn nghỉ ngơi vui vẻ và nạp năng lượng!\n\nTrân trọng,\nNguyễn Văn Quản Lý',
+        source: 'Nguyễn Văn Quản Lý',
+        time: '1 ngày trước',
+        unread: false,
+        actions: []
+      },
+      {
+        id: 4,
+        type: 'system',
+        category: 'warning',
+        title: 'Nhắc nhở chấm công',
+        text: 'Bạn chưa kết thúc ca làm việc hôm nay.',
+        fullText: 'Nhắc nhở quan trọng!\n\nHệ thống phát hiện bạn chưa kết thúc ca làm việc hôm nay.\n\n• Ca bắt đầu: 08:00\n• Thời gian hiện tại: 17:30\n\nVui lòng:\n1. Vào trang Thẻ giờ\n2. Chọn "Kết thúc công việc"\n3. Xác nhận kết thúc ca\n\nViệc kết thúc ca đúng giờ giúp tính lương chính xác.',
+        source: 'Hệ thống',
+        time: '3 giờ trước',
+        unread: true,
+        actions: ['clockout']
+      },
+      {
+        id: 5,
+        type: 'system',
+        category: 'success',
+        title: 'Chúc mừng! Bạn đã hoàn thành tháng làm việc xuất sắc',
+        text: 'Bạn đã hoàn thành 100% ca làm việc trong tháng 12/2025.',
+        fullText: 'Chúc mừng bạn!\n\nBạn đã có một tháng làm việc xuất sắc:\n\n• Tháng: 12/2025\n• Số ca hoàn thành: 22/22 ca\n• Tỷ lệ: 100%\n• Điểm hiệu suất: 9.5/10\n• Đánh giá: Xuất sắc\n\nBạn sẽ nhận được thưởng hiệu suất trong bảng lương tháng này.\n\nTiếp tục phát huy và duy trì phong độ nhé!',
+        source: 'Hệ thống',
+        time: '2 ngày trước',
+        unread: false,
+        actions: []
+      }
+    ];
+
+    // Filter tabs
+    const tabs = document.querySelectorAll('.notify-tab');
+    const notifyList = document.getElementById('notifyList');
+    let currentFilter = 'all';
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentFilter = tab.dataset.filter;
+        filterNotifications();
+      });
+    });
+
+    function filterNotifications() {
+      const items = document.querySelectorAll('.notify-item');
+      items.forEach(item => {
+        const type = item.dataset.type;
+        const isUnread = item.classList.contains('unread');
+
+        let show = true;
+        if (currentFilter === 'unread') {
+          show = isUnread;
+        } else if (currentFilter === 'system' || currentFilter === 'manager') {
+          show = type === currentFilter;
+        }
+
+        item.style.display = show ? 'flex' : 'none';
+      });
+    }
+
+    // Mark all as read
+    const markAllReadBtn = document.getElementById('markAllReadBtn');
+    markAllReadBtn.addEventListener('click', () => {
+      const unreadItems = document.querySelectorAll('.notify-item.unread');
+      unreadItems.forEach(item => {
+        item.classList.remove('unread');
+      });
+      updateTabBadges();
+    });
+
+    // Update tab badges
+    function updateTabBadges() {
+      const allCount = document.querySelectorAll('.notify-item').length;
+      const unreadCount = document.querySelectorAll('.notify-item.unread').length;
+
+      tabs.forEach(tab => {
+        const badge = tab.querySelector('.notify-tab-badge');
+        if (badge) {
+          if (tab.dataset.filter === 'all') {
+            badge.textContent = allCount;
+          } else if (tab.dataset.filter === 'unread') {
+            badge.textContent = unreadCount;
+            badge.style.display = unreadCount > 0 ? 'flex' : 'none';
+          }
+        }
+      });
+    }
+
+    // Notification detail modal
+    const modal = document.getElementById('notifyModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const notifyItems = document.querySelectorAll('.notify-item');
+
+    notifyItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const id = parseInt(item.dataset.id);
+        const notification = notifications.find(n => n.id === id);
+        if (notification) {
+          showNotificationDetail(notification);
+          item.classList.remove('unread');
+          updateTabBadges();
+        }
+      });
+    });
+
+    function showNotificationDetail(notif) {
+      modal.classList.add('active');
+
+      // Set icon
+      const iconClass = notif.category;
+      const modalIcon = document.getElementById('modalIcon');
+      modalIcon.className = `notify-modal-icon ${iconClass}`;
+
+      // Set content
+      document.getElementById('modalTitle').textContent = notif.title;
+      document.getElementById('modalTime').textContent = notif.time;
+      document.getElementById('modalText').innerHTML = notif.fullText.replace(/\n/g, '<br>');
+
+      // Set source
+      const sourceIcon = notif.type === 'system' ? 'settings' : 'person';
+      document.getElementById('modalSource').innerHTML = `
+        <span class="material-symbols-outlined">${sourceIcon}</span>
+        <span>Từ: ${notif.source}</span>
+      `;
+
+      // Set actions
+      const modalActions = document.getElementById('modalActions');
+      if (notif.actions && notif.actions.length > 0) {
+        modalActions.innerHTML = '';
+        notif.actions.forEach(action => {
+          const btn = createActionButton(action);
+          modalActions.appendChild(btn);
+        });
+        modalActions.style.display = 'flex';
+      } else {
+        modalActions.style.display = 'none';
+      }
+    }
+
+    function createActionButton(action) {
+      const btn = document.createElement('button');
+      btn.className = `notify-action-btn ${action}`;
+
+      switch (action) {
+        case 'accept':
+          btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span><span>Nhận ca</span>`;
+          btn.addEventListener('click', () => {
+            alert('Đã xác nhận nhận ca!');
+            modal.classList.remove('active');
+          });
+          break;
+        case 'reject':
+          btn.innerHTML = `<span class="material-symbols-outlined">cancel</span><span>Từ chối</span>`;
+          btn.addEventListener('click', () => {
+            alert('Đã từ chối ca làm việc');
+            modal.classList.remove('active');
+          });
+          break;
+        case 'clockout':
+          btn.innerHTML = `<span class="material-symbols-outlined">logout</span><span>Kết thúc ca</span>`;
+          btn.addEventListener('click', () => {
+            alert('Chuyển đến trang chấm công...');
+            window.location.href = '03_select_warehouse.html';
+          });
+          break;
+      }
+
+      return btn;
+    }
+
+    // Close modal
+    modalCloseBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.querySelector('.notify-modal-overlay').addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    // Initialize
+    updateTabBadges();
+  </script>
 </body>
+
 </html>

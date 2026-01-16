@@ -1,134 +1,501 @@
 <!DOCTYPE html>
 <html class="light" lang="vi">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Quy định làm việc - Andromeda</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Quy định làm việc - VasWare</title>
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/components/components.css" />
+  <link rel="stylesheet" href="css/layouts/main-layout.css" />
+  <link rel="stylesheet" href="css/pages/policy/policy.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 </head>
-<body class="page">
-  <div class="container-mobile flex flex-col">
-    <!-- Header -->
-    <header class="app-header">
-      <a href="#" class="btn-icon btn-ghost">
+
+<body>
+  <div class="main-layout">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <button class="top-nav-menu-btn" id="menuBtn">
         <span class="material-symbols-outlined">menu</span>
-      </a>
-      <h1 class="app-header-title">Quy định làm việc</h1>
-      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+      </button>
+      <div class="top-nav-center">
+        <div class="top-nav-logo">
+          <img src="assets/images/logo.png" alt="VasWare Logo" />
+        </div>
+        <div class="top-nav-title">VasWare</div>
+      </div>
+      <a href="15_notify.html" class="top-nav-notification-btn">
         <span class="material-symbols-outlined">notifications</span>
         <span class="notification-badge"></span>
       </a>
-    </header>
+    </div>
 
-    <!-- Search Bar -->
-    <div class="search-sticky">
-      <div class="input-wrapper">
-        <span class="material-symbols-outlined input-wrapper-icon">search</span>
-        <input type="text" class="input-field input-field-with-icon" 
-               placeholder="Tìm kiếm quy định..." value=""/>
+    <!-- Main Layout Wrapper -->
+    <div class="main-layout-wrapper">
+      <!-- Sidebar Menu -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+          <nav>
+            <a href="03_select_warehouse.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">schedule</span>
+              <span>Thẻ giờ</span>
+            </a>
+            <a href="09_sickleave.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">sick</span>
+              <span>Nghỉ bệnh</span>
+            </a>
+            <a href="13_safe_guide.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">health_and_safety</span>
+              <span>Hướng dẫn An toàn</span>
+            </a>
+            <a href="14_policy.html" class="sidebar-link active">
+              <span class="sidebar-icon material-symbols-outlined">policy</span>
+              <span>Quy định làm việc</span>
+            </a>
+            <a href="10_profile.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">person</span>
+              <span>Hồ sơ người dùng</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <nav>
+            <a href="12_settings.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">settings</span>
+              <span>Cài đặt</span>
+            </a>
+            <a href="index.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">logout</span>
+              <span>Đăng xuất</span>
+            </a>
+          </nav>
+          <div class="sidebar-user">
+            <div class="sidebar-user-email">nhanvien@vasware.com</div>
+            <div class="sidebar-user-role">Internal worker</div>
+          </div>
+          <div class="sidebar-version">v1.0.0</div>
+        </div>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
+      <div class="main-content-area">
+        <div class="list">
+          <div class="policy-content" id="policyContent">
+
+            <!-- Header -->
+            <div class="policy-header">
+              <h1 class="policy-title">Quy định làm việc</h1>
+              <p class="policy-subtitle">Vui lòng đọc kỹ và tuân thủ các quy định để đảm bảo môi trường làm việc an toàn
+                và hiệu quả</p>
+            </div>
+
+            <!-- Confirmation Status (if already confirmed) -->
+            <div class="policy-confirmed" id="confirmedBanner" style="display: none;">
+              <span class="material-symbols-outlined">check_circle</span>
+              <div class="policy-confirmed-text">
+                <div class="policy-confirmed-title">Đã xác nhận</div>
+                <div class="policy-confirmed-subtitle">Bạn đã xác nhận đọc và hiểu rõ các quy định này</div>
+              </div>
+            </div>
+
+            <!-- Section 1: Giờ làm việc -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">schedule</span>
+                <span>Giờ làm việc</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">1</div>
+                <div class="policy-rule-content">
+                  Bắt đầu công việc đúng giờ tại vị trí làm việc bằng cách đăng nhập vào hệ thống chấm công VasWare
+                  tại địa chỉ app.vasware.com, chọn công việc đã được giao và kết thúc công việc vào cuối ngày bằng lựa
+                  chọn "Kết thúc công việc".
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">2</div>
+                <div class="policy-rule-content">
+                  Nếu công việc kết thúc, hãy liên hệ ngay với quản lý trực tiếp của bạn.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2: An toàn và thiết bị làm việc -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">health_and_safety</span>
+                <span>An toàn và thiết bị làm việc</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">3</div>
+                <div class="policy-rule-content">
+                  Tuân thủ nghiêm túc các hướng dẫn do quản lý đưa ra. Không tự ý giao việc hoặc chỉ đạo người khác nếu
+                  không có sự đồng ý của quản lý.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">4</div>
+                <div class="policy-rule-content">
+                  Luôn sử dụng đầy đủ trang bị bắt buộc: giày bảo hộ, quần áo phản quang, khẩu trang (theo quy định địa
+                  phương), găng tay và giữ khoảng cách 2 mét (trong thời gian covid).
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">5</div>
+                <div class="policy-rule-content">
+                  Không hút thuốc hoặc sử dụng diêm/bật lửa trong nhà. Hút thuốc chỉ được phép trong giờ nghỉ và bữa ăn
+                  tại khu vực quy định. Điều này áp dụng cho tất cả các vị trí làm việc.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">6</div>
+                <div class="policy-rule-content">
+                  Không được sử dụng tai nghe hoặc loa phát nhạc trong giờ làm để giảm nguy cơ tai nạn và đảm bảo tập
+                  trung. Cấm tuyệt đối xem video trên điện thoại trong giờ làm việc.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">7</div>
+                <div class="policy-rule-content">
+                  Tuân thủ các quy định chung khi vào kho hoặc khu vực của khách hàng.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">8</div>
+                <div class="policy-rule-content">
+                  Không vận hành máy móc, thiết bị khi chưa được quản lý cho phép và hướng dẫn.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">9</div>
+                <div class="policy-rule-content">
+                  Làm việc trong khu vực được phân công. Không tự ý di chuyển sang khu vực khác nếu không có nhiệm vụ
+                  hoặc sự cho phép.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">10</div>
+                <div class="policy-rule-content">
+                  Bảo vệ tài sản của TEMPRO Oy và của khách hàng. Báo ngay cho quản lý nếu phát hiện đồ đạc bị hỏng hoặc
+                  không sử dụng được.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">11</div>
+                <div class="policy-rule-content">
+                  Dọn dẹp khu vực làm việc trong ca và sau khi kết thúc. Phân loại rác theo quy định. Trả dụng cụ về
+                  đúng nơi và báo cho quản lý nếu phát hiện hỏng hóc trước khi rời nơi làm việc.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">12</div>
+                <div class="policy-rule-content">
+                  Báo cho quản lý nếu có tai nạn hoặc tình huống nguy hiểm. Điền vào biểu mẫu báo cáo tai nạn/gần tai
+                  nạn và nộp cho quản lý.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">13</div>
+                <div class="policy-rule-content">
+                  Tuyệt đối cấm sử dụng điện thoại hoặc máy tính bảng khi di chuyển trong kho vì nguy cơ tai nạn rất
+                  cao.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: Giờ nghỉ và việc cá nhân -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">coffee</span>
+                <span>Giờ nghỉ và việc cá nhân</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">14</div>
+                <div class="policy-rule-content">
+                  Mỗi ngày có hai giờ nghỉ cà phê, mỗi lần 15 phút. Trong giờ đầu tiên và giờ cuối cùng của ca làm, nghỉ
+                  giải lao bị cấm trừ khi có sự cho phép đặc biệt từ quản lý. Giờ nghỉ trưa kéo dài 30 phút. Tất cả giờ
+                  nghỉ được tính từ thời điểm bạn rời khỏi vị trí làm việc.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">15</div>
+                <div class="policy-rule-content">
+                  Ăn uống chỉ được phép tại khu vực và phòng nghỉ được quy định. Không được uống rượu bia trước và trong
+                  giờ làm việc.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">16</div>
+                <div class="policy-rule-content">
+                  Không sử dụng điện thoại cho việc cá nhân trong giờ làm. Nếu có việc cá nhân khẩn cấp, hãy báo cho
+                  quản lý.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">17</div>
+                <div class="policy-rule-content">
+                  Khi bị ốm, hãy liên hệ trước tiên với quản lý trực tiếp của TEMPRO Oy. Quản lý sẽ hướng dẫn thêm cho
+                  bạn.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 4: Ứng xử và môi trường làm việc -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">groups</span>
+                <span>Ứng xử và môi trường làm việc</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">18</div>
+                <div class="policy-rule-content">
+                  Không đưa người lạ vào nơi làm việc.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">19</div>
+                <div class="policy-rule-content">
+                  Không làm những công việc mà bạn chưa được đào tạo hoặc hướng dẫn. Tất cả công việc đều sẽ được huấn
+                  luyện qua người hướng dẫn.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">20</div>
+                <div class="policy-rule-content">
+                  Luôn lịch sự và chuyên nghiệp khi giao tiếp với khách hàng và nhân viên của họ. Bạn đại diện cho
+                  TEMPRO Oy.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">21</div>
+                <div class="policy-rule-content">
+                  Các phát ngôn công khai liên quan đến TEMPRO Oy trên phương tiện truyền thông hoặc mạng xã hội chỉ
+                  được thực hiện bởi người được ủy quyền.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">22</div>
+                <div class="policy-rule-content">
+                  Các hành vi phạm pháp tại nơi làm việc sẽ bị xử lý theo luật pháp địa phương và báo cáo cho cơ quan
+                  chức năng.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">23</div>
+                <div class="policy-rule-content">
+                  Giữ bầu không khí làm việc tích cực. Tôn trọng đồng nghiệp và hỗ trợ khi cần thiết. Hợp tác và giao
+                  tiếp cởi mở là nền tảng của một môi trường làm việc an toàn và hiệu quả.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 5: Trách nhiệm và báo cáo -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">assignment</span>
+                <span>Trách nhiệm và báo cáo</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">24</div>
+                <div class="policy-rule-content">
+                  Đồ dùng cá nhân phải để ở khu vực quy định. TEMPRO Oy hoặc khách hàng không chịu trách nhiệm nếu bạn
+                  không tuân thủ và đồ dùng bị mất.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">25</div>
+                <div class="policy-rule-content">
+                  Khách hàng có quyền đào tạo bạn công việc mới và giao nhiệm vụ mới.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">26</div>
+                <div class="policy-rule-content">
+                  Tôn trọng tài sản của TEMPRO Oy và của khách hàng. Không lấy bất kỳ đồ vật nào nếu không có sự cho
+                  phép. Nếu được phép, bạn phải có giấy phép bằng văn bản.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">27</div>
+                <div class="policy-rule-content">
+                  Đảm bảo rằng bạn hiểu rõ các hướng dẫn đã được đưa ra. Nếu chưa rõ, hãy hỏi ngay quản lý để đảm bảo an
+                  toàn và chất lượng công việc.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">28</div>
+                <div class="policy-rule-content">
+                  Đóng góp ý kiến khi cần thiết. Nếu gặp sự cố với thiết bị, quy trình hoặc môi trường làm việc, hãy báo
+                  cho quản lý. Phản hồi chủ động giúp cải thiện an toàn và điều kiện làm việc.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">29</div>
+                <div class="policy-rule-content">
+                  Chịu trách nhiệm với công việc của chính mình. Hãy làm việc cẩn thận và có trách nhiệm. Nếu mắc lỗi,
+                  hãy báo ngay và trung thực – điều này giúp ngăn chặn sự cố lớn hơn và củng cố sự tin tưởng.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">30</div>
+                <div class="policy-rule-content">
+                  Tại nơi làm việc, không buôn chuyện, bàn tán hoặc tò mò về đời tư của người khác – dù là đồng nghiệp
+                  hay nhân viên của khách hàng. Hãy luôn giữ tính chuyên nghiệp và tập trung vào công việc.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 6: Ba trụ cột -->
+            <div class="policy-pillars">
+              <h2 class="policy-pillars-title">
+                <span class="material-symbols-outlined">workspace_premium</span>
+                <span>Ba trụ cột trong công việc</span>
+              </h2>
+              <p class="policy-pillars-subtitle">Khi làm việc, hãy ghi nhớ ba điều quan trọng:</p>
+
+              <div class="policy-pillars-grid">
+                <div class="policy-pillar-card">
+                  <div class="policy-pillar-icon">
+                    <span class="material-symbols-outlined">verified_user</span>
+                  </div>
+                  <div class="policy-pillar-number">1</div>
+                  <div class="policy-pillar-title">An toàn là trên hết</div>
+                </div>
+
+                <div class="policy-pillar-card">
+                  <div class="policy-pillar-icon">
+                    <span class="material-symbols-outlined">star</span>
+                  </div>
+                  <div class="policy-pillar-number">2</div>
+                  <div class="policy-pillar-title">Chất lượng công việc</div>
+                </div>
+
+                <div class="policy-pillar-card">
+                  <div class="policy-pillar-icon">
+                    <span class="material-symbols-outlined">speed</span>
+                  </div>
+                  <div class="policy-pillar-number">3</div>
+                  <div class="policy-pillar-title">Tốc độ</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Confirmation Section -->
+            <div class="policy-confirmation" id="confirmationSection">
+              <div class="policy-confirmation-box">
+                <label class="policy-checkbox-wrapper">
+                  <input type="checkbox" id="confirmCheckbox" />
+                  <span class="policy-checkbox-custom"></span>
+                  <span class="policy-checkbox-label">Tôi đã đọc và hiểu rõ các quy định làm việc trên</span>
+                </label>
+
+                <button class="policy-submit-btn" id="submitBtn" disabled>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  <span>Xác nhận</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Filter Chips -->
-    <div class="filter-bar px-4">
-      <a href="#" class="chip chip-selected">
-        <span class="material-symbols-outlined" style="font-size: 18px;">filter_alt</span>
-        <span>Tất cả</span>
-      </a>
-      <a href="#" class="chip">
-        <span>Giờ làm việc</span>
-      </a>
-      <a href="#" class="chip">
-        <span>Nghỉ phép</span>
-      </a>
-    </div>
-
-    <!-- Main Content -->
-    <main class="page-content scrollable">
-      <!-- Policy Categories -->
-      <section class="section">
-        <!-- Category: Working Hours -->
-        <div class="mb-6">
-          <h2 class="section-title mb-3">Giờ làm việc</h2>
-          <div class="space-y-2">
-            <a href="#" class="card">
-              <h3 class="font-bold mb-1">Giờ làm việc bình thường</h3>
-              <p class="text-secondary text-sm">Từ 08:00 đến 17:00 (5 ngày/tuần)</p>
-            </a>
-            <a href="#" class="card">
-              <h3 class="font-bold mb-1">Giờ làm việc linh hoạt</h3>
-              <p class="text-secondary text-sm">Được phép sắp xếp thời gian nếu phù hợp</p>
-            </a>
-          </div>
-        </div>
-
-        <!-- Category: Leave Policies -->
-        <div class="mb-6">
-          <h2 class="section-title mb-3">Chính sách nghỉ phép</h2>
-          <div class="space-y-2">
-            <a href="#" class="card">
-              <div class="flex justify-between items-start">
-                <div class="flex-1">
-                  <h3 class="font-bold mb-1">Nghỉ phép hàng năm</h3>
-                  <p class="text-secondary text-sm">Tối đa 15 ngày</p>
-                </div>
-                <span class="badge badge-primary">15 ngày</span>
-              </div>
-            </a>
-            <a href="#" class="card">
-              <div class="flex justify-between items-start">
-                <div class="flex-1">
-                  <h3 class="font-bold mb-1">Nghỉ bệnh</h3>
-                  <p class="text-secondary text-sm">Cần giấy xác nhận bệnh từ bác sĩ</p>
-                </div>
-                <span class="badge badge-primary">Tùy</span>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Category: Benefits -->
-        <div class="mb-6">
-          <h2 class="section-title mb-3">Phúc lợi</h2>
-          <div class="space-y-2">
-            <a href="#" class="card">
-              <div class="flex gap-3">
-                <span class="material-symbols-outlined text-success">check_circle</span>
-                <div class="flex-1">
-                  <h3 class="font-bold mb-1">Bảo hiểm xã hội</h3>
-                  <p class="text-secondary text-sm">Bao gồm bảo hiểm y tế và lương hưu</p>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="card">
-              <div class="flex gap-3">
-                <span class="material-symbols-outlined text-success">check_circle</span>
-                <div class="flex-1">
-                  <h3 class="font-bold mb-1">Thưởng hiệu suất</h3>
-                  <p class="text-secondary text-sm">Hàng tháng/hàng năm dựa trên hiệu suất</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Category: Code of Conduct -->
-        <div class="mb-6">
-          <h2 class="section-title mb-3">Quy tắc ứng xử</h2>
-          <div class="space-y-2">
-            <a href="#" class="card">
-              <h3 class="font-bold mb-1">Tôn trọng đồng nghiệp</h3>
-              <p class="text-secondary text-sm">Không phân biệt, qu騷nhiễu hoặc bắc cau</p>
-            </a>
-            <a href="#" class="card">
-              <h3 class="font-bold mb-1">Bảo mật thông tin</h3>
-              <p class="text-secondary text-sm">Giữ bí mật thông tin công ty</p>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
   </div>
+
+  <script>
+    // Sidebar toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // Policy confirmation logic
+    const confirmCheckbox = document.getElementById('confirmCheckbox');
+    const submitBtn = document.getElementById('submitBtn');
+    const confirmationSection = document.getElementById('confirmationSection');
+    const confirmedBanner = document.getElementById('confirmedBanner');
+
+    // Check if user has already confirmed
+    const policyConfirmed = localStorage.getItem('policyConfirmed');
+
+    if (policyConfirmed === 'true') {
+      // User has already confirmed, show banner and hide confirmation section
+      confirmedBanner.style.display = 'flex';
+      confirmationSection.style.display = 'none';
+    }
+
+    // Enable/disable submit button based on checkbox
+    confirmCheckbox.addEventListener('change', () => {
+      submitBtn.disabled = !confirmCheckbox.checked;
+    });
+
+    // Handle submit
+    submitBtn.addEventListener('click', () => {
+      if (confirmCheckbox.checked) {
+        // Save confirmation to localStorage
+        localStorage.setItem('policyConfirmed', 'true');
+
+        // Show success message
+        alert('Cảm ơn bạn đã xác nhận. Bạn sẽ được chuyển đến trang chấm công.');
+
+        // Redirect to warehouse selection page
+        window.location.href = '03_select_warehouse.html';
+      }
+    });
+
+    // Dark mode support
+    const htmlElement = document.documentElement;
+    const observer = new MutationObserver(() => {
+      // Can add any dark mode specific logic here if needed
+    });
+    observer.observe(htmlElement, { attributes: true, attributeFilter: ['class'] });
+  </script>
 </body>
+
 </html>

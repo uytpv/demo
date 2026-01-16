@@ -1,121 +1,516 @@
 <!DOCTYPE html>
 <html class="light" lang="vi">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Quy định an toàn - Andromeda</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Hướng dẫn An toàn - VasWare</title>
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/components/components.css" />
+  <link rel="stylesheet" href="css/layouts/main-layout.css" />
+  <link rel="stylesheet" href="css/pages/policy/policy.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 </head>
-<body class="page">
-  <div class="container-mobile flex flex-col">
-    <!-- Header -->
-    <header class="app-header">
-      <a href="#" class="btn-icon btn-ghost">
+
+<body>
+  <div class="main-layout">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <button class="top-nav-menu-btn" id="menuBtn">
         <span class="material-symbols-outlined">menu</span>
-      </a>
-      <h1 class="app-header-title">Andromeda</h1>
-      <a href="#" class="btn-icon btn-ghost" style="position: relative;">
+      </button>
+      <div class="top-nav-center">
+        <div class="top-nav-logo">
+          <img src="assets/images/logo.png" alt="VasWare Logo" />
+        </div>
+        <div class="top-nav-title">VasWare</div>
+      </div>
+      <a href="15_notify.html" class="top-nav-notification-btn">
         <span class="material-symbols-outlined">notifications</span>
         <span class="notification-badge"></span>
       </a>
-    </header>
-
-    <!-- Page Title -->
-    <section class="section">
-      <h1 class="text-3xl font-bold">Quy định an toàn</h1>
-      <p class="text-secondary text-sm mt-1">Cập nhật lần cuối: 15/10/2023</p>
-    </section>
-
-    <!-- Search Bar -->
-    <div class="search-sticky">
-      <div class="input-wrapper">
-        <span class="material-symbols-outlined input-wrapper-icon">search</span>
-        <input type="text" class="input-field input-field-with-icon" 
-               placeholder="Tìm kiếm quy định, chính sách..." value=""/>
-      </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="page-content scrollable">
-      <!-- Featured Section -->
-      <section class="section">
-        <h2 class="section-title mb-3">Các quy định quan trọng</h2>
-        <div class="space-y-3">
-          <a href="#" class="card">
-            <div class="flex gap-3">
-              <span class="material-symbols-outlined text-danger mt-1">warning</span>
-              <div class="flex-1">
-                <h3 class="font-bold">Sử dụng thiết bị bảo vệ cá nhân</h3>
-                <p class="text-secondary text-sm mt-1">Tất cả nhân viên bắt buộc phải sử dụng đầy đủ PPE</p>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="flex gap-3">
-              <span class="material-symbols-outlined text-warning mt-1">security</span>
-              <div class="flex-1">
-                <h3 class="font-bold">Kiểm tra an toàn hàng ngày</h3>
-                <p class="text-secondary text-sm mt-1">Kiểm tra thiết bị trước khi bắt đầu ca làm việc</p>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="flex gap-3">
-              <span class="material-symbols-outlined text-info mt-1">info</span>
-              <div class="flex-1">
-                <h3 class="font-bold">Báo cáo sự cố ngay</h3>
-                <p class="text-secondary text-sm mt-1">Báo cáo ngay bất kỳ sự cố hoặc nguy hiểm nào</p>
-              </div>
-            </div>
-          </a>
+    <!-- Main Layout Wrapper -->
+    <div class="main-layout-wrapper">
+      <!-- Sidebar Menu -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+          <nav>
+            <a href="03_select_warehouse.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">schedule</span>
+              <span>Thẻ giờ</span>
+            </a>
+            <a href="09_sickleave.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">sick</span>
+              <span>Nghỉ bệnh</span>
+            </a>
+            <a href="13_safe_guide.html" class="sidebar-link active">
+              <span class="sidebar-icon material-symbols-outlined">health_and_safety</span>
+              <span>Hướng dẫn An toàn</span>
+            </a>
+            <a href="14_policy.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">policy</span>
+              <span>Quy định làm việc</span>
+            </a>
+            <a href="10_profile.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">person</span>
+              <span>Hồ sơ người dùng</span>
+            </a>
+          </nav>
         </div>
-      </section>
 
-      <!-- Categories -->
-      <section class="section">
-        <h2 class="section-title mb-3">Danh mục quy định</h2>
-        <div class="space-y-2">
-          <a href="#" class="card">
-            <div class="row row-between">
-              <span class="font-medium">Bảo vệ cá nhân</span>
-              <span class="material-symbols-outlined text-secondary">chevron_right</span>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <div class="row row-between">
-              <span class="font-medium">Quy trình khẩn cấp</span>
-              <span class="material-symbols-outlined text-secondary">chevron_right</span>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <div class="row row-between">
-              <span class="font-medium">Quyền và trách nhiệm</span>
-              <span class="material-symbols-outlined text-secondary">chevron_right</span>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <div class="row row-between">
-              <span class="font-medium">Báo cáo sự cố</span>
-              <span class="material-symbols-outlined text-secondary">chevron_right</span>
-            </div>
-          </a>
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <nav>
+            <a href="12_settings.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">settings</span>
+              <span>Cài đặt</span>
+            </a>
+            <a href="index.html" class="sidebar-link">
+              <span class="sidebar-icon material-symbols-outlined">logout</span>
+              <span>Đăng xuất</span>
+            </a>
+          </nav>
+          <div class="sidebar-user">
+            <div class="sidebar-user-email">nhanvien@vasware.com</div>
+            <div class="sidebar-user-role">Internal worker</div>
+          </div>
+          <div class="sidebar-version">v1.0.0</div>
         </div>
-      </section>
+      </aside>
 
-      <!-- Emergency Contact -->
-      <section class="section">
-        <div class="alert alert-warning">
-          <span class="material-symbols-outlined">emergency</span>
-          <div>
-            <p class="font-bold">Liên hệ khẩn cấp</p>
-            <p class="text-sm mt-1">Số điện thoại: 911 | Email: safety@company.com</p>
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
+      <div class="main-content-area">
+        <div class="list">
+          <div class="policy-content" id="safetyContent">
+
+            <!-- Header -->
+            <div class="policy-header">
+              <h1 class="policy-title">Hướng dẫn An toàn Lao động</h1>
+              <p class="policy-subtitle">Hướng dẫn cơ bản về an toàn lao động trong ngành kho vận để bảo vệ sức khỏe và
+                tính mạng của bạn</p>
+            </div>
+
+            <!-- Confirmation Status (if already confirmed) -->
+            <div class="policy-confirmed" id="confirmedBanner" style="display: none;">
+              <span class="material-symbols-outlined">check_circle</span>
+              <div class="policy-confirmed-text">
+                <div class="policy-confirmed-title">Đã xác nhận</div>
+                <div class="policy-confirmed-subtitle">Bạn đã xác nhận đọc và hiểu rõ các hướng dẫn an toàn này</div>
+              </div>
+            </div>
+
+            <!-- Section 1: Trang bị bảo hộ lao động -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">shield</span>
+                <span>Trang bị bảo hộ lao động</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">1</div>
+                <div class="policy-rule-content">
+                  <strong>Giày bảo hộ:</strong> Luôn đi giày bảo hộ có mũi sắt khi làm việc trong kho. Giày bảo hộ bảo
+                  vệ chân khỏi các vật rơi, đâm thủng và trượt ngã.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">2</div>
+                <div class="policy-rule-content">
+                  <strong>Mũ bảo hộ:</strong> Đội mũ bảo hộ khi làm việc ở khu vực có nguy cơ rơi vật từ trên cao hoặc
+                  khi vận hành xe nâng.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">3</div>
+                <div class="policy-rule-content">
+                  <strong>Quần áo phản quang:</strong> Mặc áo phản quang để dễ dàng nhận diện trong kho, đặc biệt ở khu
+                  vực có xe nâng hoạt động.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">4</div>
+                <div class="policy-rule-content">
+                  <strong>Găng tay:</strong> Sử dụng găng tay khi xử lý hàng hóa, đặc biệt là vật sắc nhọn, thô ráp hoặc
+                  hóa chất.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">5</div>
+                <div class="policy-rule-content">
+                  <strong>Kính bảo hộ:</strong> Đeo kính bảo hộ khi làm việc ở nơi có bụi, mảnh vụn hoặc hóa chất có thể
+                  bắn vào mắt.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2: An toàn khi làm việc với hàng hóa -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">inventory_2</span>
+                <span>An toàn khi làm việc với hàng hóa</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">6</div>
+                <div class="policy-rule-content">
+                  <strong>Kỹ thuật nâng đúng:</strong> Khi nhấc vật nặng, hãy cúi gối thay vì cúi người. Giữ lưng thẳng
+                  và sử dụng sức từ chân để nâng. Không xoắn người khi mang vật nặng.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">7</div>
+                <div class="policy-rule-content">
+                  <strong>Giới hạn trọng lượng:</strong> Không tự ý nâng vật nặng quá khả năng (thường > 25kg). Nhờ trợ
+                  giúp hoặc sử dụng thiết bị hỗ trợ như xe đẩy, palét jack.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">8</div>
+                <div class="policy-rule-content">
+                  <strong>Xếp hàng an toàn:</strong> Xếp hàng ổn định, nặng ở dưới, nhẹ ở trên. Không xếp hàng quá cao
+                  hoặc chồng chéo không ổn định. Kiểm tra giá kệ trước khi xếp hàng.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">9</div>
+                <div class="policy-rule-content">
+                  <strong>Kiểm tra hàng hóa:</strong> Kiểm tra tình trạng bao bì, palette trước khi di chuyển. Báo ngay
+                  nếu phát hiện hàng hóa bị hư hỏng hoặc không an toàn.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">10</div>
+                <div class="policy-rule-content">
+                  <strong>Hóa chất nguy hiểm:</strong> Chú ý nhãn cảnh báo trên hàng hóa chứa hóa chất. Sử dụng thiết bị
+                  bảo hộ phù hợp và làm theo hướng dẫn xử lý.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: An toàn khi di chuyển trong kho -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">directions_walk</span>
+                <span>An toàn khi di chuyển trong kho</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">11</div>
+                <div class="policy-rule-content">
+                  <strong>Lối đi an toàn:</strong> Luôn đi trên lối đi được đánh dấu. Không đi tắt qua khu vực làm việc
+                  của xe nâng hoặc khu vực nguy hiểm.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">12</div>
+                <div class="policy-rule-content">
+                  <strong>Quan sát xung quanh:</strong> Luôn chú ý xung quanh khi di chuyển. Nhìn cả phía trước, hai bên
+                  và phía trên để phát hiện nguy hiểm.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">13</div>
+                <div class="policy-rule-content">
+                  <strong>Tránh xe nâng:</strong> Giữ khoảng cách an toàn với xe nâng đang hoạt động (tối thiểu 3 mét).
+                  Không đi sau xe nâng và luôn giao tiếp bằng mắt với người lái.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">14</div>
+                <div class="policy-rule-content">
+                  <strong>Không sử dụng điện thoại:</strong> Tuyệt đối không sử dụng điện thoại hoặc thiết bị điện tử
+                  khi đang di chuyển trong kho. Tập trung hoàn toàn vào di chuyển an toàn.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">15</div>
+                <div class="policy-rule-content">
+                  <strong>Giữ lối đi thông thoáng:</strong> Không để vật cản trên lối đi. Báo ngay nếu phát hiện lối đi
+                  bị chắn hoặc có vật rơi vãi.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 4: An toàn với thiết bị và máy móc -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">precision_manufacturing</span>
+                <span>An toàn với thiết bị và máy móc</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">16</div>
+                <div class="policy-rule-content">
+                  <strong>Đào tạo trước khi sử dụng:</strong> Chỉ sử dụng thiết bị/máy móc mà bạn đã được đào tạo. Không
+                  tự ý vận hành thiết bị lạ.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">17</div>
+                <div class="policy-rule-content">
+                  <strong>Kiểm tra trước khi dùng:</strong> Kiểm tra tình trạng thiết bị trước mỗi ca làm. Báo ngay nếu
+                  phát hiện hư hỏng, rò rỉ hoặc bất thường.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">18</div>
+                <div class="policy-rule-content">
+                  <strong>Sử dụng đúng mục đích:</strong> Chỉ sử dụng thiết bị cho mục đích thiết kế. Không cải tạo hoặc
+                  sử dụng sai cách.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">19</div>
+                <div class="policy-rule-content">
+                  <strong>Tắt nguồn khi bảo trì:</strong> Tắt và ngắt nguồn điện trước khi vệ sinh, bảo trì hoặc sửa
+                  chữa thiết bị.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">20</div>
+                <div class="policy-rule-content">
+                  <strong>Không sử dụng thiết bị hỏng:</strong> Đặt biển cảnh báo và báo quản lý ngay khi phát hiện
+                  thiết bị hỏng. Không cố sử dụng hoặc sửa chữa tạm bợ.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 5: Phòng ngừa tai nạn -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">warning</span>
+                <span>Phòng ngừa tai nạn</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">21</div>
+                <div class="policy-rule-content">
+                  <strong>Báo cáo nguy hiểm:</strong> Báo ngay cho quản lý khi phát hiện tình huống nguy hiểm, dù nhỏ.
+                  Không đợi tai nạn xảy ra mới báo cáo.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">22</div>
+                <div class="policy-rule-content">
+                  <strong>Biển báo an toàn:</strong> Tuân thủ các biển báo an toàn (cấm vào, nguy hiểm, bắt buộc). Chúng
+                  được đặt để bảo vệ bạn.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">23</div>
+                <div class="policy-rule-content">
+                  <strong>Vệ sinh nơi làm việc:</strong> Giữ khu vực làm việc sạch sẽ, gọn gàng. Lau ngay nếu có chất
+                  lỏng đổ ra để tránh trượt ngã.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">24</div>
+                <div class="policy-rule-content">
+                  <strong>Lối thoát hiểm:</strong> Biết vị trí lối thoát hiểm, thiết bị chữa cháy, và điểm tập trung
+                  khẩn cấp. Không chặn lối thoát hiểm.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">25</div>
+                <div class="policy-rule-content">
+                  <strong>Làm việc tỉnh táo:</strong> Không làm việc khi mệt mỏi, uống rượu hoặc sử dụng thuốc gây buồn
+                  ngủ. Nghỉ ngơi đầy đủ để duy trì sự tập trung.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 6: Sơ cứu và xử lý khẩn cấp -->
+            <div class="policy-section">
+              <h2 class="policy-section-title">
+                <span class="material-symbols-outlined">medical_services</span>
+                <span>Sơ cứu và xử lý khẩn cấp</span>
+              </h2>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">26</div>
+                <div class="policy-rule-content">
+                  <strong>Tủ thuốc y tế:</strong> Biết vị trí tủ thuốc y tế trong khu vực làm việc. Kiểm tra tủ y tế
+                  định kỳ.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">27</div>
+                <div class="policy-rule-content">
+                  <strong>Báo cáo tai nạn ngay:</strong> Báo ngay cho quản lý khi có tai nạn, dù nhỏ. Gọi cấp cứu 112
+                  nếu tai nạn nghiêm trọng.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">28</div>
+                <div class="policy-rule-content">
+                  <strong>Không di chuyển người bị thương nặng:</strong> Không di chuyển người bị thương nghiêm trọng
+                  trừ khi có nguy hiểm tức thời. Đợi nhân viên y tế chuyên nghiệp.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">29</div>
+                <div class="policy-rule-content">
+                  <strong>Vòi rửa mắt/vòi tắm khẩn cấp:</strong> Biết vị trí vòi rửa mắt và vòi tắm khẩn cấp. Sử dụng
+                  ngay khi bị hóa chất bắn vào mắt hoặc da.
+                </div>
+              </div>
+
+              <div class="policy-rule">
+                <div class="policy-rule-number">30</div>
+                <div class="policy-rule-content">
+                  <strong>Điền biểu mẫu tai nạn:</strong> Sau mỗi tai nạn, điền đầy đủ biểu mẫu báo cáo tai nạn. Thông
+                  tin này giúp cải thiện an toàn cho mọi người.
+                </div>
+              </div>
+            </div>
+
+            <!-- Safety Principles -->
+            <div class="policy-pillars">
+              <h2 class="policy-pillars-title">
+                <span class="material-symbols-outlined">verified_user</span>
+                <span>Nguyên tắc vàng an toàn lao động</span>
+              </h2>
+              <p class="policy-pillars-subtitle">Luôn ghi nhớ ba nguyên tắc cơ bản này:</p>
+
+              <div class="policy-pillars-grid">
+                <div class="policy-pillar-card">
+                  <div class="policy-pillar-icon">
+                    <span class="material-symbols-outlined">psychology</span>
+                  </div>
+                  <div class="policy-pillar-number">1</div>
+                  <div class="policy-pillar-title">Nghĩ trước khi làm</div>
+                </div>
+
+                <div class="policy-pillar-card">
+                  <div class="policy-pillar-icon">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </div>
+                  <div class="policy-pillar-number">2</div>
+                  <div class="policy-pillar-title">Quan sát xung quanh</div>
+                </div>
+
+                <div class="policy-pillar-card">
+                  <div class="policy-pillar-icon">
+                    <span class="material-symbols-outlined">report</span>
+                  </div>
+                  <div class="policy-pillar-number">3</div>
+                  <div class="policy-pillar-title">Báo cáo nguy hiểm</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Confirmation Section -->
+            <div class="policy-confirmation" id="confirmationSection">
+              <div class="policy-confirmation-box">
+                <label class="policy-checkbox-wrapper">
+                  <input type="checkbox" id="confirmCheckbox" />
+                  <span class="policy-checkbox-custom"></span>
+                  <span class="policy-checkbox-label">Tôi đã đọc và hiểu rõ các hướng dẫn an toàn lao động</span>
+                </label>
+
+                <button class="policy-submit-btn" id="submitBtn" disabled>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  <span>Xác nhận</span>
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   </div>
+
+  <script>
+    // Sidebar toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // Safety guide confirmation logic (OPTIONAL - not blocking)
+    const confirmCheckbox = document.getElementById('confirmCheckbox');
+    const submitBtn = document.getElementById('submitBtn');
+    const confirmationSection = document.getElementById('confirmationSection');
+    const confirmedBanner = document.getElementById('confirmedBanner');
+
+    // Check if user has already confirmed (optional tracking)
+    const safetyConfirmed = localStorage.getItem('safetyGuideConfirmed');
+
+    if (safetyConfirmed === 'true') {
+      // User has already confirmed, show banner
+      confirmedBanner.style.display = 'flex';
+      confirmationSection.style.display = 'none';
+    }
+
+    // Enable/disable submit button based on checkbox
+    confirmCheckbox.addEventListener('change', () => {
+      submitBtn.disabled = !confirmCheckbox.checked;
+    });
+
+    // Handle submit (non-blocking)
+    submitBtn.addEventListener('click', () => {
+      if (confirmCheckbox.checked) {
+        // Save confirmation to localStorage (for tracking only)
+        localStorage.setItem('safetyGuideConfirmed', 'true');
+
+        // Show success and hide confirmation section
+        confirmedBanner.style.display = 'flex';
+        confirmationSection.style.display = 'none';
+
+        // Show success message
+        alert('Cảm ơn bạn đã xác nhận. Chúc bạn làm việc an toàn!');
+
+        // Scroll to top to see confirmed banner
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    // Dark mode support
+    const htmlElement = document.documentElement;
+    const observer = new MutationObserver(() => {
+      // Can add any dark mode specific logic here if needed
+    });
+    observer.observe(htmlElement, { attributes: true, attributeFilter: ['class'] });
+  </script>
 </body>
+
 </html>
