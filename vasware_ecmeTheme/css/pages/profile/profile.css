@@ -63,12 +63,6 @@ html.dark .employee-card {
     align-items: center;
     gap: 20px;
     margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #e5e7eb;
-}
-
-html.dark .employee-card-header {
-    border-bottom-color: #334155;
 }
 
 .employee-avatar {
@@ -177,6 +171,86 @@ html.dark .name-field-input {
 /* Hide employee details in edit mode */
 .profile-content.edit-mode .employee-details {
     display: none;
+}
+
+/* Hide employee role and status badge in edit mode */
+.profile-content.edit-mode .employee-role {
+    display: none;
+}
+
+.profile-content.edit-mode .status-badge {
+    display: none;
+}
+
+/* Hide contact card in edit mode */
+.profile-content.edit-mode .contact-card {
+    display: none;
+}
+
+/* Employee Contact Edit Section (in edit mode) */
+.employee-contact-edit {
+    display: none;
+    margin-top: 20px;
+}
+
+.profile-content.edit-mode .employee-contact-edit {
+    display: block;
+}
+
+.employee-edit-field {
+    margin-bottom: 16px;
+}
+
+.employee-edit-field:last-child {
+    margin-bottom: 0;
+}
+
+.employee-edit-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1e40af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+html.dark .employee-edit-label {
+    color: #93c5fd;
+}
+
+.employee-edit-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #bfdbfe;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #ffffff;
+}
+
+html.dark .employee-edit-input {
+    background: #1e293b;
+    border-color: rgba(96, 165, 250, 0.3);
+    color: #dbeafe;
+}
+
+.employee-edit-input:focus {
+    outline: none;
+    border-color: #1e63dc;
+    box-shadow: 0 0 0 3px rgba(30, 99, 220, 0.1);
+}
+
+/* Show action buttons in edit mode within employee-card */
+.employee-card .profile-actions {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #e5e7eb;
+}
+
+html.dark .employee-card .profile-actions {
+    border-top-color: #334155;
 }
 
 .employee-role {

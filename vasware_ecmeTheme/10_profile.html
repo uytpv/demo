@@ -137,6 +137,35 @@
                 </div>
               </div>
 
+              <!-- Email and Phone fields (in edit mode) -->
+              <div class="employee-contact-edit">
+                <!-- Email -->
+                <div class="employee-edit-field">
+                  <label class="employee-edit-label">Email</label>
+                  <input type="email" class="employee-edit-input" id="fieldEmail" value="nhanvien@vasware.com"
+                    placeholder="Nhập email" />
+                </div>
+
+                <!-- Phone -->
+                <div class="employee-edit-field">
+                  <label class="employee-edit-label">Số điện thoại</label>
+                  <input type="tel" class="employee-edit-input" id="fieldPhone" value="+358 40 123 4567"
+                    placeholder="Nhập số điện thoại" />
+                </div>
+              </div>
+
+              <!-- Action Buttons (in edit mode) -->
+              <div class="profile-actions" id="editActions" style="display: none;">
+                <button class="profile-btn profile-btn-cancel" id="cancelBtn">
+                  <span class="material-symbols-outlined">close</span>
+                  <span>Hủy</span>
+                </button>
+                <button class="profile-btn profile-btn-save" id="saveBtn">
+                  <span class="material-symbols-outlined">save</span>
+                  <span>Lưu thay đổi</span>
+                </button>
+              </div>
+
               <!-- Card Details -->
               <div class="employee-details">
                 <!-- Row 1, Col 1: Employee ID -->
@@ -202,7 +231,6 @@
                     <div class="contact-field-label">Email</div>
                     <div class="contact-field-value">
                       <span class="display-text" id="displayEmail">nhanvien@vasware.com</span>
-                      <input type="email" id="fieldEmail" value="nhanvien@vasware.com" />
                     </div>
                   </div>
                 </div>
@@ -216,22 +244,9 @@
                     <div class="contact-field-label">Số điện thoại</div>
                     <div class="contact-field-value">
                       <span class="display-text" id="displayPhone">+358 40 123 4567</span>
-                      <input type="tel" id="fieldPhone" value="+358 40 123 4567" />
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <!-- Action Buttons (hidden by default, shown in edit mode) -->
-              <div class="profile-actions" id="editActions" style="display: none;">
-                <button class="profile-btn profile-btn-cancel" id="cancelBtn">
-                  <span class="material-symbols-outlined">close</span>
-                  <span>Hủy</span>
-                </button>
-                <button class="profile-btn profile-btn-save" id="saveBtn">
-                  <span class="material-symbols-outlined">save</span>
-                  <span>Lưu thay đổi</span>
-                </button>
               </div>
             </div>
 
@@ -273,6 +288,10 @@
     const displayFullName = document.getElementById('displayFullName');
     const displayEmail = document.getElementById('displayEmail');
     const displayPhone = document.getElementById('displayPhone');
+
+    // Update display values on page load
+    displayEmail.textContent = fieldEmail.value;
+    displayPhone.textContent = fieldPhone.value;
 
     // Store original values for cancel
     let originalValues = {};
